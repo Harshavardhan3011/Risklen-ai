@@ -1,0 +1,102 @@
+[
+  {
+    "createdAt": "2026-01-01T00:01:00.000000Z",
+    "email": "analyst01@risklens.example",
+    "id": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "name": "Risk Analyst 01",
+    "passwordHash": "!provisioning-required-b5fafd91-b1eb-50b6-a54c-09778fbf4d6f",
+    "role": "ANALYST",
+    "status": "PENDING",
+    "updatedAt": "2026-01-01T00:01:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:02:00.000000Z",
+    "email": "analyst02@risklens.example",
+    "id": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "name": "Risk Analyst 02",
+    "passwordHash": "!provisioning-required-11b7c907-7502-5bdb-8d23-71627dc31640",
+    "role": "ANALYST",
+    "status": "PENDING",
+    "updatedAt": "2026-01-01T00:02:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:03:00.000000Z",
+    "email": "analyst03@risklens.example",
+    "id": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "name": "Risk Analyst 03",
+    "passwordHash": "!provisioning-required-04825385-e988-552c-be66-c8f4e1410e41",
+    "role": "ANALYST",
+    "status": "PENDING",
+    "updatedAt": "2026-01-01T00:03:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:04:00.000000Z",
+    "email": "analyst04@risklens.example",
+    "id": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "name": "Risk Analyst 04",
+    "passwordHash": "!provisioning-required-ccfc77a5-2ae2-5fd9-a501-8f06850c5e20",
+    "role": "ANALYST",
+    "status": "PENDING",
+    "updatedAt": "2026-01-01T00:04:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:05:00.000000Z",
+    "email": "analyst05@risklens.example",
+    "id": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "name": "Risk Analyst 05",
+    "passwordHash": "!provisioning-required-65bf7268-7515-5d67-bead-ddaac48a049e",
+    "role": "ANALYST",
+    "status": "PENDING",
+    "updatedAt": "2026-01-01T00:05:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:06:00.000000Z",
+    "email": "analyst06@risklens.example",
+    "id": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "name": "Risk Analyst 06",
+    "passwordHash": "!provisioning-required-599136f4-a119-5030-b753-b34d02d55aad",
+    "role": "ANALYST",
+    "status": "PENDING",
+    "updatedAt": "2026-01-01T00:06:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:07:00.000000Z",
+    "email": "analyst07@risklens.example",
+    "id": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "name": "Risk Analyst 07",
+    "passwordHash": "!provisioning-required-0d6381ef-08ba-51cc-88c5-7692112a90ec",
+    "role": "ANALYST",
+    "status": "PENDING",
+    "updatedAt": "2026-01-01T00:07:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:08:00.000000Z",
+    "email": "analyst08@risklens.example",
+    "id": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "name": "Risk Analyst 08",
+    "passwordHash": "!provisioning-required-c2b51c84-fdb7-55a4-be30-3d1f08b5c83c",
+    "role": "ANALYST",
+    "status": "PENDING",
+    "updatedAt": "2026-01-01T00:08:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:09:00.000000Z",
+    "email": "analyst09@risklens.example",
+    "id": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "name": "Risk Analyst 09",
+    "passwordHash": "!provisioning-required-04509fc8-92de-5cc9-ba9e-67ccb56ece9e",
+    "role": "ANALYST",
+    "status": "PENDING",
+    "updatedAt": "2026-01-01T00:09:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:10:00.000000Z",
+    "email": "analyst10@risklens.example",
+    "id": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "name": "Risk Analyst 10",
+    "passwordHash": "!provisioning-required-320e555f-196a-577a-80df-0ab91d0d99ac",
+    "role": "ANALYST",
+    "status": "PENDING",
+    "updatedAt": "2026-01-01T00:10:00.000000Z"
+  }
+]

@@ -1,0 +1,1602 @@
+[
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00001",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "30195b5d-d2d4-5f29-aedc-8cb86a0fbb25",
+    "occurredAt": "2026-03-11T10:42:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00002",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "c61c7776-5f85-56a1-940b-da2af131ccbf",
+    "occurredAt": "2026-03-11T10:47:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00003",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "f23406fc-489a-53fe-9cd0-bd3e51a8b584",
+    "occurredAt": "2026-03-11T10:52:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00004",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9197a512-b517-5974-967e-9548474cc6c1",
+    "occurredAt": "2026-03-11T10:57:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00005",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "036113cd-41c6-5751-bb9a-1520dfc74a75",
+    "occurredAt": "2026-03-11T11:02:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00006",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9aafd5e4-7ad1-5cf8-9ba8-e7eecc691e5a",
+    "occurredAt": "2026-03-11T11:07:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00007",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "c3c5826b-6f28-5d32-bb86-81b1d2835767",
+    "occurredAt": "2026-03-11T11:12:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00008",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "da0d697b-1b89-5a95-bb98-fceff8a7ad68",
+    "occurredAt": "2026-03-11T11:17:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00009",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "869aeede-50c0-54fc-b5e7-d3176fd462ca",
+    "occurredAt": "2026-03-11T11:22:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00010",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "838093f9-751d-50f3-9f17-bd5f3da7d339",
+    "occurredAt": "2026-03-11T11:27:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00011",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9d21adf9-c754-5bdc-9559-24d90a124c40",
+    "occurredAt": "2026-03-11T11:32:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00012",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "8da3721c-40bc-548b-bf21-672bc091ed69",
+    "occurredAt": "2026-03-11T11:37:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00013",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "53b5e449-c070-5ebe-bf02-af8059dd50f1",
+    "occurredAt": "2026-03-11T11:42:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00014",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "d30af511-302d-5dd0-a339-1cc6497191dd",
+    "occurredAt": "2026-03-11T11:47:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00015",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "81c50b34-7aa2-5131-9884-ca806a4b7a97",
+    "occurredAt": "2026-03-11T11:52:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00016",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "6b9d0e6d-a07d-52fa-9062-1bd422326a95",
+    "occurredAt": "2026-03-11T11:57:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00017",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "bd3092a7-58db-5099-8a3b-99da44c61796",
+    "occurredAt": "2026-03-11T12:02:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00018",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "6885a5a0-19bb-522a-a05d-9229e7c602e2",
+    "occurredAt": "2026-03-11T12:07:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00019",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "536cab37-69c4-5816-8c18-457e19e44e11",
+    "occurredAt": "2026-03-11T12:12:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00020",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "5df5dbe3-9746-58f4-a903-5c37dbf759bc",
+    "occurredAt": "2026-03-11T12:17:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00021",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "4b583326-99fa-5370-993b-92d807dceab5",
+    "occurredAt": "2026-03-11T12:22:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00022",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "dd82a53e-6514-5fd4-88c3-2afc3511de17",
+    "occurredAt": "2026-03-11T12:27:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00023",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "17308678-98bf-545f-b407-04bdd68bc589",
+    "occurredAt": "2026-03-11T12:32:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00024",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "38b0d9bd-e118-5cfb-889a-a5853f942b4e",
+    "occurredAt": "2026-03-11T12:37:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00025",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "ff5586e6-c955-5119-8cee-a84c5dc5c17f",
+    "occurredAt": "2026-03-11T12:42:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00026",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "02642a0b-38a4-5016-b3d1-8217fe1e1159",
+    "occurredAt": "2026-03-11T12:47:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00027",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "5c105766-2996-5b8a-95cb-2a2df98a4057",
+    "occurredAt": "2026-03-11T12:52:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00028",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "def8280f-cebf-5cb5-96a6-610cb90e4cd1",
+    "occurredAt": "2026-03-11T12:57:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00029",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "733da121-194e-5843-8198-d7cdc4a75dae",
+    "occurredAt": "2026-03-11T13:02:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00030",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "023910d1-f7a7-567b-a90e-a507b5a05b50",
+    "occurredAt": "2026-03-11T13:07:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00031",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "a65dd2bd-6a00-5954-8161-b1778fe2412e",
+    "occurredAt": "2026-03-11T13:12:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00032",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9151caac-0aa5-5697-818f-3c1ae9af1235",
+    "occurredAt": "2026-03-11T13:17:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00033",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "cfa10483-8aaa-566a-8e58-334f234a8c18",
+    "occurredAt": "2026-03-11T13:22:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00034",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "4ce0e3eb-697b-55b7-aefb-d2f9e44bbf0b",
+    "occurredAt": "2026-03-11T13:27:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00035",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "8bff4e27-a8ba-5108-b5ff-3f9d75b917d2",
+    "occurredAt": "2026-03-11T13:32:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00036",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "e1f6905f-d2da-5631-a63d-6b3afd7f6c8e",
+    "occurredAt": "2026-03-11T13:37:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00037",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "f4a80a95-283b-510e-93ae-0330cfeff3c5",
+    "occurredAt": "2026-03-11T13:42:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00038",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "300f5fb4-fc38-52f5-8939-216e93f2d45b",
+    "occurredAt": "2026-03-11T13:47:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00039",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "7e896369-7c45-5642-86ac-42259e0c5d51",
+    "occurredAt": "2026-03-11T13:52:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00040",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "2e647d43-8251-5688-a288-2990089c83a2",
+    "occurredAt": "2026-03-11T13:57:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00041",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "ae71b1b6-2930-5f8d-ae47-eabb5f94aef6",
+    "occurredAt": "2026-03-11T14:02:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00042",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "94d0446c-6dd4-50e3-bafe-3e3f41e9aee0",
+    "occurredAt": "2026-03-11T14:07:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00043",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "1d407580-981c-506a-9528-005acef38a93",
+    "occurredAt": "2026-03-11T14:12:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00044",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "54e4cc6a-7c0c-5c1c-9b45-7bbcc8ab2594",
+    "occurredAt": "2026-03-11T14:17:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00045",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "329e0f10-dabc-5b87-bf86-5c8979a801eb",
+    "occurredAt": "2026-03-11T14:22:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00046",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "50ab9b93-4081-5d3a-9e3f-d5fa7231b8b6",
+    "occurredAt": "2026-03-11T14:27:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00047",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "cdf58991-af82-5063-8db3-25225a086884",
+    "occurredAt": "2026-03-11T14:32:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00048",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "6def49ef-6fb9-5d9b-a0ce-f912b57e63df",
+    "occurredAt": "2026-03-11T14:37:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00049",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "e2ab8269-640b-52a6-9785-69d998e3f50a",
+    "occurredAt": "2026-03-11T14:42:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00050",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "8a8b6096-bc8d-5ebe-b7b9-14bdb35142a7",
+    "occurredAt": "2026-03-11T14:47:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00051",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "34b9c9f2-1a39-5932-8aab-06800d5a3678",
+    "occurredAt": "2026-03-11T14:52:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00052",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "82df443b-5a0d-573c-b8f0-bb0a342c9c26",
+    "occurredAt": "2026-03-11T14:57:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00053",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "af3c0abb-d749-5a1e-b0e8-0ce7d0b1cd49",
+    "occurredAt": "2026-03-11T15:02:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00054",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9375820e-41b4-5606-92c4-bd53f7fc6e4c",
+    "occurredAt": "2026-03-11T15:07:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00055",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "a57a89f0-e595-551a-96b5-7d670942a8b6",
+    "occurredAt": "2026-03-11T15:12:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00056",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "feee95a8-b08a-53ea-93a5-905c786b1f46",
+    "occurredAt": "2026-03-11T15:17:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00057",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "8f7281c7-767c-578f-9ed1-0a1c6bb92f76",
+    "occurredAt": "2026-03-11T15:22:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00058",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "1e1e8970-31f9-5848-82cc-f0055b193045",
+    "occurredAt": "2026-03-11T15:27:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00059",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "2983f8ec-5d8c-5c19-b355-f9aabd77f9de",
+    "occurredAt": "2026-03-11T15:32:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00060",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9f985b26-dd5d-59d1-ad1f-3cfc9868dba2",
+    "occurredAt": "2026-03-11T15:37:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00061",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "a876c26f-dbf6-5bbb-8cab-532a1f89522d",
+    "occurredAt": "2026-03-11T15:42:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00062",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "82351686-faca-525d-93fe-fbd44ff980a7",
+    "occurredAt": "2026-03-11T15:47:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00063",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "71a256c5-894a-50ff-a9f0-a4855be98179",
+    "occurredAt": "2026-03-11T15:52:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00064",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "308e4d08-c9ef-5ee3-920a-dce5e8d59f0c",
+    "occurredAt": "2026-03-11T15:57:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00065",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "4a1f6a03-115e-52ca-91d5-7a6eb0d79f31",
+    "occurredAt": "2026-03-11T16:02:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00066",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "0cbdc83d-ef25-558b-b961-ac0664a87019",
+    "occurredAt": "2026-03-11T16:07:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00067",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "c96db607-cbc5-5512-9322-eb79b65bf207",
+    "occurredAt": "2026-03-11T16:12:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00068",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "41db87fe-d377-53f2-afb0-df60c6bce9f6",
+    "occurredAt": "2026-03-11T16:17:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00069",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "229415bd-855e-5358-8824-462ef087d843",
+    "occurredAt": "2026-03-11T16:22:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00070",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "06fb71a0-425f-50f8-90c6-a195c0743638",
+    "occurredAt": "2026-03-11T16:27:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00071",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "b4f52d78-e69e-54ff-accd-94f1c05585d3",
+    "occurredAt": "2026-03-11T16:32:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00072",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9d4a3ef1-6598-55e4-ba38-f83f4e671045",
+    "occurredAt": "2026-03-11T16:37:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00073",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "5b031413-debe-51b6-994a-c0815f74fa2e",
+    "occurredAt": "2026-03-11T16:42:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00074",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "92ee1b52-8e16-54fc-a485-cae7167d2376",
+    "occurredAt": "2026-03-11T16:47:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00075",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "e6b995b3-bc8e-57f6-a1cd-658e9a2c8ef1",
+    "occurredAt": "2026-03-11T16:52:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00076",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "5a5a85fd-d01b-5c8f-9a20-4c9b4bf51dff",
+    "occurredAt": "2026-03-11T16:57:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00077",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "175b8514-3823-5af4-9640-8b85b3fb7da3",
+    "occurredAt": "2026-03-11T17:02:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00078",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9a7945b7-f79c-5f8d-867e-87baa0a3f18f",
+    "occurredAt": "2026-03-11T17:07:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00079",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "8c4798ec-18ab-5f61-9af2-72ba1d84ef60",
+    "occurredAt": "2026-03-11T17:12:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00080",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "1f286d04-30f2-5fe9-be7e-1f671dd841c9",
+    "occurredAt": "2026-03-11T17:17:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00081",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "d8946750-f1c8-5e28-9356-f3235aa1b9c2",
+    "occurredAt": "2026-03-11T17:22:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00082",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "96cd5121-381c-5609-ba7f-94a627c9e0e4",
+    "occurredAt": "2026-03-11T17:27:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00083",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "8d1cd065-6328-5fe2-8767-d4f5ca1ea4c7",
+    "occurredAt": "2026-03-11T17:32:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00084",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "aab6f565-2cdd-5243-94cc-486c36f23f5d",
+    "occurredAt": "2026-03-11T17:37:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00085",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "63019fad-afb5-5bf5-89b1-55c3d0c66c62",
+    "occurredAt": "2026-03-11T17:42:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00086",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "35fa71a6-5bc1-5e00-9b89-05dcf24b4292",
+    "occurredAt": "2026-03-11T17:47:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00087",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "fadd9d5d-3543-5f61-8da8-8659a2a504b0",
+    "occurredAt": "2026-03-11T17:52:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00088",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "c3444ecc-4ffb-5ee9-9eb9-ac52a3a20cf0",
+    "occurredAt": "2026-03-11T17:57:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00089",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "98d639d0-e9a2-5a3b-a937-d0324a4e2277",
+    "occurredAt": "2026-03-11T18:02:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00090",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "04e4f63d-8964-59e6-92f6-537a3927e5ca",
+    "occurredAt": "2026-03-11T18:07:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00091",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "ea0c1309-dba7-5dd7-8b94-2b8409389a6d",
+    "occurredAt": "2026-03-11T18:12:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00092",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "3d5a569d-2471-5191-a3f0-9371f955c1b7",
+    "occurredAt": "2026-03-11T18:17:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00093",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "a23c064b-1970-5486-8602-178bdf52c8e6",
+    "occurredAt": "2026-03-11T18:22:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00094",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "ed0caa7a-a711-5aea-aa8a-0dc750e609cb",
+    "occurredAt": "2026-03-11T18:27:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00095",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "f7c05811-4e77-5dab-896e-82d10ef6dc4b",
+    "occurredAt": "2026-03-11T18:32:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00096",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "3730fc2c-4121-5fc7-944c-33f5f9c7d518",
+    "occurredAt": "2026-03-11T18:37:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00097",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "6f6daebf-cb11-5866-9f8c-0a43fabcd3be",
+    "occurredAt": "2026-03-11T18:42:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00098",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "b2f2056d-2676-5cd0-9dfb-5530d68e921d",
+    "occurredAt": "2026-03-11T18:47:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00099",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "7771a397-98e7-5dea-9465-0ceebdb9ec4b",
+    "occurredAt": "2026-03-11T18:52:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00100",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "e3294b97-a0de-5a9d-8d8b-f106790c5324",
+    "occurredAt": "2026-03-11T18:57:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00101",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "28a7250d-dc1a-583c-b20b-73539144606a",
+    "occurredAt": "2026-03-11T19:02:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00102",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "323159b8-3fb8-534b-9488-eb707c35ffb9",
+    "occurredAt": "2026-03-11T19:07:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00103",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "fb2a1dcd-66e4-53a1-b00d-342bd9d431fa",
+    "occurredAt": "2026-03-11T19:12:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00104",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "954b3cb4-0ef1-5b0a-8ccc-ca214015fa63",
+    "occurredAt": "2026-03-11T19:17:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00105",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "77c7fa52-6ac9-554b-910c-2fa6e5d7d9e3",
+    "occurredAt": "2026-03-11T19:22:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00106",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "11d62ee4-1fbe-5184-99a3-f1c56f6e15f0",
+    "occurredAt": "2026-03-11T19:27:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00107",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "d272911f-1f9a-5b5e-a576-372a08d05067",
+    "occurredAt": "2026-03-11T19:32:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00108",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "ddef31a3-ea64-560b-9e85-3fae36ceba5b",
+    "occurredAt": "2026-03-11T19:37:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00109",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "82294576-38f7-5c24-a8fc-649dd61ce682",
+    "occurredAt": "2026-03-11T19:42:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00110",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "fdf02f79-cc34-519b-b7be-98370d5ffe48",
+    "occurredAt": "2026-03-11T19:47:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00111",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "f50dab3a-83d9-5dd8-aec1-c282734b3f89",
+    "occurredAt": "2026-03-11T19:52:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00112",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "44c6f908-b38c-5f82-95d9-40b3cdf80df3",
+    "occurredAt": "2026-03-11T19:57:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00113",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "4352b735-1cf7-511d-96ed-bf1cff69a5e0",
+    "occurredAt": "2026-03-11T20:02:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00114",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "479ee516-7a15-5619-813b-f28fb2dd16df",
+    "occurredAt": "2026-03-11T20:07:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00115",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "dcce3825-c7ea-5451-92fe-6dc478b5ddae",
+    "occurredAt": "2026-03-11T20:12:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00116",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "02474ad3-1538-5419-ad43-c1ffdcddf6b9",
+    "occurredAt": "2026-03-11T20:17:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00117",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "dd38c19c-ff88-5583-9e8d-dc012b2dc2b0",
+    "occurredAt": "2026-03-11T20:22:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00118",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "84fa76f2-afcd-55fa-a5c3-ce3d0742b195",
+    "occurredAt": "2026-03-11T20:27:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00119",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "433cdd1b-0a09-5701-9b33-af51b77cbb20",
+    "occurredAt": "2026-03-11T20:32:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00120",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "0e0b1748-a64a-52f5-94f5-32d0024090a3",
+    "occurredAt": "2026-03-11T20:37:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00121",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "4cc73cf7-51f6-58cd-bc3b-4eb32cc64f58",
+    "occurredAt": "2026-03-11T20:42:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00122",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "42ad8d4d-4954-54d8-8b5b-198d6f3098f5",
+    "occurredAt": "2026-03-11T20:47:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00123",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "360f4a40-10ab-50f3-a24d-15defb160639",
+    "occurredAt": "2026-03-11T20:52:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00124",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "28a34eb4-d630-5302-82d5-48cac8ac7537",
+    "occurredAt": "2026-03-11T20:57:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00125",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "e8f92fd0-db36-5bdd-99f1-55ccd8d28777",
+    "occurredAt": "2026-03-11T21:02:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00126",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "bf87ea71-1368-5d0d-a130-571c76ced4b4",
+    "occurredAt": "2026-03-11T21:07:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00127",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "2b4d3923-ad6a-57b8-8398-a6a91bb2fa89",
+    "occurredAt": "2026-03-11T21:12:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00128",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "d55e0d78-9f97-5e78-ae08-a16d994926ef",
+    "occurredAt": "2026-03-11T21:17:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00129",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "f1f88f4e-1157-5fde-ad32-a23e793b87c7",
+    "occurredAt": "2026-03-11T21:22:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00130",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9e81760b-2513-57d6-822b-48115560bac4",
+    "occurredAt": "2026-03-11T21:27:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00131",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "bbd71fba-d40d-5602-89f7-d2d851a1fc23",
+    "occurredAt": "2026-03-11T21:32:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00132",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "698bfe07-188c-52c3-80a5-8ddf7b3faa42",
+    "occurredAt": "2026-03-11T21:37:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00133",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "8d73df2d-032f-5a6a-97bf-fde19ed40292",
+    "occurredAt": "2026-03-11T21:42:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00134",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "357e61c3-3c6d-518d-b9fd-683cd9460718",
+    "occurredAt": "2026-03-11T21:47:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00135",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "940afe6d-5dd8-51e8-88f4-5c8b80b4e88f",
+    "occurredAt": "2026-03-11T21:52:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00136",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "85fcf662-a341-5794-836f-915ac5d997d5",
+    "occurredAt": "2026-03-11T21:57:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00137",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "48c16b71-b1dc-5ea4-aba1-14d313bceec9",
+    "occurredAt": "2026-03-11T22:02:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00138",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "ff8de7b0-8885-5e2f-b8f2-c95e4718b56b",
+    "occurredAt": "2026-03-11T22:07:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00139",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "6f3c3e7f-49d0-5e3e-8c8d-391db9c98e02",
+    "occurredAt": "2026-03-11T22:12:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00140",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "26522553-8f65-531b-bfe7-1ee0145defe6",
+    "occurredAt": "2026-03-11T22:17:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00141",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "afa5812e-7443-5215-b45c-1b7878475224",
+    "occurredAt": "2026-03-11T22:22:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00142",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "48e9b163-2a60-5ba7-802a-aa2b5108c27f",
+    "occurredAt": "2026-03-11T22:27:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00143",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "6c4e5e6a-a01c-5722-ade3-2241ce0327eb",
+    "occurredAt": "2026-03-11T22:32:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00144",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "7e7aca04-a800-5f2e-8eff-d3e0c3de4506",
+    "occurredAt": "2026-03-11T22:37:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00145",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "136e9aae-5953-53fa-bcbb-bb70d0b71c86",
+    "occurredAt": "2026-03-11T22:42:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00146",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "dbd1b4f4-ba20-55a4-a101-867ac54c5e71",
+    "occurredAt": "2026-03-11T22:47:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00147",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "bc39864d-1306-540b-8c8f-51a0d7690c4e",
+    "occurredAt": "2026-03-11T22:52:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00148",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "e7b39f41-6709-5c44-b36f-fb68b516ef95",
+    "occurredAt": "2026-03-11T22:57:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00149",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "da6e2bda-9ad9-5c1e-ab75-d3f794126ddd",
+    "occurredAt": "2026-03-11T23:02:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00150",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "5df172f9-541b-585b-ac9d-0dfaed9cdb3c",
+    "occurredAt": "2026-03-11T23:07:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00151",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "93cc4422-fd64-5238-9021-72a7e4b6c9d4",
+    "occurredAt": "2026-03-11T23:12:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00152",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "39b38eb3-f81c-5920-86c8-af2eb6fa847b",
+    "occurredAt": "2026-03-11T23:17:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00153",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "56d7757b-a0a3-5c39-8b20-6b1bcb13c78e",
+    "occurredAt": "2026-03-11T23:22:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00154",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "1b6bfad5-cd51-5801-aa71-32db55c5508f",
+    "occurredAt": "2026-03-11T23:27:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00155",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "5fde0580-cb08-57c4-849e-afe700357bee",
+    "occurredAt": "2026-03-11T23:32:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00156",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "89607bbb-9397-5317-baff-f1c91e5990e1",
+    "occurredAt": "2026-03-11T23:37:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00157",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "91e25081-4451-5542-860e-47b09a8a2a79",
+    "occurredAt": "2026-03-11T23:42:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00158",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "c531550d-53a2-51f4-b0a7-a9a6b01f19cd",
+    "occurredAt": "2026-03-11T23:47:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00159",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "5a795ec1-1a5d-58a0-b6e3-36b75969a834",
+    "occurredAt": "2026-03-11T23:52:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00160",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "a6e8685f-f149-5614-8dd8-ef7231cb9579",
+    "occurredAt": "2026-03-11T23:57:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00161",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "059df8ff-1856-5334-a31e-c794c5e78b48",
+    "occurredAt": "2026-03-12T00:02:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00162",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "24b184de-d1c1-5532-a6a3-2c3a0e237a7c",
+    "occurredAt": "2026-03-12T00:07:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00163",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "0b855493-140c-5933-a98b-aa86d44977ea",
+    "occurredAt": "2026-03-12T00:12:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00164",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "2884bca7-015c-5d2f-968e-b2bc056835b2",
+    "occurredAt": "2026-03-12T00:17:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00165",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "af0586c2-a5c5-565c-93e4-e5f0e8a8e4ba",
+    "occurredAt": "2026-03-12T00:22:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00166",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "b7ade362-502a-545b-81eb-b3359cab3622",
+    "occurredAt": "2026-03-12T00:27:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00167",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "b5236107-2b0e-558d-b04c-3fc984894ee0",
+    "occurredAt": "2026-03-12T00:32:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00168",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "12a1aa51-d5ff-5283-9987-43c4636c55f0",
+    "occurredAt": "2026-03-12T00:37:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00169",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "7f37160d-d8a2-59b6-8094-5e0fce9bba6a",
+    "occurredAt": "2026-03-12T00:42:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00170",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "33ebc62c-3bcc-5a50-833a-e30b78efec9c",
+    "occurredAt": "2026-03-12T00:47:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00171",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "e0a92f7d-1c34-58af-84f3-804e46247771",
+    "occurredAt": "2026-03-12T00:52:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00172",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "851c15cb-6a64-5236-bd76-8e6a3990f217",
+    "occurredAt": "2026-03-12T00:57:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00173",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "8b8e8c88-a5dc-56db-b6e5-3fce6d6fa851",
+    "occurredAt": "2026-03-12T01:02:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00174",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "2eb8c9ba-7a1c-5893-9346-cba59f33b93c",
+    "occurredAt": "2026-03-12T01:07:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00175",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "86a7167e-1468-57d8-b540-cb111995c808",
+    "occurredAt": "2026-03-12T01:12:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00176",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "70290243-362a-59fa-b5e1-86faedcff35e",
+    "occurredAt": "2026-03-12T01:17:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00177",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "d898690a-ebec-545e-8199-aec8f78a60a4",
+    "occurredAt": "2026-03-12T01:22:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00178",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "a729192e-27b2-58a0-8aa6-4cd53f718ff7",
+    "occurredAt": "2026-03-12T01:27:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00179",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "66330c87-64da-5481-93ea-97a820de92ce",
+    "occurredAt": "2026-03-12T01:32:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00180",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "2dd41fc6-6874-5584-9301-57da88c5d715",
+    "occurredAt": "2026-03-12T01:37:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00181",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "3ad063d8-135b-5435-b5ef-d3d108837c10",
+    "occurredAt": "2026-03-12T01:42:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00182",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "12fee8b8-ea92-5481-9fa1-5f9818c14ad0",
+    "occurredAt": "2026-03-12T01:47:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00183",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "375822a9-b779-5cde-aae1-21ff55ec3906",
+    "occurredAt": "2026-03-12T01:52:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00184",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "e3dee8c1-86f8-5bdc-963d-1c666e568b3c",
+    "occurredAt": "2026-03-12T01:57:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00185",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "86d9348b-ab8c-5137-9b76-cde6f41be3f5",
+    "occurredAt": "2026-03-12T02:02:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00186",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "d0e2b1b2-3285-58ce-9114-2fd050e1e510",
+    "occurredAt": "2026-03-12T02:07:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00187",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "8ea803c9-da5b-5820-8ed8-1c4c324d7234",
+    "occurredAt": "2026-03-12T02:12:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00188",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "35be79cf-acb7-5283-817f-88a84f385828",
+    "occurredAt": "2026-03-12T02:17:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00189",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "f933f99e-0bf7-5671-85a2-288ce4625891",
+    "occurredAt": "2026-03-12T02:22:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00190",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "90e55a88-aa14-5f39-aafc-5efbb166c818",
+    "occurredAt": "2026-03-12T02:27:00.000000Z"
+  },
+  {
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00191",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "5fdd8cdd-081c-5bf3-85a5-e62cbffa32cf",
+    "occurredAt": "2026-03-12T02:32:00.000000Z"
+  },
+  {
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00192",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9750ab15-2c70-536a-b16c-2675ba785b85",
+    "occurredAt": "2026-03-12T02:37:00.000000Z"
+  },
+  {
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00193",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "3355c843-e262-500c-8635-f2c09bb8b38f",
+    "occurredAt": "2026-03-12T02:42:00.000000Z"
+  },
+  {
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00194",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "fd236002-5a82-5798-9c29-edac6268f322",
+    "occurredAt": "2026-03-12T02:47:00.000000Z"
+  },
+  {
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00195",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "111feaaa-5be4-534d-ac9d-f59e613fae49",
+    "occurredAt": "2026-03-12T02:52:00.000000Z"
+  },
+  {
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00196",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "7d5a7009-483d-5165-b5c6-e1d0be7a26cb",
+    "occurredAt": "2026-03-12T02:57:00.000000Z"
+  },
+  {
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00197",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "73183331-3f59-5082-ad97-687a61ace2f1",
+    "occurredAt": "2026-03-12T03:02:00.000000Z"
+  },
+  {
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00198",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "ff498c6e-0914-58c8-a45a-e6f5fdbf2185",
+    "occurredAt": "2026-03-12T03:07:00.000000Z"
+  },
+  {
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00199",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "e242f522-d095-5183-a3c1-c4f8eeffa0bf",
+    "occurredAt": "2026-03-12T03:12:00.000000Z"
+  },
+  {
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00200",
+    "details": "{\"alertCount\": 5}",
+    "eventType": "CREATED",
+    "id": "9bcf5241-3979-51a8-a15d-95371fd61523",
+    "occurredAt": "2026-03-12T03:17:00.000000Z"
+  }
+]

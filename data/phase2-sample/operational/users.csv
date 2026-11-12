@@ -1,0 +1,11 @@
+id,email,name,role,passwordHash,createdAt,updatedAt
+dfde0a2d-7339-548f-94fa-e3d352e78083,analyst01@risklens.example,Risk Analyst 01,ANALYST,phase2-fixture-password-hash,2026-01-01T00:01:00.000000Z,2026-01-01T00:01:00.000000Z
+f2db8bbf-e64b-5453-ac10-8de2d6f11363,analyst02@risklens.example,Risk Analyst 02,ANALYST,phase2-fixture-password-hash,2026-01-01T00:02:00.000000Z,2026-01-01T00:02:00.000000Z
+345d8095-aaf1-5a31-94a2-c0fea0abebe9,analyst03@risklens.example,Risk Analyst 03,ANALYST,phase2-fixture-password-hash,2026-01-01T00:03:00.000000Z,2026-01-01T00:03:00.000000Z
+a7c419cc-ee65-5667-9cd1-06a10e28937f,analyst04@risklens.example,Risk Analyst 04,ANALYST,phase2-fixture-password-hash,2026-01-01T00:04:00.000000Z,2026-01-01T00:04:00.000000Z
+b3975344-9b33-50da-b6d3-0c0d798e347c,analyst05@risklens.example,Risk Analyst 05,ANALYST,phase2-fixture-password-hash,2026-01-01T00:05:00.000000Z,2026-01-01T00:05:00.000000Z
+6dede4e1-cbb4-5376-831c-c9e731f0f899,analyst06@risklens.example,Risk Analyst 06,ANALYST,phase2-fixture-password-hash,2026-01-01T00:06:00.000000Z,2026-01-01T00:06:00.000000Z
+46b720a3-fdd7-5ad3-b841-0f4ac9792734,analyst07@risklens.example,Risk Analyst 07,ANALYST,phase2-fixture-password-hash,2026-01-01T00:07:00.000000Z,2026-01-01T00:07:00.000000Z
+9b7922f7-4975-5ef1-aca2-20dc25f0a29d,analyst08@risklens.example,Risk Analyst 08,ANALYST,phase2-fixture-password-hash,2026-01-01T00:08:00.000000Z,2026-01-01T00:08:00.000000Z
+7a663df0-1bc8-57c6-a2a7-231c5970049d,analyst09@risklens.example,Risk Analyst 09,ANALYST,phase2-fixture-password-hash,2026-01-01T00:09:00.000000Z,2026-01-01T00:09:00.000000Z
+1d3605e1-0b8a-53ef-914d-4b879022e62e,analyst10@risklens.example,Risk Analyst 10,ANALYST,phase2-fixture-password-hash,2026-01-01T00:10:00.000000Z,2026-01-01T00:10:00.000000Z

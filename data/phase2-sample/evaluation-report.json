@@ -1,0 +1,75 @@
+{
+  "alertsPer1000Transactions": 100.0,
+  "evaluationUnit": "transaction: an alert is a positive prediction when its transactionId matches a ground-truth transaction.",
+  "evidenceCompleteness": 1.0,
+  "f1": 0.17845484221980415,
+  "falseNegatives": 737,
+  "falsePositiveRate": 0.09944751381215469,
+  "falsePositives": 18,
+  "matchingMethod": "Exact transaction ID matching; multiple alerts for one transaction count once.",
+  "precision": 0.82,
+  "recall": 0.10012210012210013,
+  "ruleMetrics": {
+    "R001": {
+      "alerts": 10,
+      "precision": 1.0,
+      "recall": 0.10989010989010989
+    },
+    "R002": {
+      "alerts": 9,
+      "precision": 1.0,
+      "recall": 0.0989010989010989
+    },
+    "R003": {
+      "alerts": 9,
+      "precision": 1.0,
+      "recall": 0.0989010989010989
+    },
+    "R004": {
+      "alerts": 9,
+      "precision": 1.0,
+      "recall": 0.0989010989010989
+    },
+    "R005": {
+      "alerts": 9,
+      "precision": 1.0,
+      "recall": 0.0989010989010989
+    },
+    "R006": {
+      "alerts": 9,
+      "precision": 1.0,
+      "recall": 0.0989010989010989
+    },
+    "R007": {
+      "alerts": 9,
+      "precision": 1.0,
+      "recall": 0.0989010989010989
+    },
+    "R008": {
+      "alerts": 27,
+      "precision": 0.3333333333333333,
+      "recall": 0.0989010989010989
+    },
+    "R009": {
+      "alerts": 9,
+      "precision": 1.0,
+      "recall": 0.0989010989010989
+    }
+  },
+  "scenarioDetectionCoverage": {
+    "benign_unusual": 1.0,
+    "circular_transfer": 0.0989010989010989,
+    "closed_account_attempt": 0.0989010989010989,
+    "dormant_reactivation": 0.0989010989010989,
+    "legitimate_high_value": 1.0,
+    "negative_balance_attempt": 0.0989010989010989,
+    "new_device": 0.0989010989010989,
+    "repeated_attempts": 0.0989010989010989,
+    "transfer_reconciliation_anomaly": 0.0989010989010989,
+    "unusual_merchant": 0.0989010989010989,
+    "velocity_spike": 0.10989010989010989
+  },
+  "trueNegatives": 163,
+  "truePositives": 82,
+  "validationPassRate": 1.0
+}

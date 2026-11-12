@@ -1,0 +1,2 @@
+id,seed,scale,status,startedAt,completedAt,sourceChecksum,metadata
+2b9ad917-5a48-5b95-836c-f20445ee01bb,42,full,COMPLETED,2026-01-01T00:00:00.000000Z,2026-05-19T21:30:00.000000Z,,"{""referenceTimestamp"": ""2026-01-01T00:00:00+00:00""}"

@@ -1,0 +1,202 @@
+[
+  {
+    "categoryCode": "5812",
+    "countryCode": "GB",
+    "createdAt": "2026-01-01T00:01:00.000000Z",
+    "id": "MER-00001",
+    "name": "Merchant 00001",
+    "riskRating": "MEDIUM",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:01:00.000000Z"
+  },
+  {
+    "categoryCode": "5732",
+    "countryCode": "IN",
+    "createdAt": "2026-01-01T00:02:00.000000Z",
+    "id": "MER-00002",
+    "name": "Merchant 00002",
+    "riskRating": "HIGH",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:02:00.000000Z"
+  },
+  {
+    "categoryCode": "6011",
+    "countryCode": "CA",
+    "createdAt": "2026-01-01T00:03:00.000000Z",
+    "id": "MER-00003",
+    "name": "Merchant 00003",
+    "riskRating": "LOW",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:03:00.000000Z"
+  },
+  {
+    "categoryCode": "7995",
+    "countryCode": "US",
+    "createdAt": "2026-01-01T00:04:00.000000Z",
+    "id": "MER-00004",
+    "name": "Merchant 00004",
+    "riskRating": "MEDIUM",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:04:00.000000Z"
+  },
+  {
+    "categoryCode": "5411",
+    "countryCode": "GB",
+    "createdAt": "2026-01-01T00:05:00.000000Z",
+    "id": "MER-00005",
+    "name": "Merchant 00005",
+    "riskRating": "HIGH",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:05:00.000000Z"
+  },
+  {
+    "categoryCode": "5812",
+    "countryCode": "IN",
+    "createdAt": "2026-01-01T00:06:00.000000Z",
+    "id": "MER-00006",
+    "name": "Merchant 00006",
+    "riskRating": "LOW",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:06:00.000000Z"
+  },
+  {
+    "categoryCode": "5732",
+    "countryCode": "CA",
+    "createdAt": "2026-01-01T00:07:00.000000Z",
+    "id": "MER-00007",
+    "name": "Merchant 00007",
+    "riskRating": "MEDIUM",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:07:00.000000Z"
+  },
+  {
+    "categoryCode": "6011",
+    "countryCode": "US",
+    "createdAt": "2026-01-01T00:08:00.000000Z",
+    "id": "MER-00008",
+    "name": "Merchant 00008",
+    "riskRating": "HIGH",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:08:00.000000Z"
+  },
+  {
+    "categoryCode": "7995",
+    "countryCode": "GB",
+    "createdAt": "2026-01-01T00:09:00.000000Z",
+    "id": "MER-00009",
+    "name": "Merchant 00009",
+    "riskRating": "LOW",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:09:00.000000Z"
+  },
+  {
+    "categoryCode": "5411",
+    "countryCode": "IN",
+    "createdAt": "2026-01-01T00:10:00.000000Z",
+    "id": "MER-00010",
+    "name": "Merchant 00010",
+    "riskRating": "MEDIUM",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:10:00.000000Z"
+  },
+  {
+    "categoryCode": "5812",
+    "countryCode": "CA",
+    "createdAt": "2026-01-01T00:11:00.000000Z",
+    "id": "MER-00011",
+    "name": "Merchant 00011",
+    "riskRating": "HIGH",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:11:00.000000Z"
+  },
+  {
+    "categoryCode": "5732",
+    "countryCode": "US",
+    "createdAt": "2026-01-01T00:12:00.000000Z",
+    "id": "MER-00012",
+    "name": "Merchant 00012",
+    "riskRating": "LOW",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:12:00.000000Z"
+  },
+  {
+    "categoryCode": "6011",
+    "countryCode": "GB",
+    "createdAt": "2026-01-01T00:13:00.000000Z",
+    "id": "MER-00013",
+    "name": "Merchant 00013",
+    "riskRating": "MEDIUM",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:13:00.000000Z"
+  },
+  {
+    "categoryCode": "7995",
+    "countryCode": "IN",
+    "createdAt": "2026-01-01T00:14:00.000000Z",
+    "id": "MER-00014",
+    "name": "Merchant 00014",
+    "riskRating": "HIGH",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:14:00.000000Z"
+  },
+  {
+    "categoryCode": "5411",
+    "countryCode": "CA",
+    "createdAt": "2026-01-01T00:15:00.000000Z",
+    "id": "MER-00015",
+    "name": "Merchant 00015",
+    "riskRating": "LOW",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:15:00.000000Z"
+  },
+  {
+    "categoryCode": "5812",
+    "countryCode": "US",
+    "createdAt": "2026-01-01T00:16:00.000000Z",
+    "id": "MER-00016",
+    "name": "Merchant 00016",
+    "riskRating": "MEDIUM",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:16:00.000000Z"
+  },
+  {
+    "categoryCode": "5732",
+    "countryCode": "GB",
+    "createdAt": "2026-01-01T00:17:00.000000Z",
+    "id": "MER-00017",
+    "name": "Merchant 00017",
+    "riskRating": "HIGH",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:17:00.000000Z"
+  },
+  {
+    "categoryCode": "6011",
+    "countryCode": "IN",
+    "createdAt": "2026-01-01T00:18:00.000000Z",
+    "id": "MER-00018",
+    "name": "Merchant 00018",
+    "riskRating": "LOW",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:18:00.000000Z"
+  },
+  {
+    "categoryCode": "7995",
+    "countryCode": "CA",
+    "createdAt": "2026-01-01T00:19:00.000000Z",
+    "id": "MER-00019",
+    "name": "Merchant 00019",
+    "riskRating": "MEDIUM",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:19:00.000000Z"
+  },
+  {
+    "categoryCode": "5411",
+    "countryCode": "US",
+    "createdAt": "2026-01-01T00:20:00.000000Z",
+    "id": "MER-00020",
+    "name": "Merchant 00020",
+    "riskRating": "HIGH",
+    "status": "ACTIVE",
+    "updatedAt": "2026-01-01T00:20:00.000000Z"
+  }
+]

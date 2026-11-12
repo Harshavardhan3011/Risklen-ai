@@ -1,0 +1,92 @@
+[
+  {
+    "createdAt": "2026-01-01T00:01:00.000000Z",
+    "email": "analyst01@risklens.example",
+    "id": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "name": "Risk Analyst 01",
+    "passwordHash": "phase2-fixture-password-hash",
+    "role": "ANALYST",
+    "updatedAt": "2026-01-01T00:01:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:02:00.000000Z",
+    "email": "analyst02@risklens.example",
+    "id": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "name": "Risk Analyst 02",
+    "passwordHash": "phase2-fixture-password-hash",
+    "role": "ANALYST",
+    "updatedAt": "2026-01-01T00:02:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:03:00.000000Z",
+    "email": "analyst03@risklens.example",
+    "id": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "name": "Risk Analyst 03",
+    "passwordHash": "phase2-fixture-password-hash",
+    "role": "ANALYST",
+    "updatedAt": "2026-01-01T00:03:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:04:00.000000Z",
+    "email": "analyst04@risklens.example",
+    "id": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "name": "Risk Analyst 04",
+    "passwordHash": "phase2-fixture-password-hash",
+    "role": "ANALYST",
+    "updatedAt": "2026-01-01T00:04:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:05:00.000000Z",
+    "email": "analyst05@risklens.example",
+    "id": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "name": "Risk Analyst 05",
+    "passwordHash": "phase2-fixture-password-hash",
+    "role": "ANALYST",
+    "updatedAt": "2026-01-01T00:05:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:06:00.000000Z",
+    "email": "analyst06@risklens.example",
+    "id": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "name": "Risk Analyst 06",
+    "passwordHash": "phase2-fixture-password-hash",
+    "role": "ANALYST",
+    "updatedAt": "2026-01-01T00:06:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:07:00.000000Z",
+    "email": "analyst07@risklens.example",
+    "id": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "name": "Risk Analyst 07",
+    "passwordHash": "phase2-fixture-password-hash",
+    "role": "ANALYST",
+    "updatedAt": "2026-01-01T00:07:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:08:00.000000Z",
+    "email": "analyst08@risklens.example",
+    "id": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "name": "Risk Analyst 08",
+    "passwordHash": "phase2-fixture-password-hash",
+    "role": "ANALYST",
+    "updatedAt": "2026-01-01T00:08:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:09:00.000000Z",
+    "email": "analyst09@risklens.example",
+    "id": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "name": "Risk Analyst 09",
+    "passwordHash": "phase2-fixture-password-hash",
+    "role": "ANALYST",
+    "updatedAt": "2026-01-01T00:09:00.000000Z"
+  },
+  {
+    "createdAt": "2026-01-01T00:10:00.000000Z",
+    "email": "analyst10@risklens.example",
+    "id": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "name": "Risk Analyst 10",
+    "passwordHash": "phase2-fixture-password-hash",
+    "role": "ANALYST",
+    "updatedAt": "2026-01-01T00:10:00.000000Z"
+  }
+]

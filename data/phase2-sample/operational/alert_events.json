@@ -1,0 +1,802 @@
+[
+  {
+    "actorId": "",
+    "alertId": "ALT-000001",
+    "details": "{\"scenario\": \"velocity_spike\"}",
+    "eventType": "CREATED",
+    "id": "534f86ef-5246-5b51-a43e-64816ff9005b",
+    "occurredAt": "2026-03-11T10:42:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000002",
+    "details": "{\"scenario\": \"new_device\"}",
+    "eventType": "CREATED",
+    "id": "d917031c-85dc-59d5-bcf8-e42929b0958e",
+    "occurredAt": "2026-03-11T10:43:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000003",
+    "details": "{\"scenario\": \"circular_transfer\"}",
+    "eventType": "CREATED",
+    "id": "6a667347-52d2-532d-8234-155ef0b20111",
+    "occurredAt": "2026-03-11T10:44:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000004",
+    "details": "{\"scenario\": \"dormant_reactivation\"}",
+    "eventType": "CREATED",
+    "id": "a5c87151-2556-59f8-b1d3-99e5fbb574ef",
+    "occurredAt": "2026-03-11T10:45:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000005",
+    "details": "{\"scenario\": \"unusual_merchant\"}",
+    "eventType": "CREATED",
+    "id": "b5be7656-0dba-5d8d-809e-7a8ff25a656e",
+    "occurredAt": "2026-03-11T10:46:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000006",
+    "details": "{\"scenario\": \"repeated_attempts\"}",
+    "eventType": "CREATED",
+    "id": "58085714-f651-5628-8248-1888473151a8",
+    "occurredAt": "2026-03-11T10:47:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000007",
+    "details": "{\"scenario\": \"closed_account_attempt\"}",
+    "eventType": "CREATED",
+    "id": "9e0e1957-deea-5a60-a315-f76f10f5720e",
+    "occurredAt": "2026-03-11T10:48:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000008",
+    "details": "{\"scenario\": \"negative_balance_attempt\"}",
+    "eventType": "CREATED",
+    "id": "ebbd320f-f5ca-5ea8-8317-f05c9f855b62",
+    "occurredAt": "2026-03-11T10:49:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000009",
+    "details": "{\"scenario\": \"transfer_reconciliation_anomaly\"}",
+    "eventType": "CREATED",
+    "id": "ae542e0a-b876-5710-8fb0-e6e16e0025f6",
+    "occurredAt": "2026-03-11T10:50:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000010",
+    "details": "{\"scenario\": \"legitimate_high_value\"}",
+    "eventType": "CREATED",
+    "id": "6dfa78de-23c5-53a5-bfcd-2ebba2bd0a10",
+    "occurredAt": "2026-03-11T10:51:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000011",
+    "details": "{\"scenario\": \"benign_unusual\"}",
+    "eventType": "CREATED",
+    "id": "7d092054-0dd4-5578-a331-dd9ee47f674f",
+    "occurredAt": "2026-03-11T10:52:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000012",
+    "details": "{\"scenario\": \"velocity_spike\"}",
+    "eventType": "CREATED",
+    "id": "25eb9dcf-516d-581c-b3ac-37c333a2f461",
+    "occurredAt": "2026-03-11T10:53:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000013",
+    "details": "{\"scenario\": \"new_device\"}",
+    "eventType": "CREATED",
+    "id": "81379caa-bdb6-5662-a4f2-61d33917d626",
+    "occurredAt": "2026-03-11T10:54:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000014",
+    "details": "{\"scenario\": \"circular_transfer\"}",
+    "eventType": "CREATED",
+    "id": "f38dd9d7-c002-554f-b952-923bde5083e6",
+    "occurredAt": "2026-03-11T10:55:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000015",
+    "details": "{\"scenario\": \"dormant_reactivation\"}",
+    "eventType": "CREATED",
+    "id": "81abc9d8-3a60-50cc-a3b4-931ec763fe24",
+    "occurredAt": "2026-03-11T10:56:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000016",
+    "details": "{\"scenario\": \"unusual_merchant\"}",
+    "eventType": "CREATED",
+    "id": "79e2585a-35d6-5250-acce-87b74a42b63d",
+    "occurredAt": "2026-03-11T10:57:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000017",
+    "details": "{\"scenario\": \"repeated_attempts\"}",
+    "eventType": "CREATED",
+    "id": "36fe5195-9707-5c76-bfb7-4585d52acfb8",
+    "occurredAt": "2026-03-11T10:58:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000018",
+    "details": "{\"scenario\": \"closed_account_attempt\"}",
+    "eventType": "CREATED",
+    "id": "177414a5-a3aa-5af1-8dce-c0d629ee7626",
+    "occurredAt": "2026-03-11T10:59:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000019",
+    "details": "{\"scenario\": \"negative_balance_attempt\"}",
+    "eventType": "CREATED",
+    "id": "86b5e731-f7ef-5bae-a79c-0c5571cf55e9",
+    "occurredAt": "2026-03-11T11:00:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000020",
+    "details": "{\"scenario\": \"transfer_reconciliation_anomaly\"}",
+    "eventType": "CREATED",
+    "id": "8ca77a99-196e-5fc0-aca3-b807a333805b",
+    "occurredAt": "2026-03-11T11:01:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000021",
+    "details": "{\"scenario\": \"legitimate_high_value\"}",
+    "eventType": "CREATED",
+    "id": "93576974-800d-52b9-a288-e7bddc87c1df",
+    "occurredAt": "2026-03-11T11:02:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000022",
+    "details": "{\"scenario\": \"benign_unusual\"}",
+    "eventType": "CREATED",
+    "id": "71633455-38b0-5430-bb2e-25b0ea5e2c84",
+    "occurredAt": "2026-03-11T11:03:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000023",
+    "details": "{\"scenario\": \"velocity_spike\"}",
+    "eventType": "CREATED",
+    "id": "3d72bd64-a4f9-588a-83d2-4f0ade361ee6",
+    "occurredAt": "2026-03-11T11:04:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000024",
+    "details": "{\"scenario\": \"new_device\"}",
+    "eventType": "CREATED",
+    "id": "190fe85a-4459-5366-a841-574e4f7f8d73",
+    "occurredAt": "2026-03-11T11:05:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000025",
+    "details": "{\"scenario\": \"circular_transfer\"}",
+    "eventType": "CREATED",
+    "id": "781cb123-f6d3-51a9-b571-c2976b554072",
+    "occurredAt": "2026-03-11T11:06:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000026",
+    "details": "{\"scenario\": \"dormant_reactivation\"}",
+    "eventType": "CREATED",
+    "id": "6d946586-b522-5e89-bf77-73b437b2be7c",
+    "occurredAt": "2026-03-11T11:07:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000027",
+    "details": "{\"scenario\": \"unusual_merchant\"}",
+    "eventType": "CREATED",
+    "id": "50375ca2-b92e-52ed-b5d9-052a41f799e0",
+    "occurredAt": "2026-03-11T11:08:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000028",
+    "details": "{\"scenario\": \"repeated_attempts\"}",
+    "eventType": "CREATED",
+    "id": "aede28a6-ca84-50b9-81e0-d88713e444d0",
+    "occurredAt": "2026-03-11T11:09:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000029",
+    "details": "{\"scenario\": \"closed_account_attempt\"}",
+    "eventType": "CREATED",
+    "id": "22b60905-c9f3-5a36-8336-d6d65776ca91",
+    "occurredAt": "2026-03-11T11:10:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000030",
+    "details": "{\"scenario\": \"negative_balance_attempt\"}",
+    "eventType": "CREATED",
+    "id": "d19c592c-bfc1-56c1-a557-f53f453fb8e4",
+    "occurredAt": "2026-03-11T11:11:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000031",
+    "details": "{\"scenario\": \"transfer_reconciliation_anomaly\"}",
+    "eventType": "CREATED",
+    "id": "3668c8fa-5260-5bb6-bfb7-5eadcd4e5156",
+    "occurredAt": "2026-03-11T11:12:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000032",
+    "details": "{\"scenario\": \"legitimate_high_value\"}",
+    "eventType": "CREATED",
+    "id": "f9dbf077-1bde-586b-b031-b0c0c71588be",
+    "occurredAt": "2026-03-11T11:13:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000033",
+    "details": "{\"scenario\": \"benign_unusual\"}",
+    "eventType": "CREATED",
+    "id": "6dddea74-db66-5d1e-9ea0-75969ba0ad83",
+    "occurredAt": "2026-03-11T11:14:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000034",
+    "details": "{\"scenario\": \"velocity_spike\"}",
+    "eventType": "CREATED",
+    "id": "11cfadef-4d9e-5564-85fa-3fec0c23ab28",
+    "occurredAt": "2026-03-11T11:15:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000035",
+    "details": "{\"scenario\": \"new_device\"}",
+    "eventType": "CREATED",
+    "id": "299c9314-f8eb-5a5a-8acf-2b535de8c626",
+    "occurredAt": "2026-03-11T11:16:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000036",
+    "details": "{\"scenario\": \"circular_transfer\"}",
+    "eventType": "CREATED",
+    "id": "3e1e9bc9-2eef-54a0-9839-610dbbc606d4",
+    "occurredAt": "2026-03-11T11:17:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000037",
+    "details": "{\"scenario\": \"dormant_reactivation\"}",
+    "eventType": "CREATED",
+    "id": "9eba817e-1755-5bf7-84cc-e72631786f25",
+    "occurredAt": "2026-03-11T11:18:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000038",
+    "details": "{\"scenario\": \"unusual_merchant\"}",
+    "eventType": "CREATED",
+    "id": "1a55c2ac-11eb-5f28-96ad-a7fd2387f4d0",
+    "occurredAt": "2026-03-11T11:19:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000039",
+    "details": "{\"scenario\": \"repeated_attempts\"}",
+    "eventType": "CREATED",
+    "id": "afbd5e7d-e4be-57db-9885-07550dcf34ba",
+    "occurredAt": "2026-03-11T11:20:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000040",
+    "details": "{\"scenario\": \"closed_account_attempt\"}",
+    "eventType": "CREATED",
+    "id": "b9f7d9f0-c302-5a78-b0cf-6453e473a817",
+    "occurredAt": "2026-03-11T11:21:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000041",
+    "details": "{\"scenario\": \"negative_balance_attempt\"}",
+    "eventType": "CREATED",
+    "id": "e1c193a5-4a7c-537d-baea-f855df337567",
+    "occurredAt": "2026-03-11T11:22:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000042",
+    "details": "{\"scenario\": \"transfer_reconciliation_anomaly\"}",
+    "eventType": "CREATED",
+    "id": "54b678b3-d934-5e16-bac2-8531b96720a0",
+    "occurredAt": "2026-03-11T11:23:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000043",
+    "details": "{\"scenario\": \"legitimate_high_value\"}",
+    "eventType": "CREATED",
+    "id": "28eabf37-d072-5a7d-b6fc-d702e9c027fb",
+    "occurredAt": "2026-03-11T11:24:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000044",
+    "details": "{\"scenario\": \"benign_unusual\"}",
+    "eventType": "CREATED",
+    "id": "76cf07f0-e66c-5fde-a5ec-905cbab7a6a4",
+    "occurredAt": "2026-03-11T11:25:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000045",
+    "details": "{\"scenario\": \"velocity_spike\"}",
+    "eventType": "CREATED",
+    "id": "2bed1862-507d-5bdc-bb5e-95e219a84875",
+    "occurredAt": "2026-03-11T11:26:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000046",
+    "details": "{\"scenario\": \"new_device\"}",
+    "eventType": "CREATED",
+    "id": "f9f655e3-3714-5867-a683-c2c224f9617d",
+    "occurredAt": "2026-03-11T11:27:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000047",
+    "details": "{\"scenario\": \"circular_transfer\"}",
+    "eventType": "CREATED",
+    "id": "afbafbab-2eac-5479-a8d5-17c62ce83e44",
+    "occurredAt": "2026-03-11T11:28:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000048",
+    "details": "{\"scenario\": \"dormant_reactivation\"}",
+    "eventType": "CREATED",
+    "id": "fa3ff0c0-8c8d-5f58-8e24-7a7254364d54",
+    "occurredAt": "2026-03-11T11:29:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000049",
+    "details": "{\"scenario\": \"unusual_merchant\"}",
+    "eventType": "CREATED",
+    "id": "1bef63d3-5c89-5515-87f5-ae0a823b03f2",
+    "occurredAt": "2026-03-11T11:30:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000050",
+    "details": "{\"scenario\": \"repeated_attempts\"}",
+    "eventType": "CREATED",
+    "id": "7c81fa29-4777-5c65-a673-fc355af1e0a6",
+    "occurredAt": "2026-03-11T11:31:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000051",
+    "details": "{\"scenario\": \"closed_account_attempt\"}",
+    "eventType": "CREATED",
+    "id": "99e10be0-1087-5528-b22d-cfdb2de76bac",
+    "occurredAt": "2026-03-11T11:32:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000052",
+    "details": "{\"scenario\": \"negative_balance_attempt\"}",
+    "eventType": "CREATED",
+    "id": "17e171f0-c910-5148-a633-f4906c594edf",
+    "occurredAt": "2026-03-11T11:33:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000053",
+    "details": "{\"scenario\": \"transfer_reconciliation_anomaly\"}",
+    "eventType": "CREATED",
+    "id": "e1bb4126-02d2-51f4-8450-b27c4917ef58",
+    "occurredAt": "2026-03-11T11:34:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000054",
+    "details": "{\"scenario\": \"legitimate_high_value\"}",
+    "eventType": "CREATED",
+    "id": "b880442a-3236-53c2-9f11-75313221d1eb",
+    "occurredAt": "2026-03-11T11:35:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000055",
+    "details": "{\"scenario\": \"benign_unusual\"}",
+    "eventType": "CREATED",
+    "id": "67cceb10-7a56-5b06-a666-930ef305b60b",
+    "occurredAt": "2026-03-11T11:36:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000056",
+    "details": "{\"scenario\": \"velocity_spike\"}",
+    "eventType": "CREATED",
+    "id": "343918ff-ff34-552b-bc29-bfee8c8b5296",
+    "occurredAt": "2026-03-11T11:37:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000057",
+    "details": "{\"scenario\": \"new_device\"}",
+    "eventType": "CREATED",
+    "id": "ef6b6691-5e6d-5174-ada8-9c3e6ff6936f",
+    "occurredAt": "2026-03-11T11:38:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000058",
+    "details": "{\"scenario\": \"circular_transfer\"}",
+    "eventType": "CREATED",
+    "id": "1eb2fa6d-9bb8-57d4-bde9-b46cc33552cd",
+    "occurredAt": "2026-03-11T11:39:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000059",
+    "details": "{\"scenario\": \"dormant_reactivation\"}",
+    "eventType": "CREATED",
+    "id": "3fce083a-1ec8-56f3-bf36-548f0f986b5b",
+    "occurredAt": "2026-03-11T11:40:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000060",
+    "details": "{\"scenario\": \"unusual_merchant\"}",
+    "eventType": "CREATED",
+    "id": "68e04861-3e55-5eaf-8bab-08772575ced0",
+    "occurredAt": "2026-03-11T11:41:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000061",
+    "details": "{\"scenario\": \"repeated_attempts\"}",
+    "eventType": "CREATED",
+    "id": "43a01fd6-8e17-5303-a999-2fa651e6ba67",
+    "occurredAt": "2026-03-11T11:42:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000062",
+    "details": "{\"scenario\": \"closed_account_attempt\"}",
+    "eventType": "CREATED",
+    "id": "417c96ca-8868-5621-95ac-d65197e5c174",
+    "occurredAt": "2026-03-11T11:43:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000063",
+    "details": "{\"scenario\": \"negative_balance_attempt\"}",
+    "eventType": "CREATED",
+    "id": "317aa7f2-635b-5d6c-ab3f-e10cc097f144",
+    "occurredAt": "2026-03-11T11:44:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000064",
+    "details": "{\"scenario\": \"transfer_reconciliation_anomaly\"}",
+    "eventType": "CREATED",
+    "id": "3b8f8648-5e27-5fef-a327-1603b1583863",
+    "occurredAt": "2026-03-11T11:45:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000065",
+    "details": "{\"scenario\": \"legitimate_high_value\"}",
+    "eventType": "CREATED",
+    "id": "80dfc283-dd40-5486-b767-0b779baaab7e",
+    "occurredAt": "2026-03-11T11:46:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000066",
+    "details": "{\"scenario\": \"benign_unusual\"}",
+    "eventType": "CREATED",
+    "id": "72599bcb-3866-5e6d-b0c2-7890ae74fbf3",
+    "occurredAt": "2026-03-11T11:47:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000067",
+    "details": "{\"scenario\": \"velocity_spike\"}",
+    "eventType": "CREATED",
+    "id": "04d22330-5833-5cfe-9168-e30682ff8b6c",
+    "occurredAt": "2026-03-11T11:48:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000068",
+    "details": "{\"scenario\": \"new_device\"}",
+    "eventType": "CREATED",
+    "id": "21dd6545-c9f5-50d3-9091-5b720926c1e3",
+    "occurredAt": "2026-03-11T11:49:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000069",
+    "details": "{\"scenario\": \"circular_transfer\"}",
+    "eventType": "CREATED",
+    "id": "675275b8-1404-5738-87f0-602a8d146a7e",
+    "occurredAt": "2026-03-11T11:50:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000070",
+    "details": "{\"scenario\": \"dormant_reactivation\"}",
+    "eventType": "CREATED",
+    "id": "6d124b9f-24c2-5f91-be39-9d2398bdad3e",
+    "occurredAt": "2026-03-11T11:51:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000071",
+    "details": "{\"scenario\": \"unusual_merchant\"}",
+    "eventType": "CREATED",
+    "id": "4103baac-23e2-5245-aaf6-822b8a7f01df",
+    "occurredAt": "2026-03-11T11:52:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000072",
+    "details": "{\"scenario\": \"repeated_attempts\"}",
+    "eventType": "CREATED",
+    "id": "64547028-eba0-5c10-a68d-bddfdb0b45a1",
+    "occurredAt": "2026-03-11T11:53:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000073",
+    "details": "{\"scenario\": \"closed_account_attempt\"}",
+    "eventType": "CREATED",
+    "id": "f9410b2f-9755-55b5-816d-a416e94aa844",
+    "occurredAt": "2026-03-11T11:54:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000074",
+    "details": "{\"scenario\": \"negative_balance_attempt\"}",
+    "eventType": "CREATED",
+    "id": "3f14cecd-2abf-58bc-b6fe-aa0ce24e745f",
+    "occurredAt": "2026-03-11T11:55:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000075",
+    "details": "{\"scenario\": \"transfer_reconciliation_anomaly\"}",
+    "eventType": "CREATED",
+    "id": "d53e63bf-eedb-508c-8274-c7bc6c9da08d",
+    "occurredAt": "2026-03-11T11:56:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000076",
+    "details": "{\"scenario\": \"legitimate_high_value\"}",
+    "eventType": "CREATED",
+    "id": "b12e3817-f4b5-5b92-8a54-3cc93f703728",
+    "occurredAt": "2026-03-11T11:57:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000077",
+    "details": "{\"scenario\": \"benign_unusual\"}",
+    "eventType": "CREATED",
+    "id": "1230fb7f-4b3a-5da5-aafd-782f8c9aaa76",
+    "occurredAt": "2026-03-11T11:58:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000078",
+    "details": "{\"scenario\": \"velocity_spike\"}",
+    "eventType": "CREATED",
+    "id": "4191fdf8-5daf-59fb-b2e5-708c43eac318",
+    "occurredAt": "2026-03-11T11:59:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000079",
+    "details": "{\"scenario\": \"new_device\"}",
+    "eventType": "CREATED",
+    "id": "366bb03c-01f3-5300-9e5b-0a33fb087682",
+    "occurredAt": "2026-03-11T12:00:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000080",
+    "details": "{\"scenario\": \"circular_transfer\"}",
+    "eventType": "CREATED",
+    "id": "64d08055-d890-5b40-928b-0d9df3051eea",
+    "occurredAt": "2026-03-11T12:01:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000081",
+    "details": "{\"scenario\": \"dormant_reactivation\"}",
+    "eventType": "CREATED",
+    "id": "77d26c75-2337-5053-812f-f874b0509ad2",
+    "occurredAt": "2026-03-11T12:02:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000082",
+    "details": "{\"scenario\": \"unusual_merchant\"}",
+    "eventType": "CREATED",
+    "id": "766493a3-73df-5e5f-9cb1-71e47a34bcf6",
+    "occurredAt": "2026-03-11T12:03:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000083",
+    "details": "{\"scenario\": \"repeated_attempts\"}",
+    "eventType": "CREATED",
+    "id": "d7450e8a-39be-5f04-a623-4361cf80b0a6",
+    "occurredAt": "2026-03-11T12:04:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000084",
+    "details": "{\"scenario\": \"closed_account_attempt\"}",
+    "eventType": "CREATED",
+    "id": "53843d84-985a-51c8-8431-1ec50f852c63",
+    "occurredAt": "2026-03-11T12:05:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000085",
+    "details": "{\"scenario\": \"negative_balance_attempt\"}",
+    "eventType": "CREATED",
+    "id": "8630a359-0468-5d3e-bf57-dd2b741e75a2",
+    "occurredAt": "2026-03-11T12:06:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000086",
+    "details": "{\"scenario\": \"transfer_reconciliation_anomaly\"}",
+    "eventType": "CREATED",
+    "id": "072477fc-8326-53b3-a7be-ff8df7399bfb",
+    "occurredAt": "2026-03-11T12:07:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000087",
+    "details": "{\"scenario\": \"legitimate_high_value\"}",
+    "eventType": "CREATED",
+    "id": "11a57d0f-112c-5ad9-b11c-3354095ad231",
+    "occurredAt": "2026-03-11T12:08:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000088",
+    "details": "{\"scenario\": \"benign_unusual\"}",
+    "eventType": "CREATED",
+    "id": "ab8cd030-bbc1-5022-bc9e-8443af7a73a7",
+    "occurredAt": "2026-03-11T12:09:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000089",
+    "details": "{\"scenario\": \"velocity_spike\"}",
+    "eventType": "CREATED",
+    "id": "a6253340-b329-5dcd-b18b-e5ba41191c89",
+    "occurredAt": "2026-03-11T12:10:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000090",
+    "details": "{\"scenario\": \"new_device\"}",
+    "eventType": "CREATED",
+    "id": "b0b86503-d25e-5a0d-905d-a86067f46687",
+    "occurredAt": "2026-03-11T12:11:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000091",
+    "details": "{\"scenario\": \"circular_transfer\"}",
+    "eventType": "CREATED",
+    "id": "efd4c668-16c7-582d-89ad-326e828e25d1",
+    "occurredAt": "2026-03-11T12:12:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000092",
+    "details": "{\"scenario\": \"dormant_reactivation\"}",
+    "eventType": "CREATED",
+    "id": "4934d2ff-7798-5a47-8be3-2a4023d51d37",
+    "occurredAt": "2026-03-11T12:13:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000093",
+    "details": "{\"scenario\": \"unusual_merchant\"}",
+    "eventType": "CREATED",
+    "id": "b62e584e-ce1c-578e-a517-b14a206c9af6",
+    "occurredAt": "2026-03-11T12:14:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000094",
+    "details": "{\"scenario\": \"repeated_attempts\"}",
+    "eventType": "CREATED",
+    "id": "7705938d-19c8-5bd3-bf26-3815a9b800c7",
+    "occurredAt": "2026-03-11T12:15:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000095",
+    "details": "{\"scenario\": \"closed_account_attempt\"}",
+    "eventType": "CREATED",
+    "id": "b679d01c-26f0-563f-8852-32d1c7369989",
+    "occurredAt": "2026-03-11T12:16:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000096",
+    "details": "{\"scenario\": \"negative_balance_attempt\"}",
+    "eventType": "CREATED",
+    "id": "9f5f1161-642f-513c-800f-7bf136eae0e5",
+    "occurredAt": "2026-03-11T12:17:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000097",
+    "details": "{\"scenario\": \"transfer_reconciliation_anomaly\"}",
+    "eventType": "CREATED",
+    "id": "e74dbcdc-3faf-503d-8220-c79dc595c22e",
+    "occurredAt": "2026-03-11T12:18:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000098",
+    "details": "{\"scenario\": \"legitimate_high_value\"}",
+    "eventType": "CREATED",
+    "id": "92366b11-dfbb-5215-92d8-721cbb26d33c",
+    "occurredAt": "2026-03-11T12:19:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000099",
+    "details": "{\"scenario\": \"benign_unusual\"}",
+    "eventType": "CREATED",
+    "id": "81edf64f-2e6e-5013-ae9f-7f4472b91853",
+    "occurredAt": "2026-03-11T12:20:00.000000Z"
+  },
+  {
+    "actorId": "",
+    "alertId": "ALT-000100",
+    "details": "{\"scenario\": \"velocity_spike\"}",
+    "eventType": "CREATED",
+    "id": "5203e44d-0ae8-5ba8-a229-8fd33b318c19",
+    "occurredAt": "2026-03-11T12:21:00.000000Z"
+  }
+]

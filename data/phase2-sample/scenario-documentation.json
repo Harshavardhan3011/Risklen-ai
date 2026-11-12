@@ -1,0 +1,50 @@
+{
+  "benign_unusual": {
+    "expectedDetection": "no automatic fraud classification",
+    "suspicious": false
+  },
+  "circular_transfer": {
+    "expectedDetection": "rule-based alert",
+    "suspicious": true
+  },
+  "closed_account_attempt": {
+    "expectedDetection": "rule-based alert",
+    "suspicious": true
+  },
+  "dormant_reactivation": {
+    "expectedDetection": "rule-based alert",
+    "suspicious": true
+  },
+  "legitimate_high_value": {
+    "expectedDetection": "no automatic fraud classification",
+    "suspicious": false
+  },
+  "negative_balance_attempt": {
+    "expectedDetection": "rule-based alert",
+    "suspicious": true
+  },
+  "new_device": {
+    "expectedDetection": "rule-based alert",
+    "suspicious": true
+  },
+  "normal": {
+    "expectedDetection": "no automatic fraud classification",
+    "suspicious": false
+  },
+  "repeated_attempts": {
+    "expectedDetection": "rule-based alert",
+    "suspicious": true
+  },
+  "transfer_reconciliation_anomaly": {
+    "expectedDetection": "rule-based alert",
+    "suspicious": true
+  },
+  "unusual_merchant": {
+    "expectedDetection": "rule-based alert",
+    "suspicious": true
+  },
+  "velocity_spike": {
+    "expectedDetection": "rule-based alert",
+    "suspicious": true
+  }
+}

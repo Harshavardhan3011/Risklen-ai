@@ -1,0 +1,21 @@
+id,caseId,actorId,actionType,fromStatus,toStatus,disposition,comment,createdAt
+46c94828-0656-516f-870e-6618086c50dc,CASE-00001,dfde0a2d-7339-548f-94fa-e3d352e78083,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T10:42:00.000000Z
+de5659c4-8e75-5459-b4df-96dca305da5d,CASE-00002,f2db8bbf-e64b-5453-ac10-8de2d6f11363,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T10:47:00.000000Z
+fade035e-df8d-5ca7-907e-aaa94225aa00,CASE-00003,345d8095-aaf1-5a31-94a2-c0fea0abebe9,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T10:52:00.000000Z
+77b63404-c4c5-5f7c-b6cf-20570c3718ce,CASE-00004,a7c419cc-ee65-5667-9cd1-06a10e28937f,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T10:57:00.000000Z
+37429d1e-16b3-550a-9c0e-fbcadc898f10,CASE-00005,b3975344-9b33-50da-b6d3-0c0d798e347c,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:02:00.000000Z
+fc19fe4c-cf23-5875-8f4b-3c65ad021ebc,CASE-00006,6dede4e1-cbb4-5376-831c-c9e731f0f899,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:07:00.000000Z
+1de8db58-4fb6-55f9-bd9c-1c371a38c537,CASE-00007,46b720a3-fdd7-5ad3-b841-0f4ac9792734,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:12:00.000000Z
+a954c0d2-5350-54e5-83ba-5514552e41cd,CASE-00008,9b7922f7-4975-5ef1-aca2-20dc25f0a29d,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:17:00.000000Z
+249e8d97-6be7-582f-94e3-da4952417660,CASE-00009,7a663df0-1bc8-57c6-a2a7-231c5970049d,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:22:00.000000Z
+016378da-da12-50e2-9a4a-0a56eb456f0e,CASE-00010,1d3605e1-0b8a-53ef-914d-4b879022e62e,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:27:00.000000Z
+8d1ef14a-0c55-5f47-9cf9-a4a3e390083b,CASE-00011,dfde0a2d-7339-548f-94fa-e3d352e78083,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:32:00.000000Z
+4b3a156b-c3b5-52ec-affa-b6a2b4916f4f,CASE-00012,f2db8bbf-e64b-5453-ac10-8de2d6f11363,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:37:00.000000Z
+2f220d52-32e1-51ab-9174-9345ea04f253,CASE-00013,345d8095-aaf1-5a31-94a2-c0fea0abebe9,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:42:00.000000Z
+7741dee3-1470-59bb-af84-9ae03ab07135,CASE-00014,a7c419cc-ee65-5667-9cd1-06a10e28937f,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:47:00.000000Z
+246794eb-bd25-5b0d-b7e8-c575be61e819,CASE-00015,b3975344-9b33-50da-b6d3-0c0d798e347c,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:52:00.000000Z
+ce5c0fec-c2dc-5a89-8736-6aea3ce3a7ed,CASE-00016,6dede4e1-cbb4-5376-831c-c9e731f0f899,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T11:57:00.000000Z
+93db3383-d4ba-54b1-b8c7-af29ebff1718,CASE-00017,46b720a3-fdd7-5ad3-b841-0f4ac9792734,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T12:02:00.000000Z
+0d9c46ab-a022-5de9-be6e-5da160cd51ba,CASE-00018,9b7922f7-4975-5ef1-aca2-20dc25f0a29d,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T12:07:00.000000Z
+682da856-4a16-5061-a183-00d636df6888,CASE-00019,7a663df0-1bc8-57c6-a2a7-231c5970049d,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T12:12:00.000000Z
+a38eceb4-f7ca-5f18-ba2e-e1591019626c,CASE-00020,1d3605e1-0b8a-53ef-914d-4b879022e62e,ASSIGNED,,NEW,,Deterministic initial assignment.,2026-03-11T12:17:00.000000Z

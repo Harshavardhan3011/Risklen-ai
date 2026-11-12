@@ -1,0 +1,11 @@
+id,email,name,role,passwordHash,status,createdAt,updatedAt
+dfde0a2d-7339-548f-94fa-e3d352e78083,analyst01@risklens.example,Risk Analyst 01,ANALYST,!provisioning-required-b5fafd91-b1eb-50b6-a54c-09778fbf4d6f,PENDING,2026-01-01T00:01:00.000000Z,2026-01-01T00:01:00.000000Z
+f2db8bbf-e64b-5453-ac10-8de2d6f11363,analyst02@risklens.example,Risk Analyst 02,ANALYST,!provisioning-required-11b7c907-7502-5bdb-8d23-71627dc31640,PENDING,2026-01-01T00:02:00.000000Z,2026-01-01T00:02:00.000000Z
+345d8095-aaf1-5a31-94a2-c0fea0abebe9,analyst03@risklens.example,Risk Analyst 03,ANALYST,!provisioning-required-04825385-e988-552c-be66-c8f4e1410e41,PENDING,2026-01-01T00:03:00.000000Z,2026-01-01T00:03:00.000000Z
+a7c419cc-ee65-5667-9cd1-06a10e28937f,analyst04@risklens.example,Risk Analyst 04,ANALYST,!provisioning-required-ccfc77a5-2ae2-5fd9-a501-8f06850c5e20,PENDING,2026-01-01T00:04:00.000000Z,2026-01-01T00:04:00.000000Z
+b3975344-9b33-50da-b6d3-0c0d798e347c,analyst05@risklens.example,Risk Analyst 05,ANALYST,!provisioning-required-65bf7268-7515-5d67-bead-ddaac48a049e,PENDING,2026-01-01T00:05:00.000000Z,2026-01-01T00:05:00.000000Z
+6dede4e1-cbb4-5376-831c-c9e731f0f899,analyst06@risklens.example,Risk Analyst 06,ANALYST,!provisioning-required-599136f4-a119-5030-b753-b34d02d55aad,PENDING,2026-01-01T00:06:00.000000Z,2026-01-01T00:06:00.000000Z
+46b720a3-fdd7-5ad3-b841-0f4ac9792734,analyst07@risklens.example,Risk Analyst 07,ANALYST,!provisioning-required-0d6381ef-08ba-51cc-88c5-7692112a90ec,PENDING,2026-01-01T00:07:00.000000Z,2026-01-01T00:07:00.000000Z
+9b7922f7-4975-5ef1-aca2-20dc25f0a29d,analyst08@risklens.example,Risk Analyst 08,ANALYST,!provisioning-required-c2b51c84-fdb7-55a4-be30-3d1f08b5c83c,PENDING,2026-01-01T00:08:00.000000Z,2026-01-01T00:08:00.000000Z
+7a663df0-1bc8-57c6-a2a7-231c5970049d,analyst09@risklens.example,Risk Analyst 09,ANALYST,!provisioning-required-04509fc8-92de-5cc9-ba9e-67ccb56ece9e,PENDING,2026-01-01T00:09:00.000000Z,2026-01-01T00:09:00.000000Z
+1d3605e1-0b8a-53ef-914d-4b879022e62e,analyst10@risklens.example,Risk Analyst 10,ANALYST,!provisioning-required-320e555f-196a-577a-80df-0ab91d0d99ac,PENDING,2026-01-01T00:10:00.000000Z,2026-01-01T00:10:00.000000Z

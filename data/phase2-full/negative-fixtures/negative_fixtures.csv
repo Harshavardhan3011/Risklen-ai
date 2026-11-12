@@ -1,0 +1,6 @@
+fixtureId,type,expectedError,transactionId,accountStatus,transactionStatus,balanceAfter,overdraftLimit,sourceAmount,targetAmount,alertId,alertCreatedAt,dispositionAt
+NEG-001,closed_account_transaction,closed account transaction must be declined,NEG-TXN-001,CLOSED,POSTED,,,,,,,
+NEG-002,negative_balance_without_overdraft,balance cannot fall below overdraft limit,NEG-TXN-002,,,-1.00,0.00,,,,,
+NEG-003,mismatched_transfer_legs,transfer legs must reconcile,NEG-TXN-003,,,,,10.00,9.00,,,
+NEG-004,alert_without_transaction,alert transaction reference is required,,,,,,,,NEG-ALT-004,,
+NEG-005,case_disposition_before_alert,case disposition cannot precede alert creation,NEG-TXN-005,,,,,,,,2026-01-02T00:00:00Z,2026-01-01T00:00:00Z

@@ -1,0 +1,7 @@
+node_modules/
+backend/dist/
+backend/risklens.db
+data/generated/
+.env
+*.pyc
+__pycache__/

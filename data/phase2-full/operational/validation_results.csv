@@ -1,0 +1,2 @@
+id,generationRunId,checkName,status,message,details,checkedAt
+8c4f347a-6374-5ed8-aa40-3698bbeb45e9,2b9ad917-5a48-5b95-836c-f20445ee01bb,generation_structure,PASSED,Generated entity counts and references are structurally valid.,"{""transactions"": 100000}",2026-05-19T21:31:00.000000Z

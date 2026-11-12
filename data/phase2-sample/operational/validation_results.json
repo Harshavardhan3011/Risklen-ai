@@ -1,0 +1,11 @@
+[
+  {
+    "checkName": "generation_structure",
+    "checkedAt": "2026-03-12T03:31:00.000000Z",
+    "details": "{\"transactions\": 1000}",
+    "generationRunId": "2b9ad917-5a48-5b95-836c-f20445ee01bb",
+    "id": "8c4f347a-6374-5ed8-aa40-3698bbeb45e9",
+    "message": "Generated entity counts and references are structurally valid.",
+    "status": "PASSED"
+  }
+]

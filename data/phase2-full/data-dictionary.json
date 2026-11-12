@@ -1,0 +1,226 @@
+{
+  "account_events": {
+    "accountId": "Generated deterministic field.",
+    "actorId": "Generated deterministic field.",
+    "details": "Generated deterministic field.",
+    "eventType": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "occurredAt": "Generated deterministic field."
+  },
+  "account_owners": {
+    "accountId": "Generated deterministic field.",
+    "customerId": "Generated deterministic field.",
+    "effectiveFrom": "Generated deterministic field.",
+    "effectiveTo": "Generated deterministic field.",
+    "ownershipType": "Generated deterministic field."
+  },
+  "accounts": {
+    "accountType": "Generated deterministic field.",
+    "closedAt": "Generated deterministic field.",
+    "createdAt": "Generated deterministic field.",
+    "currency": "Generated deterministic field.",
+    "currentBalance": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "openedAt": "Generated deterministic field.",
+    "overdraftLimit": "Generated deterministic field.",
+    "status": "Generated deterministic field.",
+    "updatedAt": "Generated deterministic field."
+  },
+  "alert_events": {
+    "actorId": "Generated deterministic field.",
+    "alertId": "Generated deterministic field.",
+    "details": "Generated deterministic field.",
+    "eventType": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "occurredAt": "Generated deterministic field."
+  },
+  "alert_evidence": {
+    "alertId": "Generated deterministic field.",
+    "createdAt": "Generated deterministic field.",
+    "description": "Generated deterministic field.",
+    "evidenceType": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "sourceId": "Generated deterministic field.",
+    "value": "Generated deterministic field."
+  },
+  "alerts": {
+    "accountId": "Generated deterministic field.",
+    "closedAt": "Generated deterministic field.",
+    "createdAt": "Generated deterministic field.",
+    "customerId": "Generated deterministic field.",
+    "detectedAt": "Generated deterministic field.",
+    "evaluationVersion": "Generated deterministic field.",
+    "explanation": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "priority": "Generated deterministic field.",
+    "riskRuleId": "Generated deterministic field.",
+    "riskScore": "Generated deterministic field.",
+    "status": "Generated deterministic field.",
+    "transactionId": "Generated deterministic field."
+  },
+  "analyst_actions": {
+    "actionType": "Generated deterministic field.",
+    "actorId": "Generated deterministic field.",
+    "caseId": "Generated deterministic field.",
+    "comment": "Generated deterministic field.",
+    "createdAt": "Generated deterministic field.",
+    "disposition": "Generated deterministic field.",
+    "fromStatus": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "toStatus": "Generated deterministic field."
+  },
+  "audit_events": {
+    "actorId": "Generated deterministic field.",
+    "details": "Generated deterministic field.",
+    "entityId": "Generated deterministic field.",
+    "entityType": "Generated deterministic field.",
+    "eventType": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "occurredAt": "Generated deterministic field."
+  },
+  "case_alerts": {
+    "alertId": "Generated deterministic field.",
+    "caseId": "Generated deterministic field.",
+    "linkedAt": "Generated deterministic field."
+  },
+  "case_events": {
+    "actorId": "Generated deterministic field.",
+    "caseId": "Generated deterministic field.",
+    "details": "Generated deterministic field.",
+    "eventType": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "occurredAt": "Generated deterministic field."
+  },
+  "cases": {
+    "assignedToId": "Generated deterministic field.",
+    "closedAt": "Generated deterministic field.",
+    "createdAt": "Generated deterministic field.",
+    "disposition": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "openedAt": "Generated deterministic field.",
+    "status": "Generated deterministic field.",
+    "updatedAt": "Generated deterministic field."
+  },
+  "customer_devices": {
+    "associationType": "Generated deterministic field.",
+    "customerId": "Generated deterministic field.",
+    "deviceId": "Generated deterministic field.",
+    "effectiveFrom": "Generated deterministic field.",
+    "effectiveTo": "Generated deterministic field."
+  },
+  "customers": {
+    "countryCode": "Generated deterministic field.",
+    "createdAt": "Generated deterministic field.",
+    "dateOfBirth": "Generated deterministic field.",
+    "email": "Generated deterministic field.",
+    "fullName": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "phone": "Generated deterministic field.",
+    "updatedAt": "Generated deterministic field."
+  },
+  "devices": {
+    "createdAt": "Generated deterministic field.",
+    "deviceType": "Generated deterministic field.",
+    "fingerprintHash": "Generated deterministic field.",
+    "firstSeenAt": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "lastSeenAt": "Generated deterministic field.",
+    "operatingSystem": "Generated deterministic field.",
+    "status": "Generated deterministic field.",
+    "updatedAt": "Generated deterministic field."
+  },
+  "generation_runs": {
+    "completedAt": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "metadata": "Generated deterministic field.",
+    "scale": "Generated deterministic field.",
+    "seed": "Generated deterministic field.",
+    "sourceChecksum": "Generated deterministic field.",
+    "startedAt": "Generated deterministic field.",
+    "status": "Generated deterministic field."
+  },
+  "kyc_profiles": {
+    "createdAt": "Generated deterministic field.",
+    "customerId": "Generated deterministic field.",
+    "expiresAt": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "riskRating": "Generated deterministic field.",
+    "sourceReference": "Generated deterministic field.",
+    "status": "Generated deterministic field.",
+    "updatedAt": "Generated deterministic field.",
+    "verifiedAt": "Generated deterministic field."
+  },
+  "merchants": {
+    "categoryCode": "Generated deterministic field.",
+    "countryCode": "Generated deterministic field.",
+    "createdAt": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "name": "Generated deterministic field.",
+    "riskRating": "Generated deterministic field.",
+    "updatedAt": "Generated deterministic field."
+  },
+  "risk_rules": {
+    "configuration": "Generated deterministic field.",
+    "createdAt": "Generated deterministic field.",
+    "description": "Generated deterministic field.",
+    "effectiveFrom": "Generated deterministic field.",
+    "effectiveTo": "Generated deterministic field.",
+    "enabled": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "name": "Generated deterministic field.",
+    "ruleCode": "Generated deterministic field.",
+    "severity": "Generated deterministic field.",
+    "threshold": "Generated deterministic field.",
+    "updatedAt": "Generated deterministic field.",
+    "version": "Generated deterministic field.",
+    "weight": "Generated deterministic field."
+  },
+  "transactions": {
+    "accountId": "Generated deterministic field.",
+    "amount": "Generated deterministic field.",
+    "balanceAfter": "Generated deterministic field.",
+    "balanceBefore": "Generated deterministic field.",
+    "createdAt": "Generated deterministic field.",
+    "currency": "Generated deterministic field.",
+    "customerId": "Generated deterministic field.",
+    "deviceId": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "merchantId": "Generated deterministic field.",
+    "metadata": "Generated deterministic field.",
+    "occurredAt": "Generated deterministic field.",
+    "postedAt": "Generated deterministic field.",
+    "reference": "Generated deterministic field.",
+    "status": "Generated deterministic field.",
+    "transactionType": "Generated deterministic field."
+  },
+  "transfer_links": {
+    "amount": "Generated deterministic field.",
+    "currency": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "legReference": "Generated deterministic field.",
+    "occurredAt": "Generated deterministic field.",
+    "sourceAccountId": "Generated deterministic field.",
+    "targetAccountId": "Generated deterministic field.",
+    "transactionId": "Generated deterministic field.",
+    "transferType": "Generated deterministic field."
+  },
+  "users": {
+    "createdAt": "Generated deterministic field.",
+    "email": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "name": "Generated deterministic field.",
+    "passwordHash": "Generated deterministic field.",
+    "role": "Generated deterministic field.",
+    "status": "Generated deterministic field.",
+    "updatedAt": "Generated deterministic field."
+  },
+  "validation_results": {
+    "checkName": "Generated deterministic field.",
+    "checkedAt": "Generated deterministic field.",
+    "details": "Generated deterministic field.",
+    "generationRunId": "Generated deterministic field.",
+    "id": "Generated deterministic field.",
+    "message": "Generated deterministic field.",
+    "status": "Generated deterministic field."
+  }
+}

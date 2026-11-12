@@ -1,0 +1,41 @@
+[
+  {
+    "accountStatus": "CLOSED",
+    "expectedError": "closed account transaction must be declined",
+    "fixtureId": "NEG-001",
+    "transactionId": "NEG-TXN-001",
+    "transactionStatus": "POSTED",
+    "type": "closed_account_transaction"
+  },
+  {
+    "balanceAfter": "-1.00",
+    "expectedError": "balance cannot fall below overdraft limit",
+    "fixtureId": "NEG-002",
+    "overdraftLimit": "0.00",
+    "transactionId": "NEG-TXN-002",
+    "type": "negative_balance_without_overdraft"
+  },
+  {
+    "expectedError": "transfer legs must reconcile",
+    "fixtureId": "NEG-003",
+    "sourceAmount": "10.00",
+    "targetAmount": "9.00",
+    "transactionId": "NEG-TXN-003",
+    "type": "mismatched_transfer_legs"
+  },
+  {
+    "alertId": "NEG-ALT-004",
+    "expectedError": "alert transaction reference is required",
+    "fixtureId": "NEG-004",
+    "transactionId": "",
+    "type": "alert_without_transaction"
+  },
+  {
+    "alertCreatedAt": "2026-01-02T00:00:00Z",
+    "dispositionAt": "2026-01-01T00:00:00Z",
+    "expectedError": "case disposition cannot precede alert creation",
+    "fixtureId": "NEG-005",
+    "transactionId": "NEG-TXN-005",
+    "type": "case_disposition_before_alert"
+  }
+]

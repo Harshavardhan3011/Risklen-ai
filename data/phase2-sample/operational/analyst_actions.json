@@ -1,0 +1,222 @@
+[
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00001",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T10:42:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "46c94828-0656-516f-870e-6618086c50dc",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00002",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T10:47:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "de5659c4-8e75-5459-b4df-96dca305da5d",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00003",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T10:52:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "fade035e-df8d-5ca7-907e-aaa94225aa00",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00004",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T10:57:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "77b63404-c4c5-5f7c-b6cf-20570c3718ce",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00005",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:02:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "37429d1e-16b3-550a-9c0e-fbcadc898f10",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00006",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:07:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "fc19fe4c-cf23-5875-8f4b-3c65ad021ebc",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00007",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:12:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "1de8db58-4fb6-55f9-bd9c-1c371a38c537",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00008",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:17:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "a954c0d2-5350-54e5-83ba-5514552e41cd",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00009",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:22:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "249e8d97-6be7-582f-94e3-da4952417660",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00010",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:27:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "016378da-da12-50e2-9a4a-0a56eb456f0e",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "caseId": "CASE-00011",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:32:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "8d1ef14a-0c55-5f47-9cf9-a4a3e390083b",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "caseId": "CASE-00012",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:37:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "4b3a156b-c3b5-52ec-affa-b6a2b4916f4f",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "caseId": "CASE-00013",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:42:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "2f220d52-32e1-51ab-9174-9345ea04f253",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "caseId": "CASE-00014",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:47:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "7741dee3-1470-59bb-af84-9ae03ab07135",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "caseId": "CASE-00015",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:52:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "246794eb-bd25-5b0d-b7e8-c575be61e819",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "caseId": "CASE-00016",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T11:57:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "ce5c0fec-c2dc-5a89-8736-6aea3ce3a7ed",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "caseId": "CASE-00017",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T12:02:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "93db3383-d4ba-54b1-b8c7-af29ebff1718",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "caseId": "CASE-00018",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T12:07:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "0d9c46ab-a022-5de9-be6e-5da160cd51ba",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "caseId": "CASE-00019",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T12:12:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "682da856-4a16-5061-a183-00d636df6888",
+    "toStatus": "NEW"
+  },
+  {
+    "actionType": "ASSIGNED",
+    "actorId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "caseId": "CASE-00020",
+    "comment": "Deterministic initial assignment.",
+    "createdAt": "2026-03-11T12:17:00.000000Z",
+    "disposition": "",
+    "fromStatus": "",
+    "id": "a38eceb4-f7ca-5f18-ba2e-e1591019626c",
+    "toStatus": "NEW"
+  }
+]

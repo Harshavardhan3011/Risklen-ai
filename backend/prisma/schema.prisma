@@ -1,0 +1,604 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas   = ["public", "evaluation"]
+}
+
+enum UserRole {
+  ADMIN
+  ANALYST
+  COMPLIANCE_REVIEWER
+  CUSTOMER
+  @@schema("public")
+}
+
+enum AccountStatus {
+  OPEN
+  DORMANT
+  CLOSED
+  SUSPENDED
+  @@schema("public")
+}
+
+enum AccountType {
+  CHECKING
+  SAVINGS
+  WALLET
+  BUSINESS
+  @@schema("public")
+}
+
+enum KycStatus {
+  PENDING
+  VERIFIED
+  REVIEW
+  REJECTED
+  EXPIRED
+  @@schema("public")
+}
+
+enum DeviceStatus {
+  ACTIVE
+  BLOCKED
+  RETIRED
+  @@schema("public")
+}
+
+enum TransactionType {
+  DEBIT
+  CREDIT
+  TRANSFER
+  REVERSAL
+  FEE
+  @@schema("public")
+}
+
+enum TransactionStatus {
+  PENDING
+  POSTED
+  DECLINED
+  REVERSED
+  FAILED
+  @@schema("public")
+}
+
+enum TransferType {
+  INTERNAL
+  EXTERNAL
+  INTERNATIONAL
+  @@schema("public")
+}
+
+enum RiskSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+  @@schema("public")
+}
+
+enum AlertStatus {
+  OPEN
+  INVESTIGATING
+  ESCALATED
+  CLOSED
+  FALSE_POSITIVE
+  @@schema("public")
+}
+
+enum CaseStatus {
+  NEW
+  IN_PROGRESS
+  PENDING_REVIEW
+  ESCALATED
+  CLOSED
+  @@schema("public")
+}
+
+enum Disposition {
+  CONFIRMED_SUSPICIOUS
+  LEGITIMATE
+  FALSE_POSITIVE
+  FURTHER_INVESTIGATION
+  ESCALATED
+  @@schema("public")
+}
+
+enum AnalystActionType {
+  ASSIGNED
+  UNASSIGNED
+  COMMENTED
+  EVIDENCE_ADDED
+  DISPOSITION_RECORDED
+  STATUS_CHANGED
+  ESCALATED
+  @@schema("public")
+}
+
+enum EventType {
+  CREATED
+  UPDATED
+  STATUS_CHANGED
+  OWNERSHIP_STARTED
+  OWNERSHIP_ENDED
+  DEVICE_LINKED
+  DEVICE_UNLINKED
+  BALANCE_ADJUSTED
+  DISPOSITION_RECORDED
+  @@schema("public")
+}
+
+enum EvidenceType {
+  TRANSACTION
+  ACCOUNT
+  CUSTOMER
+  DEVICE
+  MERCHANT
+  TRANSFER
+  RULE_MATCH
+  SYSTEM
+  @@schema("public")
+}
+
+enum GenerationStatus {
+  STARTED
+  COMPLETED
+  FAILED
+  @@schema("public")
+}
+
+enum ValidationStatus {
+  PASSED
+  FAILED
+  WARNING
+  @@schema("public")
+}
+
+enum UserStatus {
+  PENDING
+  ACTIVE
+  DISABLED
+  LOCKED
+  @@schema("public")
+}
+
+model User {
+  id              String          @id @default(uuid()) @db.Uuid
+  email           String          @unique
+  name            String
+  role            UserRole
+  passwordHash    String
+  status          UserStatus      @default(PENDING)
+  authVersion     Int             @default(0) @map("auth_version")
+  createdAt       DateTime        @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime        @updatedAt @db.Timestamptz(6)
+  analystActions  AnalystAction[]
+  auditEvents     AuditEvent[]
+  assignedCases   Case[]          @relation("CaseAssignee")
+  accountEvents   AccountEvent[]  @relation("AccountEventActor")
+  alertEvents     AlertEvent[]    @relation("AlertEventActor")
+  caseEvents      CaseEvent[]     @relation("CaseEventActor")
+
+  @@index([role])
+  @@schema("public")
+  @@map("users")
+}
+
+model Customer {
+  id              String           @id
+  fullName        String
+  email           String?          @unique
+  phone           String?
+  countryCode     String           @db.VarChar(2)
+  dateOfBirth     DateTime?        @db.Date
+  createdAt       DateTime         @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime         @updatedAt @db.Timestamptz(6)
+  kycProfile      KYCProfile?
+  accountOwners   AccountOwner[]
+  customerDevices CustomerDevice[]
+  transactions    Transaction[]
+  alerts          Alert[]
+
+  @@index([countryCode])
+  @@index([createdAt])
+  @@schema("public")
+  @@map("customers")
+}
+
+model KYCProfile {
+  id                String    @id @default(uuid()) @db.Uuid
+  customerId        String    @unique
+  status            KycStatus
+  riskRating        RiskSeverity?
+  verifiedAt        DateTime? @db.Timestamptz(6)
+  expiresAt         DateTime? @db.Timestamptz(6)
+  sourceReference   String?
+  createdAt         DateTime  @default(now()) @db.Timestamptz(6)
+  updatedAt         DateTime  @updatedAt @db.Timestamptz(6)
+  customer          Customer  @relation(fields: [customerId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([status])
+  @@schema("public")
+  @@map("kyc_profiles")
+}
+
+model Account {
+  id              String          @id
+  accountType     AccountType
+  status          AccountStatus
+  currency        String          @db.Char(3)
+  currentBalance  Decimal         @db.Decimal(18, 2)
+  overdraftLimit  Decimal         @default(0) @db.Decimal(18, 2)
+  openedAt        DateTime        @db.Timestamptz(6)
+  closedAt        DateTime?       @db.Timestamptz(6)
+  createdAt       DateTime        @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime        @updatedAt @db.Timestamptz(6)
+  owners          AccountOwner[]
+  transactions    Transaction[]
+  transferSources TransferLink[]  @relation("TransferSourceAccount")
+  transferTargets TransferLink[]  @relation("TransferTargetAccount")
+  events          AccountEvent[]
+  alerts          Alert[]
+
+  @@index([status])
+  @@index([openedAt])
+  @@schema("public")
+  @@map("accounts")
+}
+
+model AccountOwner {
+  accountId     String
+  customerId    String
+  ownershipType String
+  effectiveFrom DateTime  @db.Timestamptz(6)
+  effectiveTo   DateTime? @db.Timestamptz(6)
+  account       Account  @relation(fields: [accountId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  customer      Customer @relation(fields: [customerId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@id([accountId, customerId, effectiveFrom])
+  @@index([customerId, effectiveFrom])
+  @@index([accountId, effectiveFrom])
+  @@schema("public")
+  @@map("account_owners")
+}
+
+model Merchant {
+  id              String        @id
+  name            String
+  categoryCode    String        @db.VarChar(8)
+  countryCode     String        @db.VarChar(2)
+  riskRating      RiskSeverity?
+  createdAt       DateTime      @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime      @updatedAt @db.Timestamptz(6)
+  transactions    Transaction[]
+
+  @@index([categoryCode])
+  @@index([countryCode])
+  @@schema("public")
+  @@map("merchants")
+}
+
+model Device {
+  id              String           @id
+  fingerprintHash String           @unique
+  deviceType      String
+  operatingSystem String?
+  status          DeviceStatus
+  firstSeenAt     DateTime         @db.Timestamptz(6)
+  lastSeenAt      DateTime         @db.Timestamptz(6)
+  createdAt       DateTime         @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime         @updatedAt @db.Timestamptz(6)
+  customerDevices CustomerDevice[]
+  transactions    Transaction[]
+
+  @@index([status])
+  @@index([lastSeenAt])
+  @@schema("public")
+  @@map("devices")
+}
+
+model CustomerDevice {
+  customerId  String
+  deviceId    String
+  effectiveFrom DateTime  @db.Timestamptz(6)
+  effectiveTo   DateTime? @db.Timestamptz(6)
+  associationType String
+  customer    Customer @relation(fields: [customerId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  device      Device   @relation(fields: [deviceId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@id([customerId, deviceId, effectiveFrom])
+  @@index([deviceId, effectiveFrom])
+  @@schema("public")
+  @@map("customer_devices")
+}
+
+model Transaction {
+  id                String            @id
+  customerId        String
+  accountId         String
+  merchantId        String?
+  deviceId          String?
+  transactionType   TransactionType
+  status            TransactionStatus
+  amount            Decimal           @db.Decimal(18, 2)
+  balanceBefore     Decimal           @db.Decimal(18, 2)
+  balanceAfter      Decimal           @db.Decimal(18, 2)
+  currency          String            @db.Char(3)
+  occurredAt        DateTime          @db.Timestamptz(6)
+  postedAt          DateTime?         @db.Timestamptz(6)
+  reference         String?
+  metadata          Json?
+  createdAt         DateTime          @default(now()) @db.Timestamptz(6)
+  customer          Customer          @relation(fields: [customerId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  account           Account           @relation(fields: [accountId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  merchant          Merchant?         @relation(fields: [merchantId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  device            Device?           @relation(fields: [deviceId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  transferLinks     TransferLink[]    @relation("TransferTransaction")
+  alerts            Alert[]
+
+  @@index([customerId, occurredAt])
+  @@index([accountId, occurredAt])
+  @@index([merchantId, occurredAt])
+  @@index([deviceId, occurredAt])
+  @@index([status, occurredAt])
+  @@schema("public")
+  @@map("transactions")
+}
+
+model TransferLink {
+  id                String        @id
+  transactionId     String
+  sourceAccountId   String
+  targetAccountId   String
+  transferType      TransferType
+  amount            Decimal       @db.Decimal(18, 2)
+  currency          String        @db.Char(3)
+  legReference      String?
+  occurredAt        DateTime      @db.Timestamptz(6)
+  transaction       Transaction   @relation("TransferTransaction", fields: [transactionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  sourceAccount     Account       @relation("TransferSourceAccount", fields: [sourceAccountId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  targetAccount     Account       @relation("TransferTargetAccount", fields: [targetAccountId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@unique([transactionId, sourceAccountId, targetAccountId])
+  @@index([sourceAccountId, occurredAt])
+  @@index([targetAccountId, occurredAt])
+  @@schema("public")
+  @@map("transfer_links")
+}
+
+model RiskRule {
+  id              String       @id @default(uuid()) @db.Uuid
+  ruleCode        String
+  version         Int
+  name            String
+  description     String
+  severity        RiskSeverity
+  weight          Int
+  threshold       Decimal?     @db.Decimal(18, 2)
+  enabled         Boolean      @default(true)
+  effectiveFrom   DateTime     @db.Timestamptz(6)
+  effectiveTo     DateTime?    @db.Timestamptz(6)
+  configuration   Json?
+  createdAt       DateTime     @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime     @updatedAt @db.Timestamptz(6)
+  alerts          Alert[]
+
+  @@unique([ruleCode, version])
+  @@index([ruleCode, enabled, effectiveFrom])
+  @@schema("public")
+  @@map("risk_rules")
+}
+
+model Alert {
+  id              String         @id
+  customerId      String
+  accountId       String
+  transactionId   String
+  riskRuleId      String         @db.Uuid
+  evaluationVersion String
+  riskScore       Int
+  priority        RiskSeverity
+  status          AlertStatus
+  explanation     String
+  detectedAt      DateTime       @db.Timestamptz(6)
+  closedAt        DateTime?      @db.Timestamptz(6)
+  createdAt       DateTime       @default(now()) @db.Timestamptz(6)
+  customer        Customer       @relation(fields: [customerId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  account         Account        @relation(fields: [accountId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  transaction     Transaction    @relation(fields: [transactionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  riskRule        RiskRule       @relation(fields: [riskRuleId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  caseAlerts      CaseAlert[]
+  evidence        AlertEvidence[]
+  events          AlertEvent[]
+
+  @@unique([riskRuleId, transactionId, evaluationVersion])
+  @@index([priority, status, detectedAt])
+  @@index([customerId, detectedAt])
+  @@index([accountId, detectedAt])
+  @@schema("public")
+  @@map("alerts")
+}
+
+model Case {
+  id              String          @id
+  status          CaseStatus
+  assignedToId    String?         @db.Uuid
+  openedAt        DateTime        @default(now()) @db.Timestamptz(6)
+  closedAt        DateTime?       @db.Timestamptz(6)
+  disposition     Disposition?
+  createdAt       DateTime        @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime        @updatedAt @db.Timestamptz(6)
+  assignedTo      User?           @relation("CaseAssignee", fields: [assignedToId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  caseAlerts      CaseAlert[]
+  analystActions  AnalystAction[]
+  events          CaseEvent[]
+
+  @@index([status, updatedAt])
+  @@index([assignedToId, status])
+  @@schema("public")
+  @@map("cases")
+}
+
+model CaseAlert {
+  caseId    String
+  alertId   String
+  linkedAt  DateTime @default(now()) @db.Timestamptz(6)
+  case      Case    @relation(fields: [caseId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  alert     Alert  @relation(fields: [alertId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@id([caseId, alertId])
+  @@index([alertId])
+  @@schema("public")
+  @@map("case_alerts")
+}
+
+model AnalystAction {
+  id          String            @id @default(uuid()) @db.Uuid
+  caseId      String
+  actorId     String            @db.Uuid
+  actionType  AnalystActionType
+  fromStatus  CaseStatus?
+  toStatus    CaseStatus?
+  disposition Disposition?
+  comment     String?
+  createdAt   DateTime          @default(now()) @db.Timestamptz(6)
+  case        Case             @relation(fields: [caseId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  actor       User             @relation(fields: [actorId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([caseId, createdAt])
+  @@index([actorId, createdAt])
+  @@schema("public")
+  @@map("analyst_actions")
+}
+
+model AlertEvidence {
+  id          String       @id @default(uuid()) @db.Uuid
+  alertId     String
+  evidenceType EvidenceType
+  sourceId    String?
+  description String
+  value       Json?
+  createdAt   DateTime     @default(now()) @db.Timestamptz(6)
+  alert       Alert        @relation(fields: [alertId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([alertId, evidenceType])
+  @@schema("public")
+  @@map("alert_evidence")
+}
+
+model AccountEvent {
+  id          String    @id @default(uuid()) @db.Uuid
+  accountId   String
+  eventType   EventType
+  occurredAt  DateTime  @default(now()) @db.Timestamptz(6)
+  actorId     String?   @db.Uuid
+  details     Json?
+  account     Account   @relation(fields: [accountId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  actor       User?     @relation("AccountEventActor", fields: [actorId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([accountId, occurredAt])
+  @@schema("public")
+  @@map("account_events")
+}
+
+model AlertEvent {
+  id          String    @id @default(uuid()) @db.Uuid
+  alertId     String
+  eventType   EventType
+  occurredAt  DateTime  @default(now()) @db.Timestamptz(6)
+  actorId     String?   @db.Uuid
+  details     Json?
+  alert       Alert     @relation(fields: [alertId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  actor       User?     @relation("AlertEventActor", fields: [actorId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([alertId, occurredAt])
+  @@schema("public")
+  @@map("alert_events")
+}
+
+model CaseEvent {
+  id          String    @id @default(uuid()) @db.Uuid
+  caseId      String
+  eventType   EventType
+  occurredAt  DateTime  @default(now()) @db.Timestamptz(6)
+  actorId     String?   @db.Uuid
+  details     Json?
+  case        Case      @relation(fields: [caseId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  actor       User?     @relation("CaseEventActor", fields: [actorId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([caseId, occurredAt])
+  @@schema("public")
+  @@map("case_events")
+}
+
+model AuditEvent {
+  id          String    @id @default(uuid()) @db.Uuid
+  entityType  String
+  entityId    String
+  eventType   EventType
+  actorId     String?   @db.Uuid
+  details     Json?
+  occurredAt  DateTime  @default(now()) @db.Timestamptz(6)
+  actor       User?     @relation(fields: [actorId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([entityType, entityId, occurredAt])
+  @@index([actorId, occurredAt])
+  @@schema("public")
+  @@map("audit_events")
+}
+
+model GenerationRun {
+  id              String            @id @default(uuid()) @db.Uuid
+  seed            BigInt
+  scale           String
+  status          GenerationStatus
+  startedAt       DateTime          @default(now()) @db.Timestamptz(6)
+  completedAt     DateTime?         @db.Timestamptz(6)
+  sourceChecksum  String?
+  metadata        Json?
+  validationResults ValidationResult[]
+
+  @@index([status, startedAt])
+  @@schema("public")
+  @@map("generation_runs")
+}
+
+model ValidationResult {
+  id             String           @id @default(uuid()) @db.Uuid
+  generationRunId String? @db.Uuid
+  checkName      String
+  status         ValidationStatus
+  message        String
+  details        Json?
+  checkedAt      DateTime         @default(now()) @db.Timestamptz(6)
+  generationRun  GenerationRun?   @relation(fields: [generationRunId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([generationRunId, status])
+  @@index([checkName, checkedAt])
+  @@schema("public")
+  @@map("validation_results")
+}
+
+// Evaluation labels are intentionally isolated from operational models.
+// The operational schema contains no relation to this model.
+model GroundTruthLabel {
+  id                String   @id @default(uuid()) @db.Uuid
+  transactionId     String
+  customerId        String?
+  scenarioCode      String
+  isSuspicious      Boolean
+  expectedRuleCode  String?
+  labelSource       String
+  createdAt         DateTime @default(now()) @db.Timestamptz(6)
+  metadata          Json?
+
+  @@unique([transactionId, scenarioCode])
+  @@index([transactionId])
+  @@index([scenarioCode, isSuspicious])
+  @@schema("evaluation")
+  @@map("ground_truth_labels")
+}

@@ -1,0 +1,5 @@
+id,transaction_id,account_id,rule_id,rule_name,risk_score,priority,explanation
+ALT-2026-000001,TXN-2026-00000001,ACC-CUS-000001-01,R001,High transaction velocity,35,HIGH,High transaction velocity triggered for TXN-2026-00000001.
+ALT-2026-000002,TXN-2026-00000002,ACC-CUS-000002-01,R002,New device with unusual activity,28,MEDIUM,New device with unusual activity triggered for TXN-2026-00000002.
+ALT-2026-000003,TXN-2026-00000003,ACC-CUS-000003-01,R004,Dormant account reactivation,25,MEDIUM,Dormant account reactivation triggered for TXN-2026-00000003.
+ALT-2026-000004,TXN-2026-00000004,ACC-CUS-000004-01,R005,Transaction on closed account,60,HIGH,Transaction on closed account triggered for TXN-2026-00000004.

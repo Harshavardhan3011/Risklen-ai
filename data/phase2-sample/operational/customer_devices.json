@@ -1,0 +1,380 @@
+[
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000001",
+    "deviceId": "DEV-000001",
+    "effectiveFrom": "2026-01-01T00:03:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000002",
+    "deviceId": "DEV-000002",
+    "effectiveFrom": "2026-01-01T00:06:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000003",
+    "deviceId": "DEV-000003",
+    "effectiveFrom": "2026-01-01T00:09:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000004",
+    "deviceId": "DEV-000004",
+    "effectiveFrom": "2026-01-01T00:12:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000005",
+    "deviceId": "DEV-000005",
+    "effectiveFrom": "2026-01-01T00:15:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000006",
+    "deviceId": "DEV-000006",
+    "effectiveFrom": "2026-01-01T00:18:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000007",
+    "deviceId": "DEV-000007",
+    "effectiveFrom": "2026-01-01T00:21:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000008",
+    "deviceId": "DEV-000008",
+    "effectiveFrom": "2026-01-01T00:24:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000009",
+    "deviceId": "DEV-000009",
+    "effectiveFrom": "2026-01-01T00:27:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000010",
+    "deviceId": "DEV-000010",
+    "effectiveFrom": "2026-01-01T00:30:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000011",
+    "deviceId": "DEV-000011",
+    "effectiveFrom": "2026-01-01T00:33:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "SHARED",
+    "customerId": "CUS-000011",
+    "deviceId": "DEV-000012",
+    "effectiveFrom": "2026-01-01T00:34:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000012",
+    "deviceId": "DEV-000012",
+    "effectiveFrom": "2026-01-01T00:36:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000013",
+    "deviceId": "DEV-000013",
+    "effectiveFrom": "2026-01-01T00:39:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000014",
+    "deviceId": "DEV-000014",
+    "effectiveFrom": "2026-01-01T00:42:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000015",
+    "deviceId": "DEV-000015",
+    "effectiveFrom": "2026-01-01T00:45:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000016",
+    "deviceId": "DEV-000016",
+    "effectiveFrom": "2026-01-01T00:48:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000017",
+    "deviceId": "DEV-000017",
+    "effectiveFrom": "2026-01-01T00:51:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000018",
+    "deviceId": "DEV-000018",
+    "effectiveFrom": "2026-01-01T00:54:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000019",
+    "deviceId": "DEV-000019",
+    "effectiveFrom": "2026-01-01T00:57:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000020",
+    "deviceId": "DEV-000020",
+    "effectiveFrom": "2026-01-01T01:00:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000021",
+    "deviceId": "DEV-000021",
+    "effectiveFrom": "2026-01-01T01:03:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000022",
+    "deviceId": "DEV-000022",
+    "effectiveFrom": "2026-01-01T01:06:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "SHARED",
+    "customerId": "CUS-000022",
+    "deviceId": "DEV-000023",
+    "effectiveFrom": "2026-01-01T01:07:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000023",
+    "deviceId": "DEV-000023",
+    "effectiveFrom": "2026-01-01T01:09:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000024",
+    "deviceId": "DEV-000024",
+    "effectiveFrom": "2026-01-01T01:12:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000025",
+    "deviceId": "DEV-000025",
+    "effectiveFrom": "2026-01-01T01:15:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000026",
+    "deviceId": "DEV-000026",
+    "effectiveFrom": "2026-01-01T01:18:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000027",
+    "deviceId": "DEV-000027",
+    "effectiveFrom": "2026-01-01T01:21:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000028",
+    "deviceId": "DEV-000028",
+    "effectiveFrom": "2026-01-01T01:24:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000029",
+    "deviceId": "DEV-000029",
+    "effectiveFrom": "2026-01-01T01:27:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000030",
+    "deviceId": "DEV-000030",
+    "effectiveFrom": "2026-01-01T01:30:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000031",
+    "deviceId": "DEV-000001",
+    "effectiveFrom": "2026-01-01T01:33:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000032",
+    "deviceId": "DEV-000002",
+    "effectiveFrom": "2026-01-01T01:36:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000033",
+    "deviceId": "DEV-000003",
+    "effectiveFrom": "2026-01-01T01:39:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "SHARED",
+    "customerId": "CUS-000033",
+    "deviceId": "DEV-000004",
+    "effectiveFrom": "2026-01-01T01:40:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000034",
+    "deviceId": "DEV-000004",
+    "effectiveFrom": "2026-01-01T01:42:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000035",
+    "deviceId": "DEV-000005",
+    "effectiveFrom": "2026-01-01T01:45:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000036",
+    "deviceId": "DEV-000006",
+    "effectiveFrom": "2026-01-01T01:48:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000037",
+    "deviceId": "DEV-000007",
+    "effectiveFrom": "2026-01-01T01:51:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000038",
+    "deviceId": "DEV-000008",
+    "effectiveFrom": "2026-01-01T01:54:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000039",
+    "deviceId": "DEV-000009",
+    "effectiveFrom": "2026-01-01T01:57:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000040",
+    "deviceId": "DEV-000010",
+    "effectiveFrom": "2026-01-01T02:00:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000041",
+    "deviceId": "DEV-000011",
+    "effectiveFrom": "2026-01-01T02:03:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000042",
+    "deviceId": "DEV-000012",
+    "effectiveFrom": "2026-01-01T02:06:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000043",
+    "deviceId": "DEV-000013",
+    "effectiveFrom": "2026-01-01T02:09:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000044",
+    "deviceId": "DEV-000014",
+    "effectiveFrom": "2026-01-01T02:12:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "SHARED",
+    "customerId": "CUS-000044",
+    "deviceId": "DEV-000015",
+    "effectiveFrom": "2026-01-01T02:13:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000045",
+    "deviceId": "DEV-000015",
+    "effectiveFrom": "2026-01-01T02:15:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000046",
+    "deviceId": "DEV-000016",
+    "effectiveFrom": "2026-01-01T02:18:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000047",
+    "deviceId": "DEV-000017",
+    "effectiveFrom": "2026-01-01T02:21:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000048",
+    "deviceId": "DEV-000018",
+    "effectiveFrom": "2026-01-01T02:24:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000049",
+    "deviceId": "DEV-000019",
+    "effectiveFrom": "2026-01-01T02:27:00.000000Z",
+    "effectiveTo": ""
+  },
+  {
+    "associationType": "PRIMARY",
+    "customerId": "CUS-000050",
+    "deviceId": "DEV-000020",
+    "effectiveFrom": "2026-01-01T02:30:00.000000Z",
+    "effectiveTo": ""
+  }
+]

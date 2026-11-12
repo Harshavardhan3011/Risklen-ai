@@ -1,0 +1,562 @@
+[
+  {
+    "accountId": "ACC-000001",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "63d3a24d-a21a-508e-86b0-0d798a61c9b3",
+    "occurredAt": "2026-01-01T00:02:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000002",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "a8680706-66bc-5cb9-939a-4be6d7d60ae1",
+    "occurredAt": "2026-01-01T00:04:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000003",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "d71396f6-8074-5fe9-8f0b-e8c7e83b82a3",
+    "occurredAt": "2026-01-01T00:06:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000004",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "2d839cad-d5c3-59e0-943e-84d0dd2fa8ff",
+    "occurredAt": "2026-01-01T00:08:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000005",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "f05601d3-77ef-5f51-bb7b-c69940060c22",
+    "occurredAt": "2026-01-01T00:10:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000006",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "217aa689-fc7d-56fc-9356-8da470b740bd",
+    "occurredAt": "2026-01-01T00:12:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000007",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "ea5a41d8-5f39-5220-8460-9d285dfd4345",
+    "occurredAt": "2026-01-01T00:14:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000008",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "436e4399-3fa1-593a-b4b8-bbd2e31ce2b3",
+    "occurredAt": "2026-01-01T00:16:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000009",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "39b103ac-f378-56da-a416-56f594561333",
+    "occurredAt": "2026-01-01T00:18:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000010",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "ab23abc5-3ad5-5ad4-a377-c35ddfea194a",
+    "occurredAt": "2026-01-01T00:20:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000011",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "a9e3bb18-3bc2-555e-a3a0-a4886752268c",
+    "occurredAt": "2026-01-01T00:22:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000012",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "391559a4-7494-5e18-93b8-63090edefd83",
+    "occurredAt": "2026-01-01T00:24:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000013",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "f2aeba01-9e6b-50a9-a18f-7d8846d3992b",
+    "occurredAt": "2026-01-01T00:26:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000014",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "72790036-5ca8-52e5-b5f1-e3cf9050c093",
+    "occurredAt": "2026-01-01T00:28:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000015",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "a53c01fc-4b10-5f50-9566-ed96f705d1ff",
+    "occurredAt": "2026-01-01T00:30:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000016",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "a1428ff4-dfc5-5f10-b72e-b8ba65a3d4b7",
+    "occurredAt": "2026-01-01T00:32:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000017",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "9e426eab-2d82-53cc-bd7f-ba69d7d2eddc",
+    "occurredAt": "2026-01-01T00:34:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000018",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "219aba08-f864-5928-a5a5-b04e2011f0f7",
+    "occurredAt": "2026-01-01T00:36:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000019",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "0c0f9e15-c325-59ef-898c-3db2854cd5d2",
+    "occurredAt": "2026-01-01T00:38:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000020",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "15aceb62-840b-54ec-902f-974926001713",
+    "occurredAt": "2026-01-01T00:40:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000021",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "203c8c10-8622-53aa-bafa-e86ee12c1e6a",
+    "occurredAt": "2026-01-01T00:42:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000022",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "34d7d298-cb3c-55ac-bea4-c08171466b2b",
+    "occurredAt": "2026-01-01T00:44:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000023",
+    "actorId": "",
+    "details": "{\"status\": \"DORMANT\"}",
+    "eventType": "CREATED",
+    "id": "43efe999-4fb3-5be2-a178-d236ef1da6d4",
+    "occurredAt": "2026-01-01T00:46:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000024",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "54e7d7af-05da-5731-b9ca-fcb2b1d32932",
+    "occurredAt": "2026-01-01T00:48:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000025",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "ba15eea5-3ff8-5dc8-a8aa-35e6da68a5f4",
+    "occurredAt": "2026-01-01T00:50:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000026",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "f5c1ce64-d0e5-5419-9a6d-573e4937b307",
+    "occurredAt": "2026-01-01T00:52:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000027",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "2c4ba9e6-ec84-5bc3-8dcf-0dfa4b08f84c",
+    "occurredAt": "2026-01-01T00:54:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000028",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "885efe0f-26e9-5735-b435-739a994fedaf",
+    "occurredAt": "2026-01-01T00:56:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000029",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "4781eaec-ce21-50cb-bf1b-d68bbb262be6",
+    "occurredAt": "2026-01-01T00:58:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000030",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "779c292f-9a37-51b9-a9fc-b6bbab8c44e9",
+    "occurredAt": "2026-01-01T01:00:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000031",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "f1bc17d4-242d-5b7c-bd64-ea3d1cafd241",
+    "occurredAt": "2026-01-01T01:02:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000032",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "22802179-4cb6-5329-8d1b-eb8f65448133",
+    "occurredAt": "2026-01-01T01:04:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000033",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "5b2d9222-e106-59d1-9b2b-5618798a04f2",
+    "occurredAt": "2026-01-01T01:06:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000034",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "9a80dfdd-ac9c-59dc-bbdd-d876f964683f",
+    "occurredAt": "2026-01-01T01:08:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000035",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "ff91a19f-4dff-5a3d-8832-f3c5369c730a",
+    "occurredAt": "2026-01-01T01:10:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000036",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "54d99b73-c5bb-5215-9376-ee28da9712d2",
+    "occurredAt": "2026-01-01T01:12:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000037",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "15ac4b37-d3aa-567d-a1a1-20f18fae8f71",
+    "occurredAt": "2026-01-01T01:14:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000038",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "9821a768-6a10-5b5e-b545-2d5f491846d9",
+    "occurredAt": "2026-01-01T01:16:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000039",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "e93dff91-3ffb-55ca-8a7c-5e64c751acd4",
+    "occurredAt": "2026-01-01T01:18:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000040",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "4c84d796-f54a-5723-9bfe-0da0c5d6bf47",
+    "occurredAt": "2026-01-01T01:20:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000041",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "1be6e89d-49c7-58e0-9401-c2623d87e278",
+    "occurredAt": "2026-01-01T01:22:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000042",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "90e7ab82-ab4e-51f0-ab13-fa4191808add",
+    "occurredAt": "2026-01-01T01:24:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000043",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "def4c5de-b6e0-5e5e-9d76-72010b5c6cac",
+    "occurredAt": "2026-01-01T01:26:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000044",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "7555f079-090b-58f8-89f0-48e44fe1b4f9",
+    "occurredAt": "2026-01-01T01:28:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000045",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "c8a9d93d-2faf-5b68-a7ab-a0f72683055b",
+    "occurredAt": "2026-01-01T01:30:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000046",
+    "actorId": "",
+    "details": "{\"status\": \"DORMANT\"}",
+    "eventType": "CREATED",
+    "id": "7b27cb3d-53a5-52f3-b944-79641f714489",
+    "occurredAt": "2026-01-01T01:32:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000047",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "01bf529e-c16a-5b10-ba6b-7c5123d6e926",
+    "occurredAt": "2026-01-01T01:34:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000048",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "efa9cb54-bb44-5523-bd8b-3128f8053de0",
+    "occurredAt": "2026-01-01T01:36:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000049",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "82f47aa5-4284-5f08-8d55-41c7c3282e54",
+    "occurredAt": "2026-01-01T01:38:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000050",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "3116f9d5-c2dd-5f33-8577-6a60075f3d09",
+    "occurredAt": "2026-01-01T01:40:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000051",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "4c3b4be6-a6d7-5083-8b7f-b6c8766178ae",
+    "occurredAt": "2026-01-01T01:42:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000052",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "684fd1e3-5651-54e7-a582-6fb1a06bb4e0",
+    "occurredAt": "2026-01-01T01:44:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000053",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "f2dabbb9-a3a2-56a7-b833-9a2321c502e4",
+    "occurredAt": "2026-01-01T01:46:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000054",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "ca50b163-9975-59e0-805e-7be738da603c",
+    "occurredAt": "2026-01-01T01:48:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000055",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "a5b119d6-fa01-5215-96ba-d293da9e1ce8",
+    "occurredAt": "2026-01-01T01:50:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000056",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "49a9b5ff-e912-5463-a498-caf66c05e2f6",
+    "occurredAt": "2026-01-01T01:52:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000057",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "2816ecaa-bd1e-5e54-acbf-7e9c0bf2ebc2",
+    "occurredAt": "2026-01-01T01:54:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000058",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "029bcbca-826c-582b-8d9d-5aa0080a736a",
+    "occurredAt": "2026-01-01T01:56:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000059",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "94b0b71e-7b85-5442-9f22-f871ebfe6998",
+    "occurredAt": "2026-01-01T01:58:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000060",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "c6773b24-6413-5db0-b155-95a859f80076",
+    "occurredAt": "2026-01-01T02:00:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000061",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "2e89ff2c-dec6-5746-81e0-cb711da2b803",
+    "occurredAt": "2026-01-01T02:02:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000062",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "65b1ba42-229d-52c3-928c-bcfbca31eee6",
+    "occurredAt": "2026-01-01T02:04:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000063",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "b082869d-f43c-5de2-b0ce-371be8b4ccf1",
+    "occurredAt": "2026-01-01T02:06:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000064",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "9489980a-cd70-5898-8f34-643a85d94053",
+    "occurredAt": "2026-01-01T02:08:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000065",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "577e4b86-4496-58ec-bc23-461e43cb4b2c",
+    "occurredAt": "2026-01-01T02:10:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000066",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "b17dfa77-68cc-5334-b7d0-7a5702c0494a",
+    "occurredAt": "2026-01-01T02:12:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000067",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "c6aa1cc1-5edb-5ab8-b291-1caa786d2f5a",
+    "occurredAt": "2026-01-01T02:14:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000068",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "a91ce9fe-d2f3-584a-a692-be26af3a1430",
+    "occurredAt": "2026-01-01T02:16:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000069",
+    "actorId": "",
+    "details": "{\"status\": \"DORMANT\"}",
+    "eventType": "CREATED",
+    "id": "8bf76b45-bd73-5bee-89d6-c4eeeed96b20",
+    "occurredAt": "2026-01-01T02:18:00.000000Z"
+  },
+  {
+    "accountId": "ACC-000070",
+    "actorId": "",
+    "details": "{\"status\": \"OPEN\"}",
+    "eventType": "CREATED",
+    "id": "b942c5fd-5031-56ed-857a-5ee1d553fd3a",
+    "occurredAt": "2026-01-01T02:20:00.000000Z"
+  }
+]

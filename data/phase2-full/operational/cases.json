@@ -1,0 +1,2002 @@
+[
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T10:46:00.000000Z",
+    "createdAt": "2026-03-11T10:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00001",
+    "openedAt": "2026-03-11T10:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T10:46:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T10:51:00.000000Z",
+    "createdAt": "2026-03-11T10:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00002",
+    "openedAt": "2026-03-11T10:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T10:51:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T10:56:00.000000Z",
+    "createdAt": "2026-03-11T10:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00003",
+    "openedAt": "2026-03-11T10:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T10:56:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T11:01:00.000000Z",
+    "createdAt": "2026-03-11T10:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00004",
+    "openedAt": "2026-03-11T10:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:01:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T11:06:00.000000Z",
+    "createdAt": "2026-03-11T11:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00005",
+    "openedAt": "2026-03-11T11:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:06:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T11:11:00.000000Z",
+    "createdAt": "2026-03-11T11:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00006",
+    "openedAt": "2026-03-11T11:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:11:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T11:16:00.000000Z",
+    "createdAt": "2026-03-11T11:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00007",
+    "openedAt": "2026-03-11T11:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:16:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T11:21:00.000000Z",
+    "createdAt": "2026-03-11T11:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00008",
+    "openedAt": "2026-03-11T11:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:21:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T11:26:00.000000Z",
+    "createdAt": "2026-03-11T11:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00009",
+    "openedAt": "2026-03-11T11:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:26:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T11:31:00.000000Z",
+    "createdAt": "2026-03-11T11:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00010",
+    "openedAt": "2026-03-11T11:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:31:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T11:36:00.000000Z",
+    "createdAt": "2026-03-11T11:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00011",
+    "openedAt": "2026-03-11T11:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:36:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T11:41:00.000000Z",
+    "createdAt": "2026-03-11T11:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00012",
+    "openedAt": "2026-03-11T11:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:41:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T11:46:00.000000Z",
+    "createdAt": "2026-03-11T11:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00013",
+    "openedAt": "2026-03-11T11:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:46:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T11:51:00.000000Z",
+    "createdAt": "2026-03-11T11:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00014",
+    "openedAt": "2026-03-11T11:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:51:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T11:56:00.000000Z",
+    "createdAt": "2026-03-11T11:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00015",
+    "openedAt": "2026-03-11T11:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T11:56:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T12:01:00.000000Z",
+    "createdAt": "2026-03-11T11:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00016",
+    "openedAt": "2026-03-11T11:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:01:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T12:06:00.000000Z",
+    "createdAt": "2026-03-11T12:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00017",
+    "openedAt": "2026-03-11T12:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:06:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T12:11:00.000000Z",
+    "createdAt": "2026-03-11T12:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00018",
+    "openedAt": "2026-03-11T12:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:11:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T12:16:00.000000Z",
+    "createdAt": "2026-03-11T12:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00019",
+    "openedAt": "2026-03-11T12:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:16:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T12:21:00.000000Z",
+    "createdAt": "2026-03-11T12:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00020",
+    "openedAt": "2026-03-11T12:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:21:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T12:26:00.000000Z",
+    "createdAt": "2026-03-11T12:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00021",
+    "openedAt": "2026-03-11T12:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:26:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T12:31:00.000000Z",
+    "createdAt": "2026-03-11T12:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00022",
+    "openedAt": "2026-03-11T12:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:31:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T12:36:00.000000Z",
+    "createdAt": "2026-03-11T12:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00023",
+    "openedAt": "2026-03-11T12:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:36:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T12:41:00.000000Z",
+    "createdAt": "2026-03-11T12:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00024",
+    "openedAt": "2026-03-11T12:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:41:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T12:46:00.000000Z",
+    "createdAt": "2026-03-11T12:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00025",
+    "openedAt": "2026-03-11T12:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:46:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T12:51:00.000000Z",
+    "createdAt": "2026-03-11T12:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00026",
+    "openedAt": "2026-03-11T12:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:51:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T12:56:00.000000Z",
+    "createdAt": "2026-03-11T12:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00027",
+    "openedAt": "2026-03-11T12:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T12:56:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T13:01:00.000000Z",
+    "createdAt": "2026-03-11T12:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00028",
+    "openedAt": "2026-03-11T12:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:01:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T13:06:00.000000Z",
+    "createdAt": "2026-03-11T13:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00029",
+    "openedAt": "2026-03-11T13:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:06:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T13:11:00.000000Z",
+    "createdAt": "2026-03-11T13:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00030",
+    "openedAt": "2026-03-11T13:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:11:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T13:16:00.000000Z",
+    "createdAt": "2026-03-11T13:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00031",
+    "openedAt": "2026-03-11T13:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:16:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T13:21:00.000000Z",
+    "createdAt": "2026-03-11T13:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00032",
+    "openedAt": "2026-03-11T13:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:21:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T13:26:00.000000Z",
+    "createdAt": "2026-03-11T13:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00033",
+    "openedAt": "2026-03-11T13:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:26:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T13:31:00.000000Z",
+    "createdAt": "2026-03-11T13:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00034",
+    "openedAt": "2026-03-11T13:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:31:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T13:36:00.000000Z",
+    "createdAt": "2026-03-11T13:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00035",
+    "openedAt": "2026-03-11T13:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:36:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T13:41:00.000000Z",
+    "createdAt": "2026-03-11T13:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00036",
+    "openedAt": "2026-03-11T13:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:41:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T13:46:00.000000Z",
+    "createdAt": "2026-03-11T13:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00037",
+    "openedAt": "2026-03-11T13:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:46:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T13:51:00.000000Z",
+    "createdAt": "2026-03-11T13:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00038",
+    "openedAt": "2026-03-11T13:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:51:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T13:56:00.000000Z",
+    "createdAt": "2026-03-11T13:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00039",
+    "openedAt": "2026-03-11T13:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T13:56:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T14:01:00.000000Z",
+    "createdAt": "2026-03-11T13:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00040",
+    "openedAt": "2026-03-11T13:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:01:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T14:06:00.000000Z",
+    "createdAt": "2026-03-11T14:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00041",
+    "openedAt": "2026-03-11T14:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:06:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T14:11:00.000000Z",
+    "createdAt": "2026-03-11T14:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00042",
+    "openedAt": "2026-03-11T14:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:11:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T14:16:00.000000Z",
+    "createdAt": "2026-03-11T14:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00043",
+    "openedAt": "2026-03-11T14:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:16:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T14:21:00.000000Z",
+    "createdAt": "2026-03-11T14:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00044",
+    "openedAt": "2026-03-11T14:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:21:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T14:26:00.000000Z",
+    "createdAt": "2026-03-11T14:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00045",
+    "openedAt": "2026-03-11T14:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:26:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T14:31:00.000000Z",
+    "createdAt": "2026-03-11T14:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00046",
+    "openedAt": "2026-03-11T14:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:31:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T14:36:00.000000Z",
+    "createdAt": "2026-03-11T14:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00047",
+    "openedAt": "2026-03-11T14:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:36:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T14:41:00.000000Z",
+    "createdAt": "2026-03-11T14:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00048",
+    "openedAt": "2026-03-11T14:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:41:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T14:46:00.000000Z",
+    "createdAt": "2026-03-11T14:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00049",
+    "openedAt": "2026-03-11T14:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:46:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T14:51:00.000000Z",
+    "createdAt": "2026-03-11T14:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00050",
+    "openedAt": "2026-03-11T14:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:51:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T14:56:00.000000Z",
+    "createdAt": "2026-03-11T14:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00051",
+    "openedAt": "2026-03-11T14:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T14:56:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T15:01:00.000000Z",
+    "createdAt": "2026-03-11T14:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00052",
+    "openedAt": "2026-03-11T14:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:01:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T15:06:00.000000Z",
+    "createdAt": "2026-03-11T15:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00053",
+    "openedAt": "2026-03-11T15:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:06:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T15:11:00.000000Z",
+    "createdAt": "2026-03-11T15:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00054",
+    "openedAt": "2026-03-11T15:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:11:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T15:16:00.000000Z",
+    "createdAt": "2026-03-11T15:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00055",
+    "openedAt": "2026-03-11T15:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:16:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T15:21:00.000000Z",
+    "createdAt": "2026-03-11T15:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00056",
+    "openedAt": "2026-03-11T15:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:21:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T15:26:00.000000Z",
+    "createdAt": "2026-03-11T15:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00057",
+    "openedAt": "2026-03-11T15:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:26:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T15:31:00.000000Z",
+    "createdAt": "2026-03-11T15:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00058",
+    "openedAt": "2026-03-11T15:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:31:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T15:36:00.000000Z",
+    "createdAt": "2026-03-11T15:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00059",
+    "openedAt": "2026-03-11T15:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:36:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T15:41:00.000000Z",
+    "createdAt": "2026-03-11T15:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00060",
+    "openedAt": "2026-03-11T15:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:41:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T15:46:00.000000Z",
+    "createdAt": "2026-03-11T15:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00061",
+    "openedAt": "2026-03-11T15:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:46:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T15:51:00.000000Z",
+    "createdAt": "2026-03-11T15:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00062",
+    "openedAt": "2026-03-11T15:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:51:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T15:56:00.000000Z",
+    "createdAt": "2026-03-11T15:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00063",
+    "openedAt": "2026-03-11T15:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T15:56:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T16:01:00.000000Z",
+    "createdAt": "2026-03-11T15:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00064",
+    "openedAt": "2026-03-11T15:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:01:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T16:06:00.000000Z",
+    "createdAt": "2026-03-11T16:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00065",
+    "openedAt": "2026-03-11T16:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:06:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T16:11:00.000000Z",
+    "createdAt": "2026-03-11T16:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00066",
+    "openedAt": "2026-03-11T16:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:11:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T16:16:00.000000Z",
+    "createdAt": "2026-03-11T16:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00067",
+    "openedAt": "2026-03-11T16:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:16:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T16:21:00.000000Z",
+    "createdAt": "2026-03-11T16:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00068",
+    "openedAt": "2026-03-11T16:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:21:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T16:26:00.000000Z",
+    "createdAt": "2026-03-11T16:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00069",
+    "openedAt": "2026-03-11T16:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:26:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T16:31:00.000000Z",
+    "createdAt": "2026-03-11T16:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00070",
+    "openedAt": "2026-03-11T16:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:31:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T16:36:00.000000Z",
+    "createdAt": "2026-03-11T16:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00071",
+    "openedAt": "2026-03-11T16:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:36:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T16:41:00.000000Z",
+    "createdAt": "2026-03-11T16:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00072",
+    "openedAt": "2026-03-11T16:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:41:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T16:46:00.000000Z",
+    "createdAt": "2026-03-11T16:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00073",
+    "openedAt": "2026-03-11T16:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:46:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T16:51:00.000000Z",
+    "createdAt": "2026-03-11T16:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00074",
+    "openedAt": "2026-03-11T16:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:51:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T16:56:00.000000Z",
+    "createdAt": "2026-03-11T16:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00075",
+    "openedAt": "2026-03-11T16:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T16:56:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T17:01:00.000000Z",
+    "createdAt": "2026-03-11T16:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00076",
+    "openedAt": "2026-03-11T16:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:01:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T17:06:00.000000Z",
+    "createdAt": "2026-03-11T17:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00077",
+    "openedAt": "2026-03-11T17:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:06:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T17:11:00.000000Z",
+    "createdAt": "2026-03-11T17:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00078",
+    "openedAt": "2026-03-11T17:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:11:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T17:16:00.000000Z",
+    "createdAt": "2026-03-11T17:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00079",
+    "openedAt": "2026-03-11T17:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:16:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T17:21:00.000000Z",
+    "createdAt": "2026-03-11T17:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00080",
+    "openedAt": "2026-03-11T17:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:21:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T17:26:00.000000Z",
+    "createdAt": "2026-03-11T17:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00081",
+    "openedAt": "2026-03-11T17:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:26:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T17:31:00.000000Z",
+    "createdAt": "2026-03-11T17:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00082",
+    "openedAt": "2026-03-11T17:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:31:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T17:36:00.000000Z",
+    "createdAt": "2026-03-11T17:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00083",
+    "openedAt": "2026-03-11T17:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:36:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T17:41:00.000000Z",
+    "createdAt": "2026-03-11T17:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00084",
+    "openedAt": "2026-03-11T17:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:41:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T17:46:00.000000Z",
+    "createdAt": "2026-03-11T17:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00085",
+    "openedAt": "2026-03-11T17:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:46:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T17:51:00.000000Z",
+    "createdAt": "2026-03-11T17:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00086",
+    "openedAt": "2026-03-11T17:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:51:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T17:56:00.000000Z",
+    "createdAt": "2026-03-11T17:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00087",
+    "openedAt": "2026-03-11T17:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T17:56:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T18:01:00.000000Z",
+    "createdAt": "2026-03-11T17:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00088",
+    "openedAt": "2026-03-11T17:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:01:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T18:06:00.000000Z",
+    "createdAt": "2026-03-11T18:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00089",
+    "openedAt": "2026-03-11T18:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:06:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T18:11:00.000000Z",
+    "createdAt": "2026-03-11T18:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00090",
+    "openedAt": "2026-03-11T18:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:11:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T18:16:00.000000Z",
+    "createdAt": "2026-03-11T18:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00091",
+    "openedAt": "2026-03-11T18:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:16:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T18:21:00.000000Z",
+    "createdAt": "2026-03-11T18:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00092",
+    "openedAt": "2026-03-11T18:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:21:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T18:26:00.000000Z",
+    "createdAt": "2026-03-11T18:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00093",
+    "openedAt": "2026-03-11T18:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:26:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T18:31:00.000000Z",
+    "createdAt": "2026-03-11T18:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00094",
+    "openedAt": "2026-03-11T18:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:31:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T18:36:00.000000Z",
+    "createdAt": "2026-03-11T18:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00095",
+    "openedAt": "2026-03-11T18:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:36:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T18:41:00.000000Z",
+    "createdAt": "2026-03-11T18:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00096",
+    "openedAt": "2026-03-11T18:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:41:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T18:46:00.000000Z",
+    "createdAt": "2026-03-11T18:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00097",
+    "openedAt": "2026-03-11T18:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:46:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T18:51:00.000000Z",
+    "createdAt": "2026-03-11T18:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00098",
+    "openedAt": "2026-03-11T18:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:51:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T18:56:00.000000Z",
+    "createdAt": "2026-03-11T18:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00099",
+    "openedAt": "2026-03-11T18:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T18:56:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T19:01:00.000000Z",
+    "createdAt": "2026-03-11T18:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00100",
+    "openedAt": "2026-03-11T18:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:01:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T19:06:00.000000Z",
+    "createdAt": "2026-03-11T19:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00101",
+    "openedAt": "2026-03-11T19:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:06:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T19:11:00.000000Z",
+    "createdAt": "2026-03-11T19:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00102",
+    "openedAt": "2026-03-11T19:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:11:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T19:16:00.000000Z",
+    "createdAt": "2026-03-11T19:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00103",
+    "openedAt": "2026-03-11T19:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:16:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T19:21:00.000000Z",
+    "createdAt": "2026-03-11T19:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00104",
+    "openedAt": "2026-03-11T19:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:21:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T19:26:00.000000Z",
+    "createdAt": "2026-03-11T19:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00105",
+    "openedAt": "2026-03-11T19:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:26:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T19:31:00.000000Z",
+    "createdAt": "2026-03-11T19:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00106",
+    "openedAt": "2026-03-11T19:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:31:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T19:36:00.000000Z",
+    "createdAt": "2026-03-11T19:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00107",
+    "openedAt": "2026-03-11T19:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:36:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T19:41:00.000000Z",
+    "createdAt": "2026-03-11T19:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00108",
+    "openedAt": "2026-03-11T19:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:41:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T19:46:00.000000Z",
+    "createdAt": "2026-03-11T19:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00109",
+    "openedAt": "2026-03-11T19:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:46:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T19:51:00.000000Z",
+    "createdAt": "2026-03-11T19:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00110",
+    "openedAt": "2026-03-11T19:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:51:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T19:56:00.000000Z",
+    "createdAt": "2026-03-11T19:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00111",
+    "openedAt": "2026-03-11T19:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T19:56:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T20:01:00.000000Z",
+    "createdAt": "2026-03-11T19:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00112",
+    "openedAt": "2026-03-11T19:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:01:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T20:06:00.000000Z",
+    "createdAt": "2026-03-11T20:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00113",
+    "openedAt": "2026-03-11T20:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:06:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T20:11:00.000000Z",
+    "createdAt": "2026-03-11T20:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00114",
+    "openedAt": "2026-03-11T20:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:11:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T20:16:00.000000Z",
+    "createdAt": "2026-03-11T20:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00115",
+    "openedAt": "2026-03-11T20:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:16:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T20:21:00.000000Z",
+    "createdAt": "2026-03-11T20:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00116",
+    "openedAt": "2026-03-11T20:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:21:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T20:26:00.000000Z",
+    "createdAt": "2026-03-11T20:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00117",
+    "openedAt": "2026-03-11T20:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:26:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T20:31:00.000000Z",
+    "createdAt": "2026-03-11T20:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00118",
+    "openedAt": "2026-03-11T20:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:31:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T20:36:00.000000Z",
+    "createdAt": "2026-03-11T20:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00119",
+    "openedAt": "2026-03-11T20:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:36:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T20:41:00.000000Z",
+    "createdAt": "2026-03-11T20:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00120",
+    "openedAt": "2026-03-11T20:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:41:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T20:46:00.000000Z",
+    "createdAt": "2026-03-11T20:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00121",
+    "openedAt": "2026-03-11T20:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:46:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T20:51:00.000000Z",
+    "createdAt": "2026-03-11T20:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00122",
+    "openedAt": "2026-03-11T20:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:51:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T20:56:00.000000Z",
+    "createdAt": "2026-03-11T20:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00123",
+    "openedAt": "2026-03-11T20:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T20:56:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T21:01:00.000000Z",
+    "createdAt": "2026-03-11T20:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00124",
+    "openedAt": "2026-03-11T20:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:01:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T21:06:00.000000Z",
+    "createdAt": "2026-03-11T21:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00125",
+    "openedAt": "2026-03-11T21:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:06:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T21:11:00.000000Z",
+    "createdAt": "2026-03-11T21:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00126",
+    "openedAt": "2026-03-11T21:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:11:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T21:16:00.000000Z",
+    "createdAt": "2026-03-11T21:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00127",
+    "openedAt": "2026-03-11T21:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:16:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T21:21:00.000000Z",
+    "createdAt": "2026-03-11T21:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00128",
+    "openedAt": "2026-03-11T21:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:21:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T21:26:00.000000Z",
+    "createdAt": "2026-03-11T21:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00129",
+    "openedAt": "2026-03-11T21:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:26:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T21:31:00.000000Z",
+    "createdAt": "2026-03-11T21:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00130",
+    "openedAt": "2026-03-11T21:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:31:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T21:36:00.000000Z",
+    "createdAt": "2026-03-11T21:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00131",
+    "openedAt": "2026-03-11T21:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:36:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T21:41:00.000000Z",
+    "createdAt": "2026-03-11T21:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00132",
+    "openedAt": "2026-03-11T21:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:41:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T21:46:00.000000Z",
+    "createdAt": "2026-03-11T21:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00133",
+    "openedAt": "2026-03-11T21:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:46:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T21:51:00.000000Z",
+    "createdAt": "2026-03-11T21:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00134",
+    "openedAt": "2026-03-11T21:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:51:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T21:56:00.000000Z",
+    "createdAt": "2026-03-11T21:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00135",
+    "openedAt": "2026-03-11T21:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T21:56:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T22:01:00.000000Z",
+    "createdAt": "2026-03-11T21:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00136",
+    "openedAt": "2026-03-11T21:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:01:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T22:06:00.000000Z",
+    "createdAt": "2026-03-11T22:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00137",
+    "openedAt": "2026-03-11T22:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:06:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T22:11:00.000000Z",
+    "createdAt": "2026-03-11T22:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00138",
+    "openedAt": "2026-03-11T22:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:11:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T22:16:00.000000Z",
+    "createdAt": "2026-03-11T22:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00139",
+    "openedAt": "2026-03-11T22:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:16:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T22:21:00.000000Z",
+    "createdAt": "2026-03-11T22:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00140",
+    "openedAt": "2026-03-11T22:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:21:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T22:26:00.000000Z",
+    "createdAt": "2026-03-11T22:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00141",
+    "openedAt": "2026-03-11T22:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:26:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T22:31:00.000000Z",
+    "createdAt": "2026-03-11T22:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00142",
+    "openedAt": "2026-03-11T22:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:31:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T22:36:00.000000Z",
+    "createdAt": "2026-03-11T22:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00143",
+    "openedAt": "2026-03-11T22:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:36:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T22:41:00.000000Z",
+    "createdAt": "2026-03-11T22:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00144",
+    "openedAt": "2026-03-11T22:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:41:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T22:46:00.000000Z",
+    "createdAt": "2026-03-11T22:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00145",
+    "openedAt": "2026-03-11T22:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:46:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T22:51:00.000000Z",
+    "createdAt": "2026-03-11T22:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00146",
+    "openedAt": "2026-03-11T22:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:51:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T22:56:00.000000Z",
+    "createdAt": "2026-03-11T22:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00147",
+    "openedAt": "2026-03-11T22:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T22:56:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T23:01:00.000000Z",
+    "createdAt": "2026-03-11T22:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00148",
+    "openedAt": "2026-03-11T22:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:01:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T23:06:00.000000Z",
+    "createdAt": "2026-03-11T23:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00149",
+    "openedAt": "2026-03-11T23:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:06:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-11T23:11:00.000000Z",
+    "createdAt": "2026-03-11T23:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00150",
+    "openedAt": "2026-03-11T23:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:11:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-11T23:16:00.000000Z",
+    "createdAt": "2026-03-11T23:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00151",
+    "openedAt": "2026-03-11T23:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:16:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-11T23:21:00.000000Z",
+    "createdAt": "2026-03-11T23:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00152",
+    "openedAt": "2026-03-11T23:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:21:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-11T23:26:00.000000Z",
+    "createdAt": "2026-03-11T23:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00153",
+    "openedAt": "2026-03-11T23:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:26:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-11T23:31:00.000000Z",
+    "createdAt": "2026-03-11T23:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00154",
+    "openedAt": "2026-03-11T23:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:31:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-11T23:36:00.000000Z",
+    "createdAt": "2026-03-11T23:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00155",
+    "openedAt": "2026-03-11T23:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:36:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-11T23:41:00.000000Z",
+    "createdAt": "2026-03-11T23:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00156",
+    "openedAt": "2026-03-11T23:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:41:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-11T23:46:00.000000Z",
+    "createdAt": "2026-03-11T23:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00157",
+    "openedAt": "2026-03-11T23:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:46:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-11T23:51:00.000000Z",
+    "createdAt": "2026-03-11T23:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00158",
+    "openedAt": "2026-03-11T23:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:51:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-11T23:56:00.000000Z",
+    "createdAt": "2026-03-11T23:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00159",
+    "openedAt": "2026-03-11T23:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-11T23:56:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-12T00:01:00.000000Z",
+    "createdAt": "2026-03-11T23:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00160",
+    "openedAt": "2026-03-11T23:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:01:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-12T00:06:00.000000Z",
+    "createdAt": "2026-03-12T00:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00161",
+    "openedAt": "2026-03-12T00:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:06:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-12T00:11:00.000000Z",
+    "createdAt": "2026-03-12T00:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00162",
+    "openedAt": "2026-03-12T00:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:11:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-12T00:16:00.000000Z",
+    "createdAt": "2026-03-12T00:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00163",
+    "openedAt": "2026-03-12T00:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:16:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-12T00:21:00.000000Z",
+    "createdAt": "2026-03-12T00:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00164",
+    "openedAt": "2026-03-12T00:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:21:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-12T00:26:00.000000Z",
+    "createdAt": "2026-03-12T00:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00165",
+    "openedAt": "2026-03-12T00:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:26:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-12T00:31:00.000000Z",
+    "createdAt": "2026-03-12T00:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00166",
+    "openedAt": "2026-03-12T00:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:31:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-12T00:36:00.000000Z",
+    "createdAt": "2026-03-12T00:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00167",
+    "openedAt": "2026-03-12T00:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:36:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-12T00:41:00.000000Z",
+    "createdAt": "2026-03-12T00:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00168",
+    "openedAt": "2026-03-12T00:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:41:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-12T00:46:00.000000Z",
+    "createdAt": "2026-03-12T00:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00169",
+    "openedAt": "2026-03-12T00:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:46:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-12T00:51:00.000000Z",
+    "createdAt": "2026-03-12T00:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00170",
+    "openedAt": "2026-03-12T00:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:51:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-12T00:56:00.000000Z",
+    "createdAt": "2026-03-12T00:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00171",
+    "openedAt": "2026-03-12T00:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T00:56:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-12T01:01:00.000000Z",
+    "createdAt": "2026-03-12T00:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00172",
+    "openedAt": "2026-03-12T00:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:01:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-12T01:06:00.000000Z",
+    "createdAt": "2026-03-12T01:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00173",
+    "openedAt": "2026-03-12T01:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:06:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-12T01:11:00.000000Z",
+    "createdAt": "2026-03-12T01:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00174",
+    "openedAt": "2026-03-12T01:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:11:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-12T01:16:00.000000Z",
+    "createdAt": "2026-03-12T01:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00175",
+    "openedAt": "2026-03-12T01:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:16:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-12T01:21:00.000000Z",
+    "createdAt": "2026-03-12T01:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00176",
+    "openedAt": "2026-03-12T01:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:21:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-12T01:26:00.000000Z",
+    "createdAt": "2026-03-12T01:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00177",
+    "openedAt": "2026-03-12T01:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:26:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-12T01:31:00.000000Z",
+    "createdAt": "2026-03-12T01:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00178",
+    "openedAt": "2026-03-12T01:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:31:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-12T01:36:00.000000Z",
+    "createdAt": "2026-03-12T01:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00179",
+    "openedAt": "2026-03-12T01:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:36:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-12T01:41:00.000000Z",
+    "createdAt": "2026-03-12T01:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00180",
+    "openedAt": "2026-03-12T01:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:41:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-12T01:46:00.000000Z",
+    "createdAt": "2026-03-12T01:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00181",
+    "openedAt": "2026-03-12T01:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:46:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-12T01:51:00.000000Z",
+    "createdAt": "2026-03-12T01:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00182",
+    "openedAt": "2026-03-12T01:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:51:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-12T01:56:00.000000Z",
+    "createdAt": "2026-03-12T01:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00183",
+    "openedAt": "2026-03-12T01:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T01:56:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-12T02:01:00.000000Z",
+    "createdAt": "2026-03-12T01:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00184",
+    "openedAt": "2026-03-12T01:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:01:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-12T02:06:00.000000Z",
+    "createdAt": "2026-03-12T02:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00185",
+    "openedAt": "2026-03-12T02:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:06:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-12T02:11:00.000000Z",
+    "createdAt": "2026-03-12T02:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00186",
+    "openedAt": "2026-03-12T02:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:11:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-12T02:16:00.000000Z",
+    "createdAt": "2026-03-12T02:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00187",
+    "openedAt": "2026-03-12T02:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:16:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-12T02:21:00.000000Z",
+    "createdAt": "2026-03-12T02:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00188",
+    "openedAt": "2026-03-12T02:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:21:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-12T02:26:00.000000Z",
+    "createdAt": "2026-03-12T02:22:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00189",
+    "openedAt": "2026-03-12T02:21:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:26:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-12T02:31:00.000000Z",
+    "createdAt": "2026-03-12T02:27:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00190",
+    "openedAt": "2026-03-12T02:26:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:31:00.000000Z"
+  },
+  {
+    "assignedToId": "dfde0a2d-7339-548f-94fa-e3d352e78083",
+    "closedAt": "2026-03-12T02:36:00.000000Z",
+    "createdAt": "2026-03-12T02:32:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00191",
+    "openedAt": "2026-03-12T02:31:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:36:00.000000Z"
+  },
+  {
+    "assignedToId": "f2db8bbf-e64b-5453-ac10-8de2d6f11363",
+    "closedAt": "2026-03-12T02:41:00.000000Z",
+    "createdAt": "2026-03-12T02:37:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00192",
+    "openedAt": "2026-03-12T02:36:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:41:00.000000Z"
+  },
+  {
+    "assignedToId": "345d8095-aaf1-5a31-94a2-c0fea0abebe9",
+    "closedAt": "2026-03-12T02:46:00.000000Z",
+    "createdAt": "2026-03-12T02:42:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00193",
+    "openedAt": "2026-03-12T02:41:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:46:00.000000Z"
+  },
+  {
+    "assignedToId": "a7c419cc-ee65-5667-9cd1-06a10e28937f",
+    "closedAt": "2026-03-12T02:51:00.000000Z",
+    "createdAt": "2026-03-12T02:47:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00194",
+    "openedAt": "2026-03-12T02:46:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:51:00.000000Z"
+  },
+  {
+    "assignedToId": "b3975344-9b33-50da-b6d3-0c0d798e347c",
+    "closedAt": "2026-03-12T02:56:00.000000Z",
+    "createdAt": "2026-03-12T02:52:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00195",
+    "openedAt": "2026-03-12T02:51:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T02:56:00.000000Z"
+  },
+  {
+    "assignedToId": "6dede4e1-cbb4-5376-831c-c9e731f0f899",
+    "closedAt": "2026-03-12T03:01:00.000000Z",
+    "createdAt": "2026-03-12T02:57:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00196",
+    "openedAt": "2026-03-12T02:56:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T03:01:00.000000Z"
+  },
+  {
+    "assignedToId": "46b720a3-fdd7-5ad3-b841-0f4ac9792734",
+    "closedAt": "2026-03-12T03:06:00.000000Z",
+    "createdAt": "2026-03-12T03:02:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00197",
+    "openedAt": "2026-03-12T03:01:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T03:06:00.000000Z"
+  },
+  {
+    "assignedToId": "9b7922f7-4975-5ef1-aca2-20dc25f0a29d",
+    "closedAt": "2026-03-12T03:11:00.000000Z",
+    "createdAt": "2026-03-12T03:07:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00198",
+    "openedAt": "2026-03-12T03:06:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T03:11:00.000000Z"
+  },
+  {
+    "assignedToId": "7a663df0-1bc8-57c6-a2a7-231c5970049d",
+    "closedAt": "2026-03-12T03:16:00.000000Z",
+    "createdAt": "2026-03-12T03:12:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00199",
+    "openedAt": "2026-03-12T03:11:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T03:16:00.000000Z"
+  },
+  {
+    "assignedToId": "1d3605e1-0b8a-53ef-914d-4b879022e62e",
+    "closedAt": "2026-03-12T03:21:00.000000Z",
+    "createdAt": "2026-03-12T03:17:00.000000Z",
+    "disposition": "FURTHER_INVESTIGATION",
+    "id": "CASE-00200",
+    "openedAt": "2026-03-12T03:16:00.000000Z",
+    "status": "CLOSED",
+    "updatedAt": "2026-03-12T03:21:00.000000Z"
+  }
+]

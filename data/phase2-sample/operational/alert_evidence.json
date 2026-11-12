@@ -1,0 +1,902 @@
+[
+  {
+    "alertId": "ALT-000001",
+    "createdAt": "2026-03-11T10:42:00.000000Z",
+    "description": "Transaction evidence for transaction velocity spike.",
+    "evidenceType": "TRANSACTION",
+    "id": "906a31ac-6c96-556a-adba-8d949023cf48",
+    "sourceId": "TXN-00000001",
+    "value": "{\"ruleCode\": \"R001\", \"scenario\": \"velocity_spike\"}"
+  },
+  {
+    "alertId": "ALT-000002",
+    "createdAt": "2026-03-11T10:43:00.000000Z",
+    "description": "Transaction evidence for new device plus unusual activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "4e70bcd4-91c7-558d-85aa-a0580e05f19d",
+    "sourceId": "TXN-00000002",
+    "value": "{\"ruleCode\": \"R002\", \"scenario\": \"new_device\"}"
+  },
+  {
+    "alertId": "ALT-000003",
+    "createdAt": "2026-03-11T10:44:00.000000Z",
+    "description": "Transaction evidence for circular transfer detection.",
+    "evidenceType": "TRANSACTION",
+    "id": "da8fd41f-6437-5840-807f-bf2870eb0880",
+    "sourceId": "TXN-00000003",
+    "value": "{\"ruleCode\": \"R003\", \"scenario\": \"circular_transfer\"}"
+  },
+  {
+    "alertId": "ALT-000004",
+    "createdAt": "2026-03-11T10:45:00.000000Z",
+    "description": "Transaction evidence for dormant account reactivation.",
+    "evidenceType": "TRANSACTION",
+    "id": "42991017-aa64-5845-9767-19403bdc0d0b",
+    "sourceId": "TXN-00000004",
+    "value": "{\"ruleCode\": \"R004\", \"scenario\": \"dormant_reactivation\"}"
+  },
+  {
+    "alertId": "ALT-000005",
+    "createdAt": "2026-03-11T10:46:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "cb7f7923-2ba8-5bb3-a998-88a2fd76ef73",
+    "sourceId": "TXN-00000005",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"unusual_merchant\"}"
+  },
+  {
+    "alertId": "ALT-000006",
+    "createdAt": "2026-03-11T10:47:00.000000Z",
+    "description": "Transaction evidence for repeated suspicious attempts.",
+    "evidenceType": "TRANSACTION",
+    "id": "02f595b5-f560-5606-8fc9-f674e2859d41",
+    "sourceId": "TXN-00000006",
+    "value": "{\"ruleCode\": \"R009\", \"scenario\": \"repeated_attempts\"}"
+  },
+  {
+    "alertId": "ALT-000007",
+    "createdAt": "2026-03-11T10:48:00.000000Z",
+    "description": "Transaction evidence for transaction on closed account.",
+    "evidenceType": "TRANSACTION",
+    "id": "2961a784-0f84-5df1-a0f2-febf890e982a",
+    "sourceId": "TXN-00000007",
+    "value": "{\"ruleCode\": \"R005\", \"scenario\": \"closed_account_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000008",
+    "createdAt": "2026-03-11T10:49:00.000000Z",
+    "description": "Transaction evidence for negative balance without overdraft.",
+    "evidenceType": "TRANSACTION",
+    "id": "7bdfa459-77f2-5da7-ad6a-fb7aabb5d347",
+    "sourceId": "TXN-00000008",
+    "value": "{\"ruleCode\": \"R006\", \"scenario\": \"negative_balance_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000009",
+    "createdAt": "2026-03-11T10:50:00.000000Z",
+    "description": "Transaction evidence for transfer reconciliation mismatch.",
+    "evidenceType": "TRANSACTION",
+    "id": "f2ecf605-85a7-58a3-9d48-14aff9343422",
+    "sourceId": "TXN-00000009",
+    "value": "{\"ruleCode\": \"R007\", \"scenario\": \"transfer_reconciliation_anomaly\"}"
+  },
+  {
+    "alertId": "ALT-000010",
+    "createdAt": "2026-03-11T10:51:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "aea5ba08-5656-5d56-8a88-4d7967d087c5",
+    "sourceId": "TXN-00000010",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"legitimate_high_value\"}"
+  },
+  {
+    "alertId": "ALT-000011",
+    "createdAt": "2026-03-11T10:52:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "81e37fbf-7453-53af-b697-4887dc65b28d",
+    "sourceId": "TXN-00000011",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"benign_unusual\"}"
+  },
+  {
+    "alertId": "ALT-000012",
+    "createdAt": "2026-03-11T10:53:00.000000Z",
+    "description": "Transaction evidence for transaction velocity spike.",
+    "evidenceType": "TRANSACTION",
+    "id": "9e98f96e-7eaa-597d-9d40-fae1dc0e51e4",
+    "sourceId": "TXN-00000012",
+    "value": "{\"ruleCode\": \"R001\", \"scenario\": \"velocity_spike\"}"
+  },
+  {
+    "alertId": "ALT-000013",
+    "createdAt": "2026-03-11T10:54:00.000000Z",
+    "description": "Transaction evidence for new device plus unusual activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "b2acb79a-3e01-5b40-94fc-fe6c4cd85efa",
+    "sourceId": "TXN-00000013",
+    "value": "{\"ruleCode\": \"R002\", \"scenario\": \"new_device\"}"
+  },
+  {
+    "alertId": "ALT-000014",
+    "createdAt": "2026-03-11T10:55:00.000000Z",
+    "description": "Transaction evidence for circular transfer detection.",
+    "evidenceType": "TRANSACTION",
+    "id": "aec62b24-cca1-51d6-ab9c-934deac54f29",
+    "sourceId": "TXN-00000014",
+    "value": "{\"ruleCode\": \"R003\", \"scenario\": \"circular_transfer\"}"
+  },
+  {
+    "alertId": "ALT-000015",
+    "createdAt": "2026-03-11T10:56:00.000000Z",
+    "description": "Transaction evidence for dormant account reactivation.",
+    "evidenceType": "TRANSACTION",
+    "id": "ac3e4e63-8c0c-5032-ae2d-d40b8deb6de2",
+    "sourceId": "TXN-00000015",
+    "value": "{\"ruleCode\": \"R004\", \"scenario\": \"dormant_reactivation\"}"
+  },
+  {
+    "alertId": "ALT-000016",
+    "createdAt": "2026-03-11T10:57:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "1299ade5-f144-5a71-842e-92ce03b44240",
+    "sourceId": "TXN-00000016",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"unusual_merchant\"}"
+  },
+  {
+    "alertId": "ALT-000017",
+    "createdAt": "2026-03-11T10:58:00.000000Z",
+    "description": "Transaction evidence for repeated suspicious attempts.",
+    "evidenceType": "TRANSACTION",
+    "id": "34fa1e3c-6c70-5e01-842c-73606e0b6d12",
+    "sourceId": "TXN-00000017",
+    "value": "{\"ruleCode\": \"R009\", \"scenario\": \"repeated_attempts\"}"
+  },
+  {
+    "alertId": "ALT-000018",
+    "createdAt": "2026-03-11T10:59:00.000000Z",
+    "description": "Transaction evidence for transaction on closed account.",
+    "evidenceType": "TRANSACTION",
+    "id": "4df815bf-1a37-50f1-9b44-ac155cbc4d56",
+    "sourceId": "TXN-00000018",
+    "value": "{\"ruleCode\": \"R005\", \"scenario\": \"closed_account_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000019",
+    "createdAt": "2026-03-11T11:00:00.000000Z",
+    "description": "Transaction evidence for negative balance without overdraft.",
+    "evidenceType": "TRANSACTION",
+    "id": "7b17f0ba-31e9-50d4-85be-b54f8f46f344",
+    "sourceId": "TXN-00000019",
+    "value": "{\"ruleCode\": \"R006\", \"scenario\": \"negative_balance_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000020",
+    "createdAt": "2026-03-11T11:01:00.000000Z",
+    "description": "Transaction evidence for transfer reconciliation mismatch.",
+    "evidenceType": "TRANSACTION",
+    "id": "77a9de1c-0052-5966-86b0-80bf2699457a",
+    "sourceId": "TXN-00000020",
+    "value": "{\"ruleCode\": \"R007\", \"scenario\": \"transfer_reconciliation_anomaly\"}"
+  },
+  {
+    "alertId": "ALT-000021",
+    "createdAt": "2026-03-11T11:02:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "3ee6111a-d395-5b65-9adf-d04c7381639b",
+    "sourceId": "TXN-00000021",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"legitimate_high_value\"}"
+  },
+  {
+    "alertId": "ALT-000022",
+    "createdAt": "2026-03-11T11:03:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "7dbde24e-dbc0-583b-8ce4-c451fafb35dd",
+    "sourceId": "TXN-00000022",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"benign_unusual\"}"
+  },
+  {
+    "alertId": "ALT-000023",
+    "createdAt": "2026-03-11T11:04:00.000000Z",
+    "description": "Transaction evidence for transaction velocity spike.",
+    "evidenceType": "TRANSACTION",
+    "id": "262aaf12-0afb-5fb9-8fea-663e83255ccc",
+    "sourceId": "TXN-00000023",
+    "value": "{\"ruleCode\": \"R001\", \"scenario\": \"velocity_spike\"}"
+  },
+  {
+    "alertId": "ALT-000024",
+    "createdAt": "2026-03-11T11:05:00.000000Z",
+    "description": "Transaction evidence for new device plus unusual activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "fcc1f545-0261-5b39-9a4c-50c21e993b2f",
+    "sourceId": "TXN-00000024",
+    "value": "{\"ruleCode\": \"R002\", \"scenario\": \"new_device\"}"
+  },
+  {
+    "alertId": "ALT-000025",
+    "createdAt": "2026-03-11T11:06:00.000000Z",
+    "description": "Transaction evidence for circular transfer detection.",
+    "evidenceType": "TRANSACTION",
+    "id": "21e8481e-f447-5860-966f-3776bde94d6a",
+    "sourceId": "TXN-00000025",
+    "value": "{\"ruleCode\": \"R003\", \"scenario\": \"circular_transfer\"}"
+  },
+  {
+    "alertId": "ALT-000026",
+    "createdAt": "2026-03-11T11:07:00.000000Z",
+    "description": "Transaction evidence for dormant account reactivation.",
+    "evidenceType": "TRANSACTION",
+    "id": "209cf5da-1300-5975-a107-761c5fd94175",
+    "sourceId": "TXN-00000026",
+    "value": "{\"ruleCode\": \"R004\", \"scenario\": \"dormant_reactivation\"}"
+  },
+  {
+    "alertId": "ALT-000027",
+    "createdAt": "2026-03-11T11:08:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "5ff62bee-b489-5779-8968-116c5c6c3435",
+    "sourceId": "TXN-00000027",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"unusual_merchant\"}"
+  },
+  {
+    "alertId": "ALT-000028",
+    "createdAt": "2026-03-11T11:09:00.000000Z",
+    "description": "Transaction evidence for repeated suspicious attempts.",
+    "evidenceType": "TRANSACTION",
+    "id": "0369222f-bc2d-5d3b-beed-109fcf3fd088",
+    "sourceId": "TXN-00000028",
+    "value": "{\"ruleCode\": \"R009\", \"scenario\": \"repeated_attempts\"}"
+  },
+  {
+    "alertId": "ALT-000029",
+    "createdAt": "2026-03-11T11:10:00.000000Z",
+    "description": "Transaction evidence for transaction on closed account.",
+    "evidenceType": "TRANSACTION",
+    "id": "bf23c28f-f719-5fad-841b-cca04cf57159",
+    "sourceId": "TXN-00000029",
+    "value": "{\"ruleCode\": \"R005\", \"scenario\": \"closed_account_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000030",
+    "createdAt": "2026-03-11T11:11:00.000000Z",
+    "description": "Transaction evidence for negative balance without overdraft.",
+    "evidenceType": "TRANSACTION",
+    "id": "dab33432-8e18-5227-9e5b-50bebc06de7a",
+    "sourceId": "TXN-00000030",
+    "value": "{\"ruleCode\": \"R006\", \"scenario\": \"negative_balance_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000031",
+    "createdAt": "2026-03-11T11:12:00.000000Z",
+    "description": "Transaction evidence for transfer reconciliation mismatch.",
+    "evidenceType": "TRANSACTION",
+    "id": "0827dbc1-3f6a-567a-aef4-4d5f8a0f5d49",
+    "sourceId": "TXN-00000031",
+    "value": "{\"ruleCode\": \"R007\", \"scenario\": \"transfer_reconciliation_anomaly\"}"
+  },
+  {
+    "alertId": "ALT-000032",
+    "createdAt": "2026-03-11T11:13:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "4d63e85b-c375-50d2-8db1-45eabb573563",
+    "sourceId": "TXN-00000032",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"legitimate_high_value\"}"
+  },
+  {
+    "alertId": "ALT-000033",
+    "createdAt": "2026-03-11T11:14:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "931e0d32-3d52-5232-b167-ac3bde44027e",
+    "sourceId": "TXN-00000033",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"benign_unusual\"}"
+  },
+  {
+    "alertId": "ALT-000034",
+    "createdAt": "2026-03-11T11:15:00.000000Z",
+    "description": "Transaction evidence for transaction velocity spike.",
+    "evidenceType": "TRANSACTION",
+    "id": "7f83fec3-12cc-5350-a541-0392743de7f6",
+    "sourceId": "TXN-00000034",
+    "value": "{\"ruleCode\": \"R001\", \"scenario\": \"velocity_spike\"}"
+  },
+  {
+    "alertId": "ALT-000035",
+    "createdAt": "2026-03-11T11:16:00.000000Z",
+    "description": "Transaction evidence for new device plus unusual activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "0b02004e-40a7-57a2-a605-49549937d0f3",
+    "sourceId": "TXN-00000035",
+    "value": "{\"ruleCode\": \"R002\", \"scenario\": \"new_device\"}"
+  },
+  {
+    "alertId": "ALT-000036",
+    "createdAt": "2026-03-11T11:17:00.000000Z",
+    "description": "Transaction evidence for circular transfer detection.",
+    "evidenceType": "TRANSACTION",
+    "id": "2886a031-0f6c-52dd-8439-f5f129dfb1b8",
+    "sourceId": "TXN-00000036",
+    "value": "{\"ruleCode\": \"R003\", \"scenario\": \"circular_transfer\"}"
+  },
+  {
+    "alertId": "ALT-000037",
+    "createdAt": "2026-03-11T11:18:00.000000Z",
+    "description": "Transaction evidence for dormant account reactivation.",
+    "evidenceType": "TRANSACTION",
+    "id": "ef1b9cc1-6c4a-5c8c-a630-6a18a6e0462f",
+    "sourceId": "TXN-00000037",
+    "value": "{\"ruleCode\": \"R004\", \"scenario\": \"dormant_reactivation\"}"
+  },
+  {
+    "alertId": "ALT-000038",
+    "createdAt": "2026-03-11T11:19:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "8f3a6333-2bee-5ca0-8efa-a2285094610f",
+    "sourceId": "TXN-00000038",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"unusual_merchant\"}"
+  },
+  {
+    "alertId": "ALT-000039",
+    "createdAt": "2026-03-11T11:20:00.000000Z",
+    "description": "Transaction evidence for repeated suspicious attempts.",
+    "evidenceType": "TRANSACTION",
+    "id": "d231d429-c47b-5d86-89a2-a542e2358128",
+    "sourceId": "TXN-00000039",
+    "value": "{\"ruleCode\": \"R009\", \"scenario\": \"repeated_attempts\"}"
+  },
+  {
+    "alertId": "ALT-000040",
+    "createdAt": "2026-03-11T11:21:00.000000Z",
+    "description": "Transaction evidence for transaction on closed account.",
+    "evidenceType": "TRANSACTION",
+    "id": "5d437091-ef36-5f37-b38d-17085abc940f",
+    "sourceId": "TXN-00000040",
+    "value": "{\"ruleCode\": \"R005\", \"scenario\": \"closed_account_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000041",
+    "createdAt": "2026-03-11T11:22:00.000000Z",
+    "description": "Transaction evidence for negative balance without overdraft.",
+    "evidenceType": "TRANSACTION",
+    "id": "d53e8722-b2b7-5b73-831a-a9ab391c8c31",
+    "sourceId": "TXN-00000041",
+    "value": "{\"ruleCode\": \"R006\", \"scenario\": \"negative_balance_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000042",
+    "createdAt": "2026-03-11T11:23:00.000000Z",
+    "description": "Transaction evidence for transfer reconciliation mismatch.",
+    "evidenceType": "TRANSACTION",
+    "id": "2e9893bf-2ee9-522b-8e8f-8dc906b9b299",
+    "sourceId": "TXN-00000042",
+    "value": "{\"ruleCode\": \"R007\", \"scenario\": \"transfer_reconciliation_anomaly\"}"
+  },
+  {
+    "alertId": "ALT-000043",
+    "createdAt": "2026-03-11T11:24:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "f56c0a9d-9d16-5e2e-aa49-2575504dfbf6",
+    "sourceId": "TXN-00000043",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"legitimate_high_value\"}"
+  },
+  {
+    "alertId": "ALT-000044",
+    "createdAt": "2026-03-11T11:25:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "21418bb2-a07d-50f7-a359-7d2e144db9c2",
+    "sourceId": "TXN-00000044",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"benign_unusual\"}"
+  },
+  {
+    "alertId": "ALT-000045",
+    "createdAt": "2026-03-11T11:26:00.000000Z",
+    "description": "Transaction evidence for transaction velocity spike.",
+    "evidenceType": "TRANSACTION",
+    "id": "e9867b68-a698-58a0-9d9c-411e33e2a01e",
+    "sourceId": "TXN-00000045",
+    "value": "{\"ruleCode\": \"R001\", \"scenario\": \"velocity_spike\"}"
+  },
+  {
+    "alertId": "ALT-000046",
+    "createdAt": "2026-03-11T11:27:00.000000Z",
+    "description": "Transaction evidence for new device plus unusual activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "afdebda1-3486-5c26-9c12-91f840dd5db4",
+    "sourceId": "TXN-00000046",
+    "value": "{\"ruleCode\": \"R002\", \"scenario\": \"new_device\"}"
+  },
+  {
+    "alertId": "ALT-000047",
+    "createdAt": "2026-03-11T11:28:00.000000Z",
+    "description": "Transaction evidence for circular transfer detection.",
+    "evidenceType": "TRANSACTION",
+    "id": "393d26cd-1c21-5f15-af54-ea110ce28ced",
+    "sourceId": "TXN-00000047",
+    "value": "{\"ruleCode\": \"R003\", \"scenario\": \"circular_transfer\"}"
+  },
+  {
+    "alertId": "ALT-000048",
+    "createdAt": "2026-03-11T11:29:00.000000Z",
+    "description": "Transaction evidence for dormant account reactivation.",
+    "evidenceType": "TRANSACTION",
+    "id": "e9cd18c1-b767-5958-b49f-b648f5cc2e5a",
+    "sourceId": "TXN-00000048",
+    "value": "{\"ruleCode\": \"R004\", \"scenario\": \"dormant_reactivation\"}"
+  },
+  {
+    "alertId": "ALT-000049",
+    "createdAt": "2026-03-11T11:30:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "9b016ed7-3da3-5d69-8195-735a31369ce5",
+    "sourceId": "TXN-00000049",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"unusual_merchant\"}"
+  },
+  {
+    "alertId": "ALT-000050",
+    "createdAt": "2026-03-11T11:31:00.000000Z",
+    "description": "Transaction evidence for repeated suspicious attempts.",
+    "evidenceType": "TRANSACTION",
+    "id": "8d329dd5-187f-5667-8dd1-a2c663455c6c",
+    "sourceId": "TXN-00000050",
+    "value": "{\"ruleCode\": \"R009\", \"scenario\": \"repeated_attempts\"}"
+  },
+  {
+    "alertId": "ALT-000051",
+    "createdAt": "2026-03-11T11:32:00.000000Z",
+    "description": "Transaction evidence for transaction on closed account.",
+    "evidenceType": "TRANSACTION",
+    "id": "ff5fd19c-51ab-5445-aa26-3170959ab86a",
+    "sourceId": "TXN-00000051",
+    "value": "{\"ruleCode\": \"R005\", \"scenario\": \"closed_account_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000052",
+    "createdAt": "2026-03-11T11:33:00.000000Z",
+    "description": "Transaction evidence for negative balance without overdraft.",
+    "evidenceType": "TRANSACTION",
+    "id": "4e1d362e-65c8-5ea2-bc24-7345563e68ef",
+    "sourceId": "TXN-00000052",
+    "value": "{\"ruleCode\": \"R006\", \"scenario\": \"negative_balance_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000053",
+    "createdAt": "2026-03-11T11:34:00.000000Z",
+    "description": "Transaction evidence for transfer reconciliation mismatch.",
+    "evidenceType": "TRANSACTION",
+    "id": "d2e22163-1544-523d-870e-c64bcff5adc8",
+    "sourceId": "TXN-00000053",
+    "value": "{\"ruleCode\": \"R007\", \"scenario\": \"transfer_reconciliation_anomaly\"}"
+  },
+  {
+    "alertId": "ALT-000054",
+    "createdAt": "2026-03-11T11:35:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "7a636d26-da4f-5a4c-8625-f698b82e99d0",
+    "sourceId": "TXN-00000054",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"legitimate_high_value\"}"
+  },
+  {
+    "alertId": "ALT-000055",
+    "createdAt": "2026-03-11T11:36:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "8d1ca434-623f-5d16-8a5a-9f488f0493ab",
+    "sourceId": "TXN-00000055",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"benign_unusual\"}"
+  },
+  {
+    "alertId": "ALT-000056",
+    "createdAt": "2026-03-11T11:37:00.000000Z",
+    "description": "Transaction evidence for transaction velocity spike.",
+    "evidenceType": "TRANSACTION",
+    "id": "26d9622e-9dd1-5e22-92ee-9013bf50a434",
+    "sourceId": "TXN-00000056",
+    "value": "{\"ruleCode\": \"R001\", \"scenario\": \"velocity_spike\"}"
+  },
+  {
+    "alertId": "ALT-000057",
+    "createdAt": "2026-03-11T11:38:00.000000Z",
+    "description": "Transaction evidence for new device plus unusual activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "47bca8eb-c963-5884-ab45-cd06fb9e7a5b",
+    "sourceId": "TXN-00000057",
+    "value": "{\"ruleCode\": \"R002\", \"scenario\": \"new_device\"}"
+  },
+  {
+    "alertId": "ALT-000058",
+    "createdAt": "2026-03-11T11:39:00.000000Z",
+    "description": "Transaction evidence for circular transfer detection.",
+    "evidenceType": "TRANSACTION",
+    "id": "7b8df219-ce42-5627-ba95-b83b969c1913",
+    "sourceId": "TXN-00000058",
+    "value": "{\"ruleCode\": \"R003\", \"scenario\": \"circular_transfer\"}"
+  },
+  {
+    "alertId": "ALT-000059",
+    "createdAt": "2026-03-11T11:40:00.000000Z",
+    "description": "Transaction evidence for dormant account reactivation.",
+    "evidenceType": "TRANSACTION",
+    "id": "f0a8362a-ec33-5335-87b3-3b7f0a02a25d",
+    "sourceId": "TXN-00000059",
+    "value": "{\"ruleCode\": \"R004\", \"scenario\": \"dormant_reactivation\"}"
+  },
+  {
+    "alertId": "ALT-000060",
+    "createdAt": "2026-03-11T11:41:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "41d8197d-edc9-54b0-8500-d270949a96c5",
+    "sourceId": "TXN-00000060",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"unusual_merchant\"}"
+  },
+  {
+    "alertId": "ALT-000061",
+    "createdAt": "2026-03-11T11:42:00.000000Z",
+    "description": "Transaction evidence for repeated suspicious attempts.",
+    "evidenceType": "TRANSACTION",
+    "id": "f677a0c7-8d30-5b03-af28-e335d514f85b",
+    "sourceId": "TXN-00000061",
+    "value": "{\"ruleCode\": \"R009\", \"scenario\": \"repeated_attempts\"}"
+  },
+  {
+    "alertId": "ALT-000062",
+    "createdAt": "2026-03-11T11:43:00.000000Z",
+    "description": "Transaction evidence for transaction on closed account.",
+    "evidenceType": "TRANSACTION",
+    "id": "396680f8-5cc5-5f3c-8115-fe167926b39f",
+    "sourceId": "TXN-00000062",
+    "value": "{\"ruleCode\": \"R005\", \"scenario\": \"closed_account_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000063",
+    "createdAt": "2026-03-11T11:44:00.000000Z",
+    "description": "Transaction evidence for negative balance without overdraft.",
+    "evidenceType": "TRANSACTION",
+    "id": "dbb61241-ae4d-5de6-bf82-b105b6112bcb",
+    "sourceId": "TXN-00000063",
+    "value": "{\"ruleCode\": \"R006\", \"scenario\": \"negative_balance_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000064",
+    "createdAt": "2026-03-11T11:45:00.000000Z",
+    "description": "Transaction evidence for transfer reconciliation mismatch.",
+    "evidenceType": "TRANSACTION",
+    "id": "9dabbedc-b6bd-5a8f-8040-0cd2ef8a2baa",
+    "sourceId": "TXN-00000064",
+    "value": "{\"ruleCode\": \"R007\", \"scenario\": \"transfer_reconciliation_anomaly\"}"
+  },
+  {
+    "alertId": "ALT-000065",
+    "createdAt": "2026-03-11T11:46:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "1e2af2cb-6fea-5872-aa42-7424e1e58b29",
+    "sourceId": "TXN-00000065",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"legitimate_high_value\"}"
+  },
+  {
+    "alertId": "ALT-000066",
+    "createdAt": "2026-03-11T11:47:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "81a41460-8885-5ba6-9201-bb461cf545af",
+    "sourceId": "TXN-00000066",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"benign_unusual\"}"
+  },
+  {
+    "alertId": "ALT-000067",
+    "createdAt": "2026-03-11T11:48:00.000000Z",
+    "description": "Transaction evidence for transaction velocity spike.",
+    "evidenceType": "TRANSACTION",
+    "id": "f3b54d40-213b-5ae2-ba24-dc40867d4304",
+    "sourceId": "TXN-00000067",
+    "value": "{\"ruleCode\": \"R001\", \"scenario\": \"velocity_spike\"}"
+  },
+  {
+    "alertId": "ALT-000068",
+    "createdAt": "2026-03-11T11:49:00.000000Z",
+    "description": "Transaction evidence for new device plus unusual activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "315d91dc-cb9e-5724-8446-e0427a413746",
+    "sourceId": "TXN-00000068",
+    "value": "{\"ruleCode\": \"R002\", \"scenario\": \"new_device\"}"
+  },
+  {
+    "alertId": "ALT-000069",
+    "createdAt": "2026-03-11T11:50:00.000000Z",
+    "description": "Transaction evidence for circular transfer detection.",
+    "evidenceType": "TRANSACTION",
+    "id": "2392f492-aec9-5759-b0f3-767e7eb9ec48",
+    "sourceId": "TXN-00000069",
+    "value": "{\"ruleCode\": \"R003\", \"scenario\": \"circular_transfer\"}"
+  },
+  {
+    "alertId": "ALT-000070",
+    "createdAt": "2026-03-11T11:51:00.000000Z",
+    "description": "Transaction evidence for dormant account reactivation.",
+    "evidenceType": "TRANSACTION",
+    "id": "279cc879-dc58-5a9e-b180-1a992693c14b",
+    "sourceId": "TXN-00000070",
+    "value": "{\"ruleCode\": \"R004\", \"scenario\": \"dormant_reactivation\"}"
+  },
+  {
+    "alertId": "ALT-000071",
+    "createdAt": "2026-03-11T11:52:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "f9778618-22f7-5450-a7f6-59c589182b9a",
+    "sourceId": "TXN-00000071",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"unusual_merchant\"}"
+  },
+  {
+    "alertId": "ALT-000072",
+    "createdAt": "2026-03-11T11:53:00.000000Z",
+    "description": "Transaction evidence for repeated suspicious attempts.",
+    "evidenceType": "TRANSACTION",
+    "id": "0cedb08a-3fdd-528d-a615-81f4a3c1d645",
+    "sourceId": "TXN-00000072",
+    "value": "{\"ruleCode\": \"R009\", \"scenario\": \"repeated_attempts\"}"
+  },
+  {
+    "alertId": "ALT-000073",
+    "createdAt": "2026-03-11T11:54:00.000000Z",
+    "description": "Transaction evidence for transaction on closed account.",
+    "evidenceType": "TRANSACTION",
+    "id": "df19f64f-30c8-5e67-be7c-5b7ea548d07f",
+    "sourceId": "TXN-00000073",
+    "value": "{\"ruleCode\": \"R005\", \"scenario\": \"closed_account_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000074",
+    "createdAt": "2026-03-11T11:55:00.000000Z",
+    "description": "Transaction evidence for negative balance without overdraft.",
+    "evidenceType": "TRANSACTION",
+    "id": "2afdd175-49bd-5b6c-9edd-773640250c30",
+    "sourceId": "TXN-00000074",
+    "value": "{\"ruleCode\": \"R006\", \"scenario\": \"negative_balance_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000075",
+    "createdAt": "2026-03-11T11:56:00.000000Z",
+    "description": "Transaction evidence for transfer reconciliation mismatch.",
+    "evidenceType": "TRANSACTION",
+    "id": "59119aea-c90f-54f6-ac71-e3679510a749",
+    "sourceId": "TXN-00000075",
+    "value": "{\"ruleCode\": \"R007\", \"scenario\": \"transfer_reconciliation_anomaly\"}"
+  },
+  {
+    "alertId": "ALT-000076",
+    "createdAt": "2026-03-11T11:57:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "990c7904-7221-52b9-b28f-0a0557ee283b",
+    "sourceId": "TXN-00000076",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"legitimate_high_value\"}"
+  },
+  {
+    "alertId": "ALT-000077",
+    "createdAt": "2026-03-11T11:58:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "8a115d77-3f7f-5093-b668-80a0aa05fe27",
+    "sourceId": "TXN-00000077",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"benign_unusual\"}"
+  },
+  {
+    "alertId": "ALT-000078",
+    "createdAt": "2026-03-11T11:59:00.000000Z",
+    "description": "Transaction evidence for transaction velocity spike.",
+    "evidenceType": "TRANSACTION",
+    "id": "c3d2a6ca-bb9e-51b8-85f7-dd54e16405a6",
+    "sourceId": "TXN-00000078",
+    "value": "{\"ruleCode\": \"R001\", \"scenario\": \"velocity_spike\"}"
+  },
+  {
+    "alertId": "ALT-000079",
+    "createdAt": "2026-03-11T12:00:00.000000Z",
+    "description": "Transaction evidence for new device plus unusual activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "88fcf644-131f-578a-b65e-023c169781ff",
+    "sourceId": "TXN-00000079",
+    "value": "{\"ruleCode\": \"R002\", \"scenario\": \"new_device\"}"
+  },
+  {
+    "alertId": "ALT-000080",
+    "createdAt": "2026-03-11T12:01:00.000000Z",
+    "description": "Transaction evidence for circular transfer detection.",
+    "evidenceType": "TRANSACTION",
+    "id": "f3e4aba5-22bc-5536-8106-bef5a17cba7d",
+    "sourceId": "TXN-00000080",
+    "value": "{\"ruleCode\": \"R003\", \"scenario\": \"circular_transfer\"}"
+  },
+  {
+    "alertId": "ALT-000081",
+    "createdAt": "2026-03-11T12:02:00.000000Z",
+    "description": "Transaction evidence for dormant account reactivation.",
+    "evidenceType": "TRANSACTION",
+    "id": "0ad4e0f9-f573-538d-993e-58537d9518d6",
+    "sourceId": "TXN-00000081",
+    "value": "{\"ruleCode\": \"R004\", \"scenario\": \"dormant_reactivation\"}"
+  },
+  {
+    "alertId": "ALT-000082",
+    "createdAt": "2026-03-11T12:03:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "110a6626-b141-58e8-b7cd-3ac8aae535c9",
+    "sourceId": "TXN-00000082",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"unusual_merchant\"}"
+  },
+  {
+    "alertId": "ALT-000083",
+    "createdAt": "2026-03-11T12:04:00.000000Z",
+    "description": "Transaction evidence for repeated suspicious attempts.",
+    "evidenceType": "TRANSACTION",
+    "id": "5ddcd506-80d8-5c72-9340-d634cd1a4e2e",
+    "sourceId": "TXN-00000083",
+    "value": "{\"ruleCode\": \"R009\", \"scenario\": \"repeated_attempts\"}"
+  },
+  {
+    "alertId": "ALT-000084",
+    "createdAt": "2026-03-11T12:05:00.000000Z",
+    "description": "Transaction evidence for transaction on closed account.",
+    "evidenceType": "TRANSACTION",
+    "id": "db4992f9-d6d6-564c-8e9b-98a87b04cede",
+    "sourceId": "TXN-00000084",
+    "value": "{\"ruleCode\": \"R005\", \"scenario\": \"closed_account_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000085",
+    "createdAt": "2026-03-11T12:06:00.000000Z",
+    "description": "Transaction evidence for negative balance without overdraft.",
+    "evidenceType": "TRANSACTION",
+    "id": "91dfe0bc-2f5c-5101-b736-35600a51d197",
+    "sourceId": "TXN-00000085",
+    "value": "{\"ruleCode\": \"R006\", \"scenario\": \"negative_balance_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000086",
+    "createdAt": "2026-03-11T12:07:00.000000Z",
+    "description": "Transaction evidence for transfer reconciliation mismatch.",
+    "evidenceType": "TRANSACTION",
+    "id": "5ba2cf03-7e82-5d70-84e4-3da8d403d1ba",
+    "sourceId": "TXN-00000086",
+    "value": "{\"ruleCode\": \"R007\", \"scenario\": \"transfer_reconciliation_anomaly\"}"
+  },
+  {
+    "alertId": "ALT-000087",
+    "createdAt": "2026-03-11T12:08:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "ad074534-2f94-519a-ad8c-f7af57fe50cc",
+    "sourceId": "TXN-00000087",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"legitimate_high_value\"}"
+  },
+  {
+    "alertId": "ALT-000088",
+    "createdAt": "2026-03-11T12:09:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "09bf0c4e-6527-5c1d-9d95-29dbaff1d71b",
+    "sourceId": "TXN-00000088",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"benign_unusual\"}"
+  },
+  {
+    "alertId": "ALT-000089",
+    "createdAt": "2026-03-11T12:10:00.000000Z",
+    "description": "Transaction evidence for transaction velocity spike.",
+    "evidenceType": "TRANSACTION",
+    "id": "e337ddf2-6ef1-54cf-b291-91d7931e899d",
+    "sourceId": "TXN-00000089",
+    "value": "{\"ruleCode\": \"R001\", \"scenario\": \"velocity_spike\"}"
+  },
+  {
+    "alertId": "ALT-000090",
+    "createdAt": "2026-03-11T12:11:00.000000Z",
+    "description": "Transaction evidence for new device plus unusual activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "14700717-ab02-5861-bc4e-9c7bea44c130",
+    "sourceId": "TXN-00000090",
+    "value": "{\"ruleCode\": \"R002\", \"scenario\": \"new_device\"}"
+  },
+  {
+    "alertId": "ALT-000091",
+    "createdAt": "2026-03-11T12:12:00.000000Z",
+    "description": "Transaction evidence for circular transfer detection.",
+    "evidenceType": "TRANSACTION",
+    "id": "f152ddfd-11ef-5482-b0a0-fb3cd9fc4adf",
+    "sourceId": "TXN-00000091",
+    "value": "{\"ruleCode\": \"R003\", \"scenario\": \"circular_transfer\"}"
+  },
+  {
+    "alertId": "ALT-000092",
+    "createdAt": "2026-03-11T12:13:00.000000Z",
+    "description": "Transaction evidence for dormant account reactivation.",
+    "evidenceType": "TRANSACTION",
+    "id": "4e75d9f9-ac64-58f7-9844-cdd28a0549e2",
+    "sourceId": "TXN-00000092",
+    "value": "{\"ruleCode\": \"R004\", \"scenario\": \"dormant_reactivation\"}"
+  },
+  {
+    "alertId": "ALT-000093",
+    "createdAt": "2026-03-11T12:14:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "3ee23fa1-653d-559e-9f6f-2131807a9ab4",
+    "sourceId": "TXN-00000093",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"unusual_merchant\"}"
+  },
+  {
+    "alertId": "ALT-000094",
+    "createdAt": "2026-03-11T12:15:00.000000Z",
+    "description": "Transaction evidence for repeated suspicious attempts.",
+    "evidenceType": "TRANSACTION",
+    "id": "b336d9da-df87-5a2c-847b-b3453da33735",
+    "sourceId": "TXN-00000094",
+    "value": "{\"ruleCode\": \"R009\", \"scenario\": \"repeated_attempts\"}"
+  },
+  {
+    "alertId": "ALT-000095",
+    "createdAt": "2026-03-11T12:16:00.000000Z",
+    "description": "Transaction evidence for transaction on closed account.",
+    "evidenceType": "TRANSACTION",
+    "id": "1d8a7bb6-1808-549b-880d-8d8426255f9c",
+    "sourceId": "TXN-00000095",
+    "value": "{\"ruleCode\": \"R005\", \"scenario\": \"closed_account_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000096",
+    "createdAt": "2026-03-11T12:17:00.000000Z",
+    "description": "Transaction evidence for negative balance without overdraft.",
+    "evidenceType": "TRANSACTION",
+    "id": "d8b5cd9a-a331-53cb-ad6a-b3b4b3fba1d8",
+    "sourceId": "TXN-00000096",
+    "value": "{\"ruleCode\": \"R006\", \"scenario\": \"negative_balance_attempt\"}"
+  },
+  {
+    "alertId": "ALT-000097",
+    "createdAt": "2026-03-11T12:18:00.000000Z",
+    "description": "Transaction evidence for transfer reconciliation mismatch.",
+    "evidenceType": "TRANSACTION",
+    "id": "6958d01b-4e44-53c1-9a48-cf3a143be4b8",
+    "sourceId": "TXN-00000097",
+    "value": "{\"ruleCode\": \"R007\", \"scenario\": \"transfer_reconciliation_anomaly\"}"
+  },
+  {
+    "alertId": "ALT-000098",
+    "createdAt": "2026-03-11T12:19:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "680c5d85-bd54-5e02-87ca-71d7d64e5dc4",
+    "sourceId": "TXN-00000098",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"legitimate_high_value\"}"
+  },
+  {
+    "alertId": "ALT-000099",
+    "createdAt": "2026-03-11T12:20:00.000000Z",
+    "description": "Transaction evidence for unusual merchant activity.",
+    "evidenceType": "TRANSACTION",
+    "id": "6ce47ed5-1a14-50b9-88df-840cfa630b85",
+    "sourceId": "TXN-00000099",
+    "value": "{\"ruleCode\": \"R008\", \"scenario\": \"benign_unusual\"}"
+  },
+  {
+    "alertId": "ALT-000100",
+    "createdAt": "2026-03-11T12:21:00.000000Z",
+    "description": "Transaction evidence for transaction velocity spike.",
+    "evidenceType": "TRANSACTION",
+    "id": "e2b7f361-1ce4-5c7a-82ba-f6b9cbb6a90e",
+    "sourceId": "TXN-00000100",
+    "value": "{\"ruleCode\": \"R001\", \"scenario\": \"velocity_spike\"}"
+  }
+]

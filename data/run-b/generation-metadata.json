@@ -1,0 +1,25 @@
+{
+  "seed": 20261022,
+  "manifest": {
+    "customers": {
+      "rows": 25,
+      "sha256": "cb8db20d619b2923ca6b0ac85a06fe367f97a8a3f236a742d8b964d0da344644"
+    },
+    "accounts": {
+      "rows": 25,
+      "sha256": "4f7f342402e704aadc6280276eb9bb5cba131ce1090dc87e9a897edd05ed57fd"
+    },
+    "transactions": {
+      "rows": 100,
+      "sha256": "9ebc456499d190f64603b403e9a8adac038a5e2495862e1fe248043476cfe016"
+    },
+    "alerts": {
+      "rows": 4,
+      "sha256": "897d3b542f62237ad88770f0e6be4ab9fb5ca9bf752e3a1a7997536e2f8c1b18"
+    },
+    "ground_truth": {
+      "rows": 100,
+      "sha256": "412ef896da9ec7d249d836cf43069f7a579d256fbcc58de900ac0ab83ea9b942"
+    }
+  }
+}

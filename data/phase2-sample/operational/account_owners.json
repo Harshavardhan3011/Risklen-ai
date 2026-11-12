@@ -1,0 +1,520 @@
+[
+  {
+    "accountId": "ACC-000001",
+    "customerId": "CUS-000001",
+    "effectiveFrom": "2026-01-01T00:02:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000002",
+    "customerId": "CUS-000002",
+    "effectiveFrom": "2026-01-01T00:04:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000003",
+    "customerId": "CUS-000003",
+    "effectiveFrom": "2026-01-01T00:06:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000004",
+    "customerId": "CUS-000004",
+    "effectiveFrom": "2026-01-01T00:08:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000005",
+    "customerId": "CUS-000005",
+    "effectiveFrom": "2026-01-01T00:10:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000006",
+    "customerId": "CUS-000006",
+    "effectiveFrom": "2026-01-01T00:12:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000007",
+    "customerId": "CUS-000007",
+    "effectiveFrom": "2026-01-01T00:14:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000008",
+    "customerId": "CUS-000008",
+    "effectiveFrom": "2026-01-01T00:16:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000009",
+    "customerId": "CUS-000009",
+    "effectiveFrom": "2026-01-01T00:18:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000010",
+    "customerId": "CUS-000010",
+    "effectiveFrom": "2026-01-01T00:20:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000011",
+    "customerId": "CUS-000011",
+    "effectiveFrom": "2026-01-01T00:22:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000012",
+    "customerId": "CUS-000012",
+    "effectiveFrom": "2026-01-01T00:24:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000013",
+    "customerId": "CUS-000013",
+    "effectiveFrom": "2026-01-01T00:26:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000014",
+    "customerId": "CUS-000014",
+    "effectiveFrom": "2026-01-01T00:28:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000015",
+    "customerId": "CUS-000015",
+    "effectiveFrom": "2026-01-01T00:30:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000016",
+    "customerId": "CUS-000016",
+    "effectiveFrom": "2026-01-01T00:32:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000017",
+    "customerId": "CUS-000017",
+    "effectiveFrom": "2026-01-01T00:34:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000017",
+    "customerId": "CUS-000018",
+    "effectiveFrom": "2026-01-01T00:35:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "JOINT"
+  },
+  {
+    "accountId": "ACC-000018",
+    "customerId": "CUS-000018",
+    "effectiveFrom": "2026-01-01T00:36:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000019",
+    "customerId": "CUS-000019",
+    "effectiveFrom": "2026-01-01T00:38:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000020",
+    "customerId": "CUS-000020",
+    "effectiveFrom": "2026-01-01T00:40:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000021",
+    "customerId": "CUS-000021",
+    "effectiveFrom": "2026-01-01T00:42:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000022",
+    "customerId": "CUS-000022",
+    "effectiveFrom": "2026-01-01T00:44:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000023",
+    "customerId": "CUS-000023",
+    "effectiveFrom": "2026-01-01T00:46:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000024",
+    "customerId": "CUS-000024",
+    "effectiveFrom": "2026-01-01T00:48:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000025",
+    "customerId": "CUS-000025",
+    "effectiveFrom": "2026-01-01T00:50:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000026",
+    "customerId": "CUS-000026",
+    "effectiveFrom": "2026-01-01T00:52:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000027",
+    "customerId": "CUS-000027",
+    "effectiveFrom": "2026-01-01T00:54:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000028",
+    "customerId": "CUS-000028",
+    "effectiveFrom": "2026-01-01T00:56:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000029",
+    "customerId": "CUS-000029",
+    "effectiveFrom": "2026-01-01T00:58:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000030",
+    "customerId": "CUS-000030",
+    "effectiveFrom": "2026-01-01T01:00:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000031",
+    "customerId": "CUS-000031",
+    "effectiveFrom": "2026-01-01T01:02:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000032",
+    "customerId": "CUS-000032",
+    "effectiveFrom": "2026-01-01T01:04:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000033",
+    "customerId": "CUS-000033",
+    "effectiveFrom": "2026-01-01T01:06:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000034",
+    "customerId": "CUS-000034",
+    "effectiveFrom": "2026-01-01T01:08:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000034",
+    "customerId": "CUS-000035",
+    "effectiveFrom": "2026-01-01T01:09:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "JOINT"
+  },
+  {
+    "accountId": "ACC-000035",
+    "customerId": "CUS-000035",
+    "effectiveFrom": "2026-01-01T01:10:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000036",
+    "customerId": "CUS-000036",
+    "effectiveFrom": "2026-01-01T01:12:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000037",
+    "customerId": "CUS-000037",
+    "effectiveFrom": "2026-01-01T01:14:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000038",
+    "customerId": "CUS-000038",
+    "effectiveFrom": "2026-01-01T01:16:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000039",
+    "customerId": "CUS-000039",
+    "effectiveFrom": "2026-01-01T01:18:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000040",
+    "customerId": "CUS-000040",
+    "effectiveFrom": "2026-01-01T01:20:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000041",
+    "customerId": "CUS-000041",
+    "effectiveFrom": "2026-01-01T01:22:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000042",
+    "customerId": "CUS-000042",
+    "effectiveFrom": "2026-01-01T01:24:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000043",
+    "customerId": "CUS-000043",
+    "effectiveFrom": "2026-01-01T01:26:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000044",
+    "customerId": "CUS-000044",
+    "effectiveFrom": "2026-01-01T01:28:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000045",
+    "customerId": "CUS-000045",
+    "effectiveFrom": "2026-01-01T01:30:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000046",
+    "customerId": "CUS-000046",
+    "effectiveFrom": "2026-01-01T01:32:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000047",
+    "customerId": "CUS-000047",
+    "effectiveFrom": "2026-01-01T01:34:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000048",
+    "customerId": "CUS-000048",
+    "effectiveFrom": "2026-01-01T01:36:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000049",
+    "customerId": "CUS-000049",
+    "effectiveFrom": "2026-01-01T01:38:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000050",
+    "customerId": "CUS-000050",
+    "effectiveFrom": "2026-01-01T01:40:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000051",
+    "customerId": "CUS-000001",
+    "effectiveFrom": "2026-01-01T01:42:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000051",
+    "customerId": "CUS-000002",
+    "effectiveFrom": "2026-01-01T01:43:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "JOINT"
+  },
+  {
+    "accountId": "ACC-000052",
+    "customerId": "CUS-000002",
+    "effectiveFrom": "2026-01-01T01:44:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000053",
+    "customerId": "CUS-000003",
+    "effectiveFrom": "2026-01-01T01:46:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000054",
+    "customerId": "CUS-000004",
+    "effectiveFrom": "2026-01-01T01:48:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000055",
+    "customerId": "CUS-000005",
+    "effectiveFrom": "2026-01-01T01:50:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000056",
+    "customerId": "CUS-000006",
+    "effectiveFrom": "2026-01-01T01:52:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000057",
+    "customerId": "CUS-000007",
+    "effectiveFrom": "2026-01-01T01:54:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000058",
+    "customerId": "CUS-000008",
+    "effectiveFrom": "2026-01-01T01:56:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000059",
+    "customerId": "CUS-000009",
+    "effectiveFrom": "2026-01-01T01:58:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000060",
+    "customerId": "CUS-000010",
+    "effectiveFrom": "2026-01-01T02:00:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000061",
+    "customerId": "CUS-000011",
+    "effectiveFrom": "2026-01-01T02:02:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000062",
+    "customerId": "CUS-000012",
+    "effectiveFrom": "2026-01-01T02:04:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000063",
+    "customerId": "CUS-000013",
+    "effectiveFrom": "2026-01-01T02:06:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000064",
+    "customerId": "CUS-000014",
+    "effectiveFrom": "2026-01-01T02:08:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000065",
+    "customerId": "CUS-000015",
+    "effectiveFrom": "2026-01-01T02:10:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000066",
+    "customerId": "CUS-000016",
+    "effectiveFrom": "2026-01-01T02:12:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000067",
+    "customerId": "CUS-000017",
+    "effectiveFrom": "2026-01-01T02:14:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000068",
+    "customerId": "CUS-000018",
+    "effectiveFrom": "2026-01-01T02:16:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000068",
+    "customerId": "CUS-000019",
+    "effectiveFrom": "2026-01-01T02:17:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "JOINT"
+  },
+  {
+    "accountId": "ACC-000069",
+    "customerId": "CUS-000019",
+    "effectiveFrom": "2026-01-01T02:18:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  },
+  {
+    "accountId": "ACC-000070",
+    "customerId": "CUS-000020",
+    "effectiveFrom": "2026-01-01T02:20:00.000000Z",
+    "effectiveTo": "",
+    "ownershipType": "PRIMARY"
+  }
+]
