@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Mapping, Sequence, Tuple
 
 from .generate import RULES, TARGETS, risk_band, stable_uuid
+from .import_postgres import OPERATIONAL_ORDER, validate_evaluation_rows, validate_foreign_keys, validate_rows
 
 
 def read_rows(directory: Path, name: str, folder: str = "operational") -> List[dict]:
@@ -119,7 +120,7 @@ def validate_negative_fixture(fixture: Mapping[str, str]) -> str | None:
     return None
 
 
-def evaluate(alerts: Sequence[Mapping[str, str]], ground_truth: Sequence[Mapping[str, str]], transactions: Sequence[Mapping[str, str]], evidence: Sequence[Mapping[str, str]]) -> dict:
+def evaluate(alerts: Sequence[Mapping[str, str]], ground_truth: Sequence[Mapping[str, str]], transactions: Sequence[Mapping[str, str]], evidence: Sequence[Mapping[str, str]], validation_pass_rate: float = 0.0) -> dict:
     truth = {row["transactionId"]: row["isSuspicious"].lower() == "true" for row in ground_truth}
     predicted = {row["transactionId"] for row in alerts}
     actual_positive = {transaction_id for transaction_id, suspicious in truth.items() if suspicious}
@@ -164,7 +165,7 @@ def evaluate(alerts: Sequence[Mapping[str, str]], ground_truth: Sequence[Mapping
         "scenarioDetectionCoverage": scenario_coverage,
         "alertsPer1000Transactions": len(alerts) * 1000 / len(transactions) if transactions else 0.0,
         "evidenceCompleteness": len({row["alertId"] for row in evidence}) / len(alerts) if alerts else 1.0,
-        "validationPassRate": 1.0,
+        "validationPassRate": validation_pass_rate,
     }
 
 
@@ -195,6 +196,11 @@ def validate(directory: Path) -> dict:
     }
     for name, count in expected.items():
         add(f"{name}_count", len(data[name]) == count, f"expected {count}, actual {len(data[name])}")
+    schema_errors: List[str] = []
+    for entity in OPERATIONAL_ORDER:
+        validate_rows(entity, data[entity], schema_errors)
+    validate_foreign_keys(data, schema_errors)
+    add("schema_types_enums_and_all_foreign_keys", not schema_errors, json.dumps(schema_errors[:10]))
     for name, key in (
         ("customers", "id"), ("accounts", "id"),
         ("merchants", "id"), ("devices", "id"), ("devices", "fingerprintHash"),
@@ -280,9 +286,24 @@ def validate(directory: Path) -> dict:
     add("alert_evidence_complete", {row["id"] for row in alerts} == {row["alertId"] for row in data["alert_evidence"]})
     leaked = any("scenario" in str(row.get("metadata", "")).lower() or "scenarioCode" in row for name in operational_names for row in data[name])
     add("ground_truth_isolated", all(row.get("labelSource") == "scenario-membership" for row in ground_truth) and not leaked, "Operational rows must not contain scenario labels.")
+    gt_errors: List[str] = []
+    validate_evaluation_rows(ground_truth, gt_errors)
+    add("ground_truth_integrity", not gt_errors and check_references(ground_truth, "transactionId", transaction_ids) and all(not row.get("customerId") or row["customerId"] in customer_ids for row in ground_truth), json.dumps(gt_errors[:10]))
+    transaction_by_id = {row["id"]: row for row in transactions}
+    alerts_match = all(alert["customerId"] == transaction_by_id[alert["transactionId"]]["customerId"] and alert["accountId"] == transaction_by_id[alert["transactionId"]]["accountId"] for alert in alerts)
+    add("alert_matches_triggering_transaction", alerts_match)
+    posted_states = all((row["status"] == "POSTED") == bool(row.get("postedAt")) for row in transactions)
+    add("transaction_posting_timestamps", posted_states)
+    case_map = {row["id"]: row for row in data["cases"]}
+    alert_map = {row["id"]: row for row in alerts}
+    case_alert_times_ok = all(case_map[link["caseId"]]["openedAt"] <= alert_map[link["alertId"]]["detectedAt"] and (not case_map[link["caseId"]].get("closedAt") or case_map[link["caseId"]]["closedAt"] >= alert_map[link["alertId"]]["createdAt"]) for link in data["case_alerts"])
+    add("case_alert_lifecycle_order", case_alert_times_ok)
+    action_times_ok = all(row["createdAt"] >= case_map[row["caseId"]]["openedAt"] for row in data["analyst_actions"])
+    add("analyst_action_lifecycle_order", action_times_ok)
     detected = [validate_negative_fixture(fixture) for fixture in fixtures]
     add("negative_fixtures_rejected", len(detected) == 5 and all(detected) and all(found == fixture["expectedError"] for found, fixture in zip(detected, fixtures)))
-    metrics = evaluate(alerts, ground_truth, transactions, data["alert_evidence"])
+    validation_pass_rate = sum(1 for check in checks if check["passed"]) / len(checks) if checks else 0.0
+    metrics = evaluate(alerts, ground_truth, transactions, data["alert_evidence"], validation_pass_rate)
     report = {
         "passed": all(check["passed"] for check in checks),
         "scale": manifest["scale"],
