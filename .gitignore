@@ -5,3 +5,5 @@ data/generated/
 .env
 *.pyc
 __pycache__/
+frontend/test-results/
+frontend/playwright-report/

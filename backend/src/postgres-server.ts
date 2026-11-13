@@ -207,6 +207,18 @@ export async function createPostgresApp() {
     })]);
     res.json({ data: cases, total, page: params.page, pageSize: params.pageSize });
   });
+  app.get("/api/cases/:id", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (req, res) => {
+    const caseRow = await prisma.case.findUnique({
+      where: { id: String(req.params.id) },
+      include: {
+        assignedTo: { select: { id: true, name: true, email: true } },
+        caseAlerts: { include: { alert: { select: { id: true, priority: true, riskScore: true, status: true, explanation: true, riskRule: { select: { ruleCode: true, name: true } }, evidence: { select: { description: true } } } } } },
+        events: { orderBy: { occurredAt: "asc" }, include: { actor: { select: { name: true } } } },
+      },
+    });
+    if (!caseRow) return res.status(404).json({ error: "Case not found" });
+    return res.json({ case: caseRow });
+  });
   app.post("/api/cases", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (req, res) => {
     const parsed = z.object({ alertIds: z.array(z.string()).min(1), assignedToId: z.string().uuid().optional() }).safeParse(req.body);
     if (!parsed.success) return res.status(400).json({ error: "Invalid case details" });
@@ -334,10 +346,20 @@ export async function createPostgresApp() {
   });
   app.get("/api/transactions", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER", "CUSTOMER"), async (req, res) => {
     const params = pageParams.parse(req.query);
+    const filters = z.object({
+      status: z.enum(["PENDING", "POSTED", "DECLINED", "REVERSED", "FAILED"]).optional(),
+      transactionType: z.enum(["DEBIT", "CREDIT", "TRANSFER", "REVERSAL", "FEE"]).optional(),
+    }).safeParse({ status: req.query.status, transactionType: req.query.transactionType });
+    if (!filters.success) return res.status(400).json({ error: "Invalid transaction filter" });
     const user = res.locals.user as AuthUser;
     const ownCustomerId = user.role === "CUSTOMER" ? await customerIdForUser(user) : null;
     if (user.role === "CUSTOMER" && !ownCustomerId) return res.status(403).json({ error: "Customer profile is not linked" });
-    const where = ownCustomerId ? { customerId: ownCustomerId } : (params.search ? { OR: [{ id: { contains: params.search, mode: "insensitive" as const } }, { customerId: { contains: params.search, mode: "insensitive" as const } }, { accountId: { contains: params.search, mode: "insensitive" as const } }, { reference: { contains: params.search, mode: "insensitive" as const } }] } : {});
+    const where = {
+      ...(ownCustomerId ? { customerId: ownCustomerId } : {}),
+      ...(filters.data.status ? { status: filters.data.status } : {}),
+      ...(filters.data.transactionType ? { transactionType: filters.data.transactionType } : {}),
+      ...(params.search ? { OR: [{ id: { contains: params.search, mode: "insensitive" as const } }, { customerId: { contains: params.search, mode: "insensitive" as const } }, { accountId: { contains: params.search, mode: "insensitive" as const } }, { reference: { contains: params.search, mode: "insensitive" as const } }] } : {}),
+    };
     const [total, data] = await Promise.all([prisma.transaction.count({ where }), prisma.transaction.findMany({ where, orderBy: { occurredAt: "desc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize })]);
     res.json({ data, total, page: params.page, pageSize: params.pageSize });
   });

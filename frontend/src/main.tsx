@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect, useMemo, useState } from "react";
+import React, { Suspense, lazy, useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 import {
@@ -72,7 +72,11 @@ type Overview = {
   volume: number[];
   recentAlerts: AlertRecord[];
 };
-type CaseRecord = { id: string; status: string; disposition?: string | null; assignedTo?: { name: string } | null; caseAlerts?: Array<{ alert: AlertRecord }> };
+type CaseRecord = {
+  id: string; status: string; disposition?: string | null; assignedTo?: { name: string } | null;
+  caseAlerts?: Array<{ alert: AlertRecord & { riskRule?: { name: string; ruleCode: string }; evidence?: Array<{ description: string }> } }>;
+  events?: Array<{ id: string; eventType: string; occurredAt: string; actor?: { name: string } | null; details?: Record<string, unknown> | null }>;
+};
 type PageResponse<T> = { data: T[]; total?: number; page?: number; pageSize?: number };
 
 const navigation = [
@@ -163,19 +167,19 @@ function App() {
         <Route element={<ProtectedRoute token={token} user={user} />}>
           <Route element={<DashboardLayout user={user!} onLogout={logout} />}>
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/alerts" element={<AlertsPage />} />
-            <Route path="/cases" element={<CasesPage />} />
+            <Route path="/dashboard" element={<StaffRoute user={user!}><DashboardPage /></StaffRoute>} />
+            <Route path="/alerts" element={<StaffRoute user={user!}><AlertsPage /></StaffRoute>} />
+            <Route path="/cases" element={<StaffRoute user={user!}><CasesPage /></StaffRoute>} />
             <Route path="/transactions" element={<TransactionsPage />} />
             <Route path="/customers" element={<ResourcePage title="Customer Records" endpoint="/api/customers" columns={["id", "fullName", "email", "countryCode"]} searchable paginated />} />
             <Route path="/accounts" element={<ResourcePage title="Account Monitoring" endpoint="/api/accounts" columns={["id", "accountType", "status", "currency", "currentBalance"]} searchable paginated />} />
-            <Route path="/analytics" element={<AnalyticsPage />} />
-            <Route path="/rules" element={<ResourcePage title="Risk Rules" endpoint="/api/rules" columns={["ruleCode", "version", "name", "severity", "weight", "enabled"]} paginated />} />
-            <Route path="/data-generation" element={<ResourcePage title="Data Processing" endpoint="/api/generation-runs" columns={["id", "seed", "scale", "status", "startedAt", "completedAt"]} paginated />} />
-            <Route path="/validation" element={<ResourcePage title="Validation Results" endpoint="/api/validation" columns={["checkName", "status", "message", "checkedAt"]} paginated />} />
-            <Route path="/audit" element={<AuditPage />} />
+            <Route path="/analytics" element={<StaffRoute user={user!}><AnalyticsPage /></StaffRoute>} />
+            <Route path="/rules" element={<StaffRoute user={user!}><ResourcePage title="Risk Rules" endpoint="/api/rules" columns={["ruleCode", "version", "name", "severity", "weight", "enabled"]} paginated /></StaffRoute>} />
+            <Route path="/data-generation" element={<StaffRoute user={user!}><ResourcePage title="Data Processing" endpoint="/api/generation-runs" columns={["id", "seed", "scale", "status", "startedAt", "completedAt"]} paginated /></StaffRoute>} />
+            <Route path="/validation" element={<StaffRoute user={user!}><ResourcePage title="Validation Results" endpoint="/api/validation" columns={["checkName", "status", "message", "checkedAt"]} paginated /></StaffRoute>} />
+            <Route path="/audit" element={<StaffRoute user={user!}><AuditPage /></StaffRoute>} />
             <Route path="/users" element={user?.role === "ADMIN" ? <ResourcePage title="User Management" endpoint="/api/users" columns={["email", "name", "role", "status"]} paginated /> : <Navigate to="/dashboard" replace />} />
-            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/settings" element={<StaffRoute user={user!}><SettingsPage /></StaffRoute>} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Route>
@@ -193,15 +197,23 @@ function ProtectedRoute({ token, user }: { token: string | null; user: User | nu
   return token && user ? <Outlet /> : <Navigate to="/login" replace state={{ from: location.pathname }} />;
 }
 
+function StaffRoute({ user, children }: { user: User; children: React.ReactNode }) {
+  return user.role === "CUSTOMER" ? <Navigate to="/transactions" replace /> : <>{children}</>;
+}
+
 function DashboardLayout({ user, onLogout }: { user: User; onLogout: () => void }) {
   const location = useLocation();
-  const items = navigation.filter((item) => !item.adminOnly || user.role === "ADMIN");
+  const items = navigation.filter((item) => user.role === "ADMIN"
+    ? true
+    : user.role === "CUSTOMER"
+      ? ["/transactions", "/customers", "/accounts"].includes(item.to)
+      : !item.adminOnly);
   const initials = user.name.trim().split(/\s+/).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
   return <div className="app-shell">
     <aside className="sidebar">
       <Link className="brand" to="/dashboard" aria-label="RiskLens AI dashboard"><span className="brand-mark"><ShieldCheck size={20} /></span><span>RiskLens<strong>AI</strong></span></Link>
       <nav aria-label="Primary navigation">{items.map(({ label, to, icon: Icon }) => <NavLink key={to} to={to} className={({ isActive }) => `nav-link${isActive ? " active" : ""}`} end={to === "/dashboard"} title={label} aria-label={label}><Icon size={17} aria-hidden="true" /><span>{label}</span></NavLink>)}</nav>
-      <button className="sign-out" onClick={onLogout} type="button"><LogOut size={17} aria-hidden="true" /><span>Sign out</span></button>
+    <button className="sign-out" onClick={onLogout} type="button" aria-label="Sign out"><LogOut size={17} aria-hidden="true" /><span>Sign out</span></button>
     </aside>
     <main className="main-content">
       <header className="page-header">
@@ -258,17 +270,25 @@ function DashboardPage() {
 function dayLabel(index: number) { const date = new Date(); date.setDate(date.getDate() - (6 - index)); return date.toLocaleDateString(undefined, { weekday: "short" }); }
 function MetricValue({ label, value }: { label: string; value: number }) { return <div className="quality-item"><strong>{(value * 100).toFixed(1)}%</strong><span>{label}</span></div>; }
 
-function usePagedResource<T>(endpoint: string, options: { searchable?: boolean; paginated?: boolean } = {}) {
+function usePagedResource<T>(endpoint: string, options: { searchable?: boolean; paginated?: boolean; status?: string } = {}) {
   const [rows, setRows] = useState<T[]>([]);
   const [total, setTotal] = useState<number | null>(null);
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
+  const appliedSearch = useRef("");
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [reload, setReload] = useState(0);
   useEffect(() => {
-    const timer = window.setTimeout(() => { setDebouncedSearch(search.trim()); setPage(1); }, options.searchable ? 300 : 0);
+    const normalizedSearch = search.trim();
+    const timer = window.setTimeout(() => {
+      if (appliedSearch.current !== normalizedSearch) {
+        appliedSearch.current = normalizedSearch;
+        setDebouncedSearch(normalizedSearch);
+        setPage(1);
+      }
+    }, options.searchable ? 300 : 0);
     return () => window.clearTimeout(timer);
   }, [search, options.searchable]);
   useEffect(() => {
@@ -278,12 +298,13 @@ function usePagedResource<T>(endpoint: string, options: { searchable?: boolean; 
     const params: Record<string, string | number> = {};
     if (options.paginated) { params.page = page; params.pageSize = PAGE_SIZE; }
     if (options.searchable && debouncedSearch) params.search = debouncedSearch;
+    if (options.status) params.status = options.status;
     getShared<PageResponse<T>>(endpoint, { params, signal: controller.signal })
       .then(({ data }) => { setRows(data.data); setTotal(typeof data.total === "number" ? data.total : null); setError(""); })
       .catch((reason: unknown) => { if (!controller.signal.aborted) setError(`Could not load ${resourceName(endpoint)}.`); })
       .finally(() => { if (!controller.signal.aborted) setLoading(false); });
     return () => controller.abort();
-  }, [endpoint, options.paginated, options.searchable, page, search, debouncedSearch, reload]);
+  }, [endpoint, options.paginated, options.searchable, options.status, page, search, debouncedSearch, reload]);
   return { rows, total, search, setSearch, page, setPage, loading, error, retry: () => setReload((value) => value + 1), refresh: () => setReload((value) => value + 1) };
 }
 
@@ -298,16 +319,51 @@ function CasesPage() {
   const list = usePagedResource<CaseRecord>("/api/cases", { paginated: true });
   const [acting, setActing] = useState("");
   const [actionError, setActionError] = useState("");
-  const perform = async (caseId: string, action: "start" | "close") => {
-    setActing(caseId); setActionError("");
+  const [selected, setSelected] = useState<CaseRecord | null>(null);
+  const [detailLoading, setDetailLoading] = useState(false);
+  const [disposition, setDisposition] = useState("LEGITIMATE");
+  const [comment, setComment] = useState("");
+
+  const openCase = async (caseId: string) => {
+    setSelected({ id: caseId, status: "LOADING" });
+    setDetailLoading(true);
+    setActionError("");
     try {
-      if (action === "start") await api.patch(`/api/cases/${caseId}`, { status: "IN_PROGRESS" });
-      else await api.post(`/api/cases/${caseId}/disposition`, { disposition: "LEGITIMATE" });
-      list.refresh();
-    } catch { setActionError("The case could not be updated. Retry the action."); }
-    finally { setActing(""); }
+      const response = await api.get<{ case: CaseRecord }>("/api/cases/" + caseId);
+      setSelected(response.data.case);
+      setDisposition(response.data.case.disposition ?? "LEGITIMATE");
+      setComment("");
+    } catch {
+      setActionError("Case details could not be loaded. Reopen the case to retry.");
+      setSelected(null);
+    } finally {
+      setDetailLoading(false);
+    }
   };
-  return <section className="panel page-panel" aria-busy={list.loading}><div className="panel-heading list-heading"><div><p className="eyebrow">INVESTIGATION WORKFLOW</p><h2>Case Management</h2></div>{list.loading && list.rows.length > 0 && <span className="muted" role="status">Updating…</span>}</div>{actionError && <ErrorState message={actionError} />}{list.error && <ErrorState message={list.error} onRetry={list.retry} />}{list.loading && !list.rows.length ? <TableSkeleton rows={6} columns={5} /> : list.rows.length ? <div className="table-scroll"><table><thead><tr><th>Case</th><th>Alerts</th><th>Assignee</th><th>Status</th><th>Actions</th></tr></thead><tbody>{list.rows.map((item) => <tr key={item.id}><td><strong>{item.id}</strong></td><td>{item.caseAlerts?.length ?? 0}</td><td>{item.assignedTo?.name ?? "Unassigned"}</td><td><StatusBadge value={item.status} /></td><td>{item.status !== "CLOSED" && <div className="row-actions"><button className="text-link" type="button" disabled={acting === item.id} onClick={() => perform(item.id, "start")}>Start review</button><button className="text-link" type="button" disabled={acting === item.id} onClick={() => perform(item.id, "close")}>Close as legitimate</button></div>}</td></tr>)}</tbody></table></div> : !list.error ? <EmptyState title="No cases to review" detail="Cases will appear here when alerts are grouped for investigation." /> : null}{list.total !== null && <Pagination page={list.page} pageSize={PAGE_SIZE} total={list.total} onPage={list.setPage} />}</section>;
+
+  const perform = async (caseId: string, action: "start" | "disposition") => {
+    setActing(caseId);
+    setActionError("");
+    try {
+      if (action === "start") await api.patch("/api/cases/" + caseId, { status: "IN_PROGRESS" });
+      else await api.post("/api/cases/" + caseId + "/disposition", { disposition, comment: comment.trim() || undefined });
+      list.refresh();
+      if (selected?.id === caseId) await openCase(caseId);
+    } catch {
+      setActionError("The case could not be updated. Retry the action.");
+    } finally {
+      setActing("");
+    }
+  };
+
+  return <section className="panel page-panel" aria-busy={list.loading}>
+    <div className="panel-heading list-heading"><div><p className="eyebrow">INVESTIGATION WORKFLOW</p><h2>Case Management</h2></div>{list.loading && list.rows.length > 0 && <span className="muted" role="status">Updating...</span>}</div>
+    {actionError && !selected && <ErrorState message={actionError} />}
+    {list.error && <ErrorState message={list.error} onRetry={list.retry} />}
+    {list.loading && !list.rows.length ? <TableSkeleton rows={6} columns={5} /> : list.rows.length ? <div className="table-scroll"><table><thead><tr><th>Case</th><th>Alerts</th><th>Assignee</th><th>Status</th><th>Actions</th></tr></thead><tbody>{list.rows.map((item) => <tr key={item.id}><td><strong>{item.id}</strong></td><td>{item.caseAlerts?.length ?? 0}</td><td>{item.assignedTo?.name ?? "Unassigned"}</td><td><StatusBadge value={item.status} /></td><td><div className="row-actions"><button className="text-link" type="button" onClick={() => void openCase(item.id)}>View details</button>{item.status !== "CLOSED" && <button className="text-link" type="button" disabled={acting === item.id} onClick={() => void perform(item.id, "start")}>Start review</button>}</div></td></tr>)}</tbody></table></div> : !list.error ? <EmptyState title="No cases to review" detail="Cases will appear here when alerts are grouped for investigation." /> : null}
+    {list.total !== null && <Pagination page={list.page} pageSize={PAGE_SIZE} total={list.total} onPage={list.setPage} />}
+    {selected && <div className="drawer-backdrop" role="presentation" onClick={(event) => { if (event.target === event.currentTarget) setSelected(null); }}><aside className="drawer" role="dialog" aria-modal="true" aria-labelledby="case-title"><button className="icon-button drawer-close" type="button" aria-label="Close case details" onClick={() => setSelected(null)}><X size={18} /></button><p className="eyebrow">CASE REVIEW</p><h2 id="case-title">{selected.id}</h2>{detailLoading ? <Skeleton className="detail-skeleton" /> : <><dl><dt>Status</dt><dd><StatusBadge value={selected.status} /></dd><dt>Disposition</dt><dd>{selected.disposition ? formatLabel(selected.disposition) : "Not recorded"}</dd><dt>Assignee</dt><dd>{selected.assignedTo?.name ?? "Unassigned"}</dd></dl><h3>Related alerts</h3>{selected.caseAlerts?.map(({ alert }) => <div className="evidence-item" key={alert.id}><strong>{alert.id} - {alert.riskRule?.name ?? "Risk alert"}</strong><p>{alert.explanation}</p>{alert.evidence?.map((item, index) => <small key={item.description + "-" + index}>{item.description}</small>)}</div>)}<h3>Case history</h3>{selected.events?.length ? <ol className="case-history">{selected.events.map((event) => <li key={event.id}><strong>{formatLabel(event.eventType)}</strong><small>{formatDate(event.occurredAt)} - {event.actor?.name ?? "System"}</small>{typeof event.details?.comment === "string" && <p>{event.details.comment}</p>}</li>)}</ol> : <p className="muted">No case events have been recorded.</p>}{selected.status !== "CLOSED" && <div className="drawer-actions"><label>Disposition<select aria-label="Case disposition" value={disposition} onChange={(event) => setDisposition(event.target.value)}><option value="LEGITIMATE">Legitimate</option><option value="FALSE_POSITIVE">False positive</option><option value="CONFIRMED_SUSPICIOUS">Confirmed suspicious</option><option value="FURTHER_INVESTIGATION">Further investigation</option><option value="ESCALATED">Escalated</option></select></label><label>Analyst comment<textarea aria-label="Analyst comment" value={comment} maxLength={2000} onChange={(event) => setComment(event.target.value)} /></label><button className="primary" type="button" disabled={acting === selected.id} onClick={() => void perform(selected.id, "disposition")}>{acting === selected.id ? "Saving..." : "Record disposition"}</button></div>}</>}{actionError && <ErrorState message={actionError} />}</aside></div>}
+  </section>;
 }
 
 function AlertTable({ alerts, compact = false }: { alerts: AlertRecord[]; compact?: boolean }) {
@@ -341,7 +397,8 @@ function AlertTable({ alerts, compact = false }: { alerts: AlertRecord[]; compac
 }
 
 function TransactionsPage() {
-  const list = usePagedResource<Record<string, unknown>>("/api/transactions", { searchable: true, paginated: true });
+  const [statusFilter, setStatusFilter] = useState("");
+  const list = usePagedResource<Record<string, unknown>>("/api/transactions", { searchable: true, paginated: true, status: statusFilter });
   const [assessment, setAssessment] = useState<Record<string, unknown> | null>(null);
   const [assessmentError, setAssessmentError] = useState("");
   const [assessing, setAssessing] = useState("");
@@ -351,7 +408,7 @@ function TransactionsPage() {
     catch { setAssessmentError("Risk assessment could not be completed. Retry the action."); }
     finally { setAssessing(""); }
   };
-  return <section className="panel page-panel" aria-busy={list.loading}><div className="panel-heading list-heading"><div><p className="eyebrow">TRANSACTION MONITORING</p><h2>Transactions</h2></div><SearchInput label="Search transactions" value={list.search} onChange={list.setSearch} placeholder="Transaction, customer, or account" />{list.loading && list.rows.length > 0 && <span className="muted" role="status">Updating…</span>}</div>{assessmentError && <ErrorState message={assessmentError} />} {list.error && <ErrorState message={list.error} onRetry={list.retry} />}{list.loading && !list.rows.length ? <TableSkeleton rows={8} columns={5} /> : list.rows.length ? <div className="table-scroll"><table><thead><tr><th>Transaction</th><th>Type</th><th>Status</th><th>Amount</th><th>Action</th></tr></thead><tbody>{list.rows.map((row) => <tr key={String(row.id)}><td><strong>{String(row.id)}</strong></td><td>{formatCell(row.transactionType)}</td><td><StatusBadge value={String(row.status)} /></td><td>{formatCell(row.amount)} {formatCell(row.currency)}</td><td><button className="text-link" type="button" disabled={assessing === String(row.id)} onClick={() => assess(String(row.id))}>{assessing === String(row.id) ? "Assessing…" : "Assess risk"}</button></td></tr>)}</tbody></table></div> : !list.error ? <EmptyState title="No transactions found" detail="Try another transaction, customer, or account search." /> : null}{list.total !== null && <Pagination page={list.page} pageSize={PAGE_SIZE} total={list.total} onPage={list.setPage} />}{assessment && <div className="assessment-result"><h3>Risk assessment</h3><p>Score: {formatCell(assessment.score)} · Priority: <PriorityBadge value={String(assessment.priority)} /></p><ul>{(assessment.findings as Array<{ ruleCode: string; evidence: string }>).map((finding) => <li key={finding.ruleCode}><strong>{finding.ruleCode}</strong> {finding.evidence}</li>)}</ul></div>}</section>;
+  return <section className="panel page-panel" aria-busy={list.loading}><div className="panel-heading list-heading"><div><p className="eyebrow">TRANSACTION MONITORING</p><h2>Transactions</h2></div><div className="list-controls"><SearchInput label="Search transactions" value={list.search} onChange={list.setSearch} placeholder="Transaction, customer, or account" /><label className="filter-control">Status<select aria-label="Transaction status" value={statusFilter} onChange={(event) => { setStatusFilter(event.target.value); list.setPage(1); }}><option value="">All statuses</option><option value="PENDING">Pending</option><option value="POSTED">Posted</option><option value="DECLINED">Declined</option><option value="REVERSED">Reversed</option><option value="FAILED">Failed</option></select></label></div>{list.loading && list.rows.length > 0 && <span className="muted" role="status">Updating…</span>}</div>{assessmentError && <ErrorState message={assessmentError} />} {list.error && <ErrorState message={list.error} onRetry={list.retry} />}{list.loading && !list.rows.length ? <TableSkeleton rows={8} columns={5} /> : list.rows.length ? <div className="table-scroll"><table><thead><tr><th>Transaction</th><th>Type</th><th>Status</th><th>Amount</th><th>Action</th></tr></thead><tbody>{list.rows.map((row) => <tr key={String(row.id)}><td><strong>{String(row.id)}</strong></td><td>{formatCell(row.transactionType)}</td><td><StatusBadge value={String(row.status)} /></td><td>{formatCell(row.amount)} {formatCell(row.currency)}</td><td><button className="text-link" type="button" disabled={assessing === String(row.id)} onClick={() => assess(String(row.id))}>{assessing === String(row.id) ? "Assessing…" : "Assess risk"}</button></td></tr>)}</tbody></table></div> : !list.error ? <EmptyState title="No transactions found" detail="Try another transaction, customer, or account search." /> : null}{list.total !== null && <Pagination page={list.page} pageSize={PAGE_SIZE} total={list.total} onPage={list.setPage} />}{assessment && <div className="assessment-result"><h3>Risk assessment</h3><p>Score: {formatCell(assessment.score)} · Priority: <PriorityBadge value={String(assessment.priority)} /></p><ul>{(assessment.findings as Array<{ ruleCode: string; evidence: string }>).map((finding) => <li key={finding.ruleCode}><strong>{finding.ruleCode}</strong> {finding.evidence}</li>)}</ul></div>}</section>;
 }
 
 function ResourcePage({ title, endpoint, columns, searchable = false, paginated = false }: { title: string; endpoint: string; columns: string[]; searchable?: boolean; paginated?: boolean }) {
