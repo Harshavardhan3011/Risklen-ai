@@ -1,8 +1,9 @@
 import express from "express";
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 import bcrypt from "bcryptjs";
+import { Prisma } from "@prisma/client";
 import { z } from "zod";
 import { prisma } from "./prisma.js";
 import { authenticatePostgresUser, prismaAuthStore, validatePostgresToken } from "./postgres-auth.js";
@@ -20,6 +21,16 @@ const pageParams = z.object({
 function safeUser(user: { id: string; email: string; name: string; role: string; status: string; authVersion: number }) {
   return { id: user.id, email: user.email, name: user.name, role: user.role, status: user.status, authVersion: user.authVersion };
 }
+
+function recoveryConsumptionId(secret: string): string {
+  const bytes = createHash("sha256").update("risklens-admin-recovery-v1\0").update(secret).digest().subarray(0, 16);
+  bytes[6] = (bytes[6] & 0x0f) | 0x50;
+  bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  const hex = bytes.toString("hex");
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+}
+
+const ADMIN_RECOVERY_REJECTED = Symbol("admin-recovery-rejected");
 
 function scoreBand(score: number): "LOW" | "MEDIUM" | "HIGH" | "CRITICAL" {
   if (score >= 75) return "CRITICAL";
@@ -96,6 +107,8 @@ export async function createPostgresApp() {
   app.use(express.json({ limit: "100kb" }));
   app.use(rateLimit({ windowMs: 60_000, limit: 120 }));
   const authRateLimit = rateLimit({ windowMs: 15 * 60_000, limit: 10, standardHeaders: true, legacyHeaders: false });
+  const adminRecoveryRateLimit = rateLimit({ windowMs: 15 * 60_000, limit: 5, standardHeaders: true, legacyHeaders: false });
+
 
   app.get("/health", async (_req, res) => {
     await prisma.$queryRaw`SELECT 1`;
@@ -142,6 +155,57 @@ export async function createPostgresApp() {
       return res.status(201).json({ user: safeUser(user) });
     } catch (error) {
       if (error instanceof Error && error.message.includes("Unique constraint")) return res.status(409).json({ error: "Account already exists" });
+      throw error;
+    }
+  });
+  app.post("/api/admin/recover", adminRecoveryRateLimit, async (req, res) => {
+    const configuredSecret = process.env.ADMIN_RECOVERY_SECRET;
+    const expiresAtValue = process.env.ADMIN_RECOVERY_EXPIRES_AT;
+    const expiresAt = expiresAtValue && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?Z$/.test(expiresAtValue)
+      ? Date.parse(expiresAtValue)
+      : Number.NaN;
+    if (!configuredSecret || !/^[a-f0-9]{64}$/i.test(configuredSecret) || !Number.isFinite(expiresAt) || expiresAt <= Date.now()) {
+      return res.status(503).json({ error: "Administrator recovery is unavailable" });
+    }
+
+    const parsed = z.object({
+      recoverySecret: z.string().min(1),
+      email: z.string().email(),
+      password: z.string().min(12),
+    }).safeParse(req.body);
+    if (!parsed.success || !validProvisioningPassword(parsed.data.password) || !matchesExternalSecret(parsed.data.recoverySecret, configuredSecret)) {
+      return res.status(401).json({ error: "Recovery request rejected" });
+    }
+
+    const passwordHash = bcrypt.hashSync(parsed.data.password, 12);
+    try {
+      const recoveredUser = await prisma.$transaction(async (tx) => {
+        const user = await tx.user.findUnique({ where: { email: parsed.data.email }, select: { id: true, role: true, status: true } });
+        if (!user || user.role !== "ADMIN" || user.status !== "ACTIVE") throw ADMIN_RECOVERY_REJECTED;
+
+        // The append-only audit row is also the durable one-time consumption marker.
+        // Its deterministic primary key makes simultaneous/replayed uses conflict atomically.
+        await tx.auditEvent.create({
+          data: {
+            id: recoveryConsumptionId(configuredSecret),
+            entityType: "USER",
+            entityId: user.id,
+            eventType: "UPDATED",
+            details: { action: "ADMIN_PASSWORD_RECOVERY", authorization: "ONE_TIME_RECOVERY_SECRET" },
+          },
+        });
+        const updated = await tx.user.updateMany({
+          where: { id: user.id, role: "ADMIN", status: "ACTIVE" },
+          data: { passwordHash, authVersion: { increment: 1 } },
+        });
+        if (updated.count !== 1) throw ADMIN_RECOVERY_REJECTED;
+        return tx.user.findUniqueOrThrow({ where: { id: user.id } });
+      });
+      return res.json({ user: safeUser(recoveredUser) });
+    } catch (error) {
+      if (error === ADMIN_RECOVERY_REJECTED || (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002")) {
+        return res.status(401).json({ error: "Recovery request rejected" });
+      }
       throw error;
     }
   });
