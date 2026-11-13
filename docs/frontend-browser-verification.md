@@ -86,3 +86,9 @@ The test command starts the backend on `127.0.0.1:4000` and Vite on `127.0.0.1:5
 - Python tests: **14 passed**.
 - Browser tests: **1 comprehensive Playwright test passed** (all 14 scenarios above).
 - No migrations were run as part of this sprint; no production database or deployment was changed.
+
+## Remaining limitations
+
+- Transaction filtering currently covers status only; there are no date, amount, or transaction-type controls in the UI.
+- Settings is intentionally read-only and describes deployment-managed configuration; it does not provide configuration editing.
+- Browser results cover the synthetic local dataset and local Chrome runtime. They do not establish production latency or verify a deployed browser environment.
