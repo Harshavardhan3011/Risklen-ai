@@ -2,6 +2,10 @@
 
 RiskLens is a focused, explainable transaction-risk operations prototype. It includes a deterministic synthetic-data pipeline, a rule-based alert model, authenticated analyst APIs, case dispositions with immutable audit events, and a responsive React analyst console.
 
+# Login credentials For Testing
+mail to log: risklens.ai@gmail.com
+password:    Harsha@202630
+
 ## What is implemented
 
 - **Generator:** deterministic Phase 2 exports for 5,000 customers, 7,000 accounts, 500 merchants, 3,000 devices, 100,000 transactions, 1,000 alerts, isolated ground truth, negative fixtures, SQL exports, and checksums.
