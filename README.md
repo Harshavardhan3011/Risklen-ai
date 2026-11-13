@@ -1,6 +1,6 @@
 # RiskLens AI
 
-RiskLens is a focused, explainable transaction-risk operations prototype. It includes a deterministic synthetic-data pipeline, a rule-based alert model, authenticated analyst APIs, case dispositions with immutable audit events, and a responsive React analyst console.
+RiskLens AI is a transaction risk-monitoring and compliance operations application. It includes a deterministic synthetic-data pipeline, transparent rule-based alerts, authenticated APIs, case dispositions with audit history, and an analyst console.
 
 ## What is implemented
 
@@ -16,8 +16,8 @@ RiskLens is a focused, explainable transaction-risk operations prototype. It inc
 npm install
 npm --prefix backend install
 npm --prefix frontend install
-python -m generator.generate --mode sample --seed 42 --output data/phase2-sample
-python -m generator.validate --input data/phase2-sample
+python -m generator.generate --mode sample --seed 20261022 --output data/yottaflex-starter-2026
+python -m generator.validate --input data/yottaflex-starter-2026
 npm run dev
 ```
 
@@ -119,6 +119,13 @@ Historical records in `audit_events`, `account_events`, `alert_events`,
 available for normal event recording; corrections must be represented by a
 new event rather than mutating an existing row.
 
+The dashboard evaluation summary is aggregated in PostgreSQL rather than
+loading ground-truth labels into Node.js. The optional
+[0005 evaluation-metric cache migration](./backend/prisma/migrations/0005_evaluation_metrics_cache/migration.sql)
+adds a revisioned aggregate cache invalidated transactionally when its source
+data changes. It is not applied automatically. Until it is applied through the
+approved database change process, the API computes the exact aggregate live.
+
 ## Phase 2 data generation
 
 The generator is export-only and never opens SQLite or PostgreSQL. It uses a fixed
@@ -127,10 +134,10 @@ Ground truth is written only under `evaluation/`; invalid records are written on
 under `negative-fixtures/`.
 
 ```powershell
-python -m generator.generate --mode sample --seed 42 --output data/phase2-sample
-python -m generator.validate --input data/phase2-sample
-python -m generator.generate --mode full --seed 42 --output data/phase2-full
-python -m generator.validate --input data/phase2-full
+python -m generator.generate --mode sample --seed 20261022 --output data/yottaflex-starter-2026
+python -m generator.validate --input data/yottaflex-starter-2026
+python -m generator.generate --mode full --seed 20261022 --output data/yottaflex-challenge-2026
+python -m generator.validate --input data/yottaflex-challenge-2026
 ```
 
 Each output contains operational CSV/JSON exports, `operational.sql`, an
@@ -139,7 +146,7 @@ validation and evaluation reports, scenario documentation, a data dictionary,
 and per-entity checksums. The full fixed volumes are 5,000 customers, 7,000
 accounts, 500 merchants, 3,000 devices, 100,000 transactions, and 1,000 alerts.
 Run the same command and compare `generation-manifest.json` checksums to verify
-reproducibility. The SQL export is insert-only and is not applied automatically.
+reproducibility. The generator refuses to overwrite a non-empty output directory; use a new path for each run. The SQL export is insert-only and is not applied automatically. The challenge dataset uses seed `20261022` and IDs `CUS-000001`, `ACC-CUS-000001-01`, `TXN-2026-00000001`, `ALT-2026-000001`, and `CASE-2026-000001`. Operational transaction fields omit scenario labels; scenario and ground-truth labels remain in the isolated evaluation export. Human and machine-readable dictionaries and validation evidence are in [docs/](./docs/).
 Circular-transfer groups use deterministic seeded canonical amounts in the
 synthetic $10.00-$25.00 range; both legs and their transactions share the
 same amount and currency, with reciprocal account endpoints.
@@ -215,3 +222,10 @@ were not performed by this implementation sprint. Full CRUD administration,
 advanced case grouping, Swagger, deployment manifests, and real-time rule
 authoring remain outside the current challenge slice. PostgreSQL integration
 tests still require an explicitly configured disposable PostgreSQL instance.
+
+
+### YottaFlex.ai challenge dataset
+
+The challenge-scale export was generated with seed `20261022` at `data/yottaflex-final-2026` and validated without a database connection. It contains 5,000 customers, 7,000 accounts, 100,000 transactions, and 1,000 alerts, plus merchants, devices, KYC, transfers, rules, cases, actions, events, 100,000 separate evaluation labels, and five negative fixtures. Invalid fixtures are stored separately and are not present in operational SQL.
+
+The checked-in `docs/yottaflex-2026-generation-manifest.json`, validation report, evaluation report, import dry-run report, and data dictionary contain checksums and reproducibility evidence. The generated CSV/JSON/SQL files are reproducible using the commands above; their full export is kept out of source control due to size. The SQL export was validated only in dry-run mode and was not executed against any database.

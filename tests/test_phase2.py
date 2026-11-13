@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from generator.generate import TARGETS, build, row_checksum, write
+from generator.generate import TARGETS, build, row_checksum, write, write_sql
 from generator.validate import validate, validate_transfers
 
 
@@ -142,3 +142,43 @@ def test_transfer_validator_rejects_each_invariant():
         failures = validate_transfers(candidate, transactions, accounts)
         assert expected_reason in {failure["reason"] for failure in failures}
 
+
+
+def test_challenge_ids_and_account_customer_references():
+    data = build("sample", 20261022)
+    assert data["customers"][0]["id"] == "CUS-000001"
+    assert data["accounts"][0]["id"] == "ACC-CUS-000001-01"
+    assert data["transactions"][0]["id"] == "TXN-2026-00000001"
+    assert data["alerts"][0]["id"] == "ALT-2026-000001"
+    assert data["cases"][0]["id"] == "CASE-2026-000001"
+    owner = {row["accountId"]: row["customerId"] for row in data["account_owners"] if row["ownershipType"] == "PRIMARY"}
+    assert all(row["customerId"] == owner[row["accountId"]] for row in data["transactions"])
+
+
+def test_operational_features_do_not_contain_evaluation_scenario_labels():
+    data = build("sample", 20261022)
+    assert all("scenarioCode" not in row for name, rows in data.items() if name not in {"ground_truth_labels", "negative_fixtures"} for row in rows)
+    assert all('"scenario"' not in row.get("metadata", "") for row in data["transactions"])
+    assert all("scenario" not in row["explanation"].lower() for row in data["alerts"])
+
+
+def test_writer_refuses_to_overwrite_nonempty_output(tmp_path: Path):
+    marker = tmp_path / "preserve.txt"
+    marker.write_text("user data")
+    try:
+        write(tmp_path, build("sample", 42), 42, "sample", 0.1)
+    except FileExistsError:
+        pass
+    else:
+        raise AssertionError("generator must refuse a non-empty output directory")
+    assert marker.read_text() == "user data"
+
+
+def test_sql_writer_uses_bounded_multivalue_batches_and_escapes_literals(tmp_path: Path):
+    path = tmp_path / "seed.sql"
+    rows = [{"id": str(index), "fullName": "O'Reilly"} for index in range(1001)]
+    statement_count = write_sql(path, {"customers": rows})
+    sql = path.read_text()
+    assert statement_count == 3
+    assert sql.count('INSERT INTO "customers"') == 3
+    assert "O''Reilly" in sql

@@ -1,0 +1,77 @@
+{
+  "accuracy": 0.99819,
+  "alertsPer1000Transactions": 10.0,
+  "evaluationUnit": "transaction: an alert is a positive prediction when its transactionId matches a ground-truth transaction.",
+  "evidenceCompleteness": 1.0,
+  "f1": 0.9004947773501923,
+  "falseNegatives": 0,
+  "falsePositiveRate": 0.001824946310281203,
+  "falsePositives": 181,
+  "matchingMethod": "Exact transaction ID matching; multiple alerts for one transaction count once.",
+  "precision": 0.819,
+  "recall": 1.0,
+  "ruleMetrics": {
+    "R001": {
+      "alerts": 91,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "R002": {
+      "alerts": 91,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "R003": {
+      "alerts": 91,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "R004": {
+      "alerts": 91,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "R005": {
+      "alerts": 91,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "R006": {
+      "alerts": 91,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "R007": {
+      "alerts": 91,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "R008": {
+      "alerts": 272,
+      "precision": 0.33455882352941174,
+      "recall": 1.0
+    },
+    "R009": {
+      "alerts": 91,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "scenarioDetectionCoverage": {
+    "benign_unusual": 1.0,
+    "circular_transfer": 1.0,
+    "closed_account_attempt": 1.0,
+    "dormant_reactivation": 1.0,
+    "legitimate_high_value": 1.0,
+    "negative_balance_attempt": 1.0,
+    "new_device": 1.0,
+    "normal": 1.0,
+    "repeated_attempts": 1.0,
+    "transfer_reconciliation_anomaly": 1.0,
+    "unusual_merchant": 1.0,
+    "velocity_spike": 1.0
+  },
+  "trueNegatives": 99000,
+  "truePositives": 819,
+  "validationPassRate": 1.0
+}

@@ -10,7 +10,6 @@ import csv
 import hashlib
 import json
 import os
-import shutil
 import time
 import uuid
 from datetime import datetime, timedelta, timezone
@@ -69,6 +68,7 @@ SUSPICIOUS_SCENARIOS = {
 
 REFERENCE_TIME = datetime(2026, 1, 1, tzinfo=timezone.utc)
 NAMESPACE = uuid.UUID("79b6ad47-bb34-4d7f-8bf5-ef6a1cb4e1f1")
+SQL_BATCH_SIZE = 500
 SQL_COLUMNS = {
     "users": ("id", "email", "name", "role", "passwordHash", "status", "createdAt", "updatedAt"),
     "customers": ("id", "fullName", "email", "phone", "countryCode", "dateOfBirth", "createdAt", "updatedAt"),
@@ -193,10 +193,6 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
                 "dateOfBirth": f"{1970 + index % 35:04d}-{index % 12 + 1:02d}-{index % 27 + 1:02d}",
                 "createdAt": timestamp(index),
                 "updatedAt": timestamp(index),
-                "customerStatus": "ACTIVE" if index % 29 else "REVIEW",
-                "riskClassification": ("LOW", "MEDIUM", "HIGH")[index % 3],
-                "address": f"{index} Synthetic Avenue",
-                "scenarioProfile": "standard",
             }
         )
 
@@ -209,7 +205,6 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
             "riskRating": ("LOW", "MEDIUM", "HIGH")[index % 3],
             "createdAt": timestamp(index),
             "updatedAt": timestamp(index),
-            "status": "ACTIVE",
         }
         for index in range(1, counts["merchants"] + 1)
     ]
@@ -220,7 +215,6 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
             "fingerprintHash": hashlib.sha256(f"{seed}:device:{index}".encode()).hexdigest(),
             "deviceType": ("MOBILE", "DESKTOP", "TABLET")[index % 3],
             "operatingSystem": ("iOS", "Android", "Windows", "macOS")[index % 4],
-            "browser": ("Chrome", "Safari", "Firefox")[index % 3],
             "status": "ACTIVE" if index % 37 else "BLOCKED",
             "firstSeenAt": timestamp(index * 3),
             "lastSeenAt": timestamp(index * 3 + 10),
@@ -233,14 +227,15 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
     accounts = []
     ownership = []
     kyc = []
+    customer_account_numbers: Dict[str, int] = {}
     for index in range(1, counts["accounts"] + 1):
         customer = customers[(index - 1) % len(customers)]
+        customer_account_numbers[customer["id"]] = customer_account_numbers.get(customer["id"], 0) + 1
         status = "CLOSED" if index % 71 == 0 else ("DORMANT" if index % 23 == 0 else "OPEN")
         opening = timestamp(index * 2)
         accounts.append(
             {
-                "id": f"ACC-{index:06d}",
-                "accountNumber": f"900000{index:07d}",
+                "id": f"ACC-{customer['id']}-{customer_account_numbers[customer['id']]:02d}",
                 "accountType": ("CHECKING", "SAVINGS", "WALLET", "BUSINESS")[index % 4],
                 "status": status,
                 "currency": "USD",
@@ -329,11 +324,13 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
         canonical_transfer_amounts[first_index] = canonical_amount
         canonical_transfer_amounts[circular_indices[pair_index + 1]] = canonical_amount
 
+    account_customer_by_id = {row["accountId"]: row["customerId"] for row in ownership if row["ownershipType"] == "PRIMARY"}
+    customer_by_id = {row["id"]: row for row in customers}
     transactions = []
     account_balances = {account["id"]: Decimal("1000.00") + Decimal((i % 500) * 10) for i, account in enumerate(accounts)}
     for index in range(1, counts["transactions"] + 1):
         account = accounts[(index - 1) % len(accounts)]
-        customer = customers[(index - 1) % len(customers)]
+        customer = customer_by_id[account_customer_by_id[account["id"]]]
         scenario = scenario_for(index)
         amount = canonical_transfer_amounts.get(
             index, Decimal(25 + ((seed + index * 17) % 475))
@@ -366,7 +363,7 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
         device = devices[(index * 13) % len(devices)] if index % 8 else None
         transactions.append(
             {
-                "id": f"TXN-{index:08d}",
+                "id": f"TXN-2026-{index:08d}",
                 "customerId": customer["id"],
                 "accountId": account["id"],
                 "merchantId": merchant["id"] if merchant else "",
@@ -380,9 +377,8 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
                 "occurredAt": timestamp(100000 + index),
                 "postedAt": "" if status == "DECLINED" else timestamp(100000 + index + 1),
                 "reference": f"REF-{seed}-{index:08d}",
-                "metadata": json.dumps({"scenario": scenario}, sort_keys=True),
+                "metadata": json.dumps({}, sort_keys=True),
                 "createdAt": timestamp(100000 + index + 1),
-                "scenarioCode": scenario,
             }
         )
 
@@ -435,11 +431,11 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
     alerts = []
     evidence = []
     for index, transaction in enumerate(transactions[: counts["alerts"]], 1):
-        scenario = transaction["scenarioCode"]
+        scenario = scenario_for(index)
         rule_code = rule_for_scenario.get(scenario, "R008")
         rule = RULES[rule_code]
         score = min(100, rule[1])
-        alert_id = f"ALT-{index:06d}"
+        alert_id = f"ALT-2026-{index:06d}"
         alerts.append(
             {
                 "id": alert_id,
@@ -447,16 +443,14 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
                 "accountId": transaction["accountId"],
                 "transactionId": transaction["id"],
                 "riskRuleId": stable_uuid("rule", int(rule_code[1:])),
-                "ruleCode": rule_code,
                 "evaluationVersion": "phase2-v1",
                 "riskScore": str(score),
                 "priority": risk_band(score),
                 "status": "OPEN",
-                "explanation": f"{rule[0]} detected for {transaction['id']} in scenario {scenario}.",
+                "explanation": f"{rule[0]} detected for {transaction['id']}.",
                 "detectedAt": transaction["occurredAt"],
                 "closedAt": "",
                 "createdAt": transaction["createdAt"],
-                "scenarioCode": scenario,
             }
         )
         evidence.append(
@@ -466,7 +460,7 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
                 "evidenceType": "TRANSACTION",
                 "sourceId": transaction["id"],
                 "description": f"Transaction evidence for {rule[0].lower()}.",
-                "value": json.dumps({"scenario": scenario, "ruleCode": rule_code}, sort_keys=True),
+                "value": json.dumps({"ruleCode": rule_code}, sort_keys=True),
                 "createdAt": transaction["createdAt"],
             }
         )
@@ -479,7 +473,7 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
         grouped = alerts[(index - 1) * 5 : index * 5]
         if not grouped:
             break
-        case_id = f"CASE-{index:05d}"
+        case_id = f"CASE-2026-{index:06d}"
         cases.append(
             {
                 "id": case_id,
@@ -541,7 +535,7 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
             "eventType": "CREATED",
             "occurredAt": alert["createdAt"],
             "actorId": "",
-            "details": json.dumps({"scenario": alert["scenarioCode"]}, sort_keys=True),
+            "details": json.dumps({}, sort_keys=True),
         }
         for index, alert in enumerate(alerts, 1)
     ]
@@ -573,12 +567,12 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
             "id": stable_uuid("ground-truth", index),
             "transactionId": transaction["id"],
             "customerId": transaction["customerId"],
-            "scenarioCode": transaction["scenarioCode"],
-            "isSuspicious": "true" if transaction["scenarioCode"] in SUSPICIOUS_SCENARIOS else "false",
-            "expectedRuleCode": rule_for_scenario.get(transaction["scenarioCode"], ""),
+            "scenarioCode": scenario_for(index),
+            "isSuspicious": "true" if scenario_for(index) in SUSPICIOUS_SCENARIOS else "false",
+            "expectedRuleCode": rule_for_scenario.get(scenario_for(index), ""),
             "labelSource": "scenario-membership",
             "createdAt": transaction["createdAt"],
-            "metadata": json.dumps({"reason": transaction["scenarioCode"]}, sort_keys=True),
+            "metadata": json.dumps({"reason": scenario_for(index)}, sort_keys=True),
         }
         for index, transaction in enumerate(transactions, 1)
     ]
@@ -642,6 +636,99 @@ def build(scale: str, seed: int) -> Dict[str, List[dict]]:
     }
 
 
+
+ENTITY_DESCRIPTIONS = {
+    "customers": "Synthetic customer identity and contact record.",
+    "accounts": "Financial account and current reconciled balance.",
+    "merchants": "Merchant accepting customer transactions.",
+    "devices": "Pseudonymous device fingerprint and lifecycle state.",
+    "transactions": "Posted or declined debit/credit ledger movement.",
+    "transfer_links": "Bridge connecting paired internal transfer legs.",
+    "risk_rules": "Versioned deterministic transaction risk rule.",
+    "alerts": "Rule-triggered transaction review record.",
+    "cases": "Analyst review work item grouping related alerts.",
+    "analyst_actions": "Immutable analyst workflow action record.",
+}
+FIELD_TYPES = {
+    "email": "string", "phone": "string", "countryCode": "char(2)", "dateOfBirth": "date",
+    "createdAt": "timestamptz", "updatedAt": "timestamptz", "openedAt": "timestamptz", "closedAt": "timestamptz",
+    "effectiveFrom": "timestamptz", "effectiveTo": "timestamptz", "firstSeenAt": "timestamptz", "lastSeenAt": "timestamptz",
+    "occurredAt": "timestamptz", "postedAt": "timestamptz", "detectedAt": "timestamptz", "verifiedAt": "timestamptz", "expiresAt": "timestamptz",
+    "amount": "decimal(18,2)", "currentBalance": "decimal(18,2)", "balanceBefore": "decimal(18,2)", "balanceAfter": "decimal(18,2)", "overdraftLimit": "decimal(18,2)",
+    "riskScore": "integer", "weight": "integer", "version": "integer", "enabled": "boolean", "metadata": "json", "configuration": "json", "value": "json",
+}
+OPTIONAL_FIELDS = {"email", "phone", "dateOfBirth", "riskRating", "operatingSystem", "merchantId", "deviceId", "postedAt", "reference", "metadata", "legReference", "threshold", "effectiveTo", "closedAt", "assignedToId", "disposition", "fromStatus", "toStatus", "comment"}
+ENUMS = {
+    ("accounts", "accountType"): ["CHECKING", "SAVINGS", "WALLET", "BUSINESS"],
+    ("accounts", "status"): ["OPEN", "DORMANT", "CLOSED", "SUSPENDED"],
+    ("merchants", "riskRating"): ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+    ("devices", "deviceType"): ["MOBILE", "DESKTOP", "TABLET"],
+    ("devices", "status"): ["ACTIVE", "BLOCKED", "RETIRED"],
+    ("transactions", "transactionType"): ["DEBIT", "CREDIT", "TRANSFER", "REVERSAL", "FEE"],
+    ("transactions", "status"): ["PENDING", "POSTED", "DECLINED", "REVERSED", "FAILED"],
+    ("transfer_links", "transferType"): ["INTERNAL", "EXTERNAL", "INTERNATIONAL"],
+    ("risk_rules", "severity"): ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+    ("alerts", "priority"): ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+    ("alerts", "status"): ["OPEN", "INVESTIGATING", "ESCALATED", "CLOSED", "FALSE_POSITIVE"],
+    ("cases", "status"): ["NEW", "IN_PROGRESS", "PENDING_REVIEW", "ESCALATED", "CLOSED"],
+    ("cases", "disposition"): ["CONFIRMED_SUSPICIOUS", "LEGITIMATE", "FALSE_POSITIVE", "FURTHER_INVESTIGATION", "ESCALATED"],
+    ("analyst_actions", "actionType"): ["ASSIGNED", "UNASSIGNED", "COMMENTED", "EVIDENCE_ADDED", "DISPOSITION_RECORDED", "STATUS_CHANGED", "ESCALATED"],
+}
+RELATIONSHIPS = {
+    ("transactions", "customerId"): "customers.id", ("transactions", "accountId"): "accounts.id",
+    ("transactions", "merchantId"): "merchants.id (optional)", ("transactions", "deviceId"): "devices.id (optional)",
+    ("transfer_links", "transactionId"): "transactions.id", ("transfer_links", "sourceAccountId"): "accounts.id",
+    ("transfer_links", "targetAccountId"): "accounts.id", ("alerts", "customerId"): "customers.id",
+    ("alerts", "accountId"): "accounts.id", ("alerts", "transactionId"): "transactions.id", ("alerts", "riskRuleId"): "risk_rules.id",
+    ("cases", "assignedToId"): "users.id (optional)", ("analyst_actions", "caseId"): "cases.id", ("analyst_actions", "actorId"): "users.id",
+}
+FIELD_DESCRIPTIONS = {
+    "id": "Immutable primary identifier.", "fullName": "Synthetic customer legal-name field.", "countryCode": "Two-character ISO 3166-1 alpha-2 country code.",
+    "dateOfBirth": "Synthetic customer birth date.", "accountType": "Financial product type.", "currentBalance": "Balance after the final generated ledger movement.",
+    "overdraftLimit": "Maximum permitted negative balance; generated accounts use zero.", "openedAt": "Account lifecycle start timestamp.",
+    "closedAt": "Account closure timestamp when status is CLOSED.", "fingerprintHash": "SHA-256 pseudonymous device fingerprint; not a raw device identifier.",
+    "amount": "Transaction or transfer amount in the associated currency.", "balanceBefore": "Ledger balance immediately before the transaction.",
+    "balanceAfter": "Ledger balance immediately after the transaction.", "occurredAt": "Time the financial event occurred.", "postedAt": "Time a successful transaction was posted; absent for declined activity.",
+    "metadata": "Operational transaction attributes; excludes evaluation scenario and label fields.", "ruleCode": "Stable deterministic rule identifier.",
+    "riskScore": "Deterministic rule weight, capped at 100.", "priority": "Risk band derived from the risk score.",
+    "explanation": "Human-readable triggering rule and transaction reference.", "disposition": "Analyst-recorded case outcome when available.",
+    "actionType": "Recorded analyst workflow action.", "effectiveFrom": "Start of a relationship's validity period.",
+    "effectiveTo": "End of a relationship's validity period, when ended.",
+}
+UNIQUE_FIELDS = {("customers", "id"), ("customers", "email"), ("accounts", "id"), ("merchants", "id"), ("devices", "id"), ("devices", "fingerprintHash"), ("transactions", "id"), ("transfer_links", "id"), ("risk_rules", "id"), ("risk_rules", "ruleCode"), ("alerts", "id"), ("cases", "id"), ("analyst_actions", "id")}
+
+def build_data_dictionary(data: Mapping[str, Sequence[Mapping[str, str]]]) -> dict:
+    result = {}
+    for entity in ENTITY_DESCRIPTIONS:
+        rows = data[entity]
+        fields = list(rows[0]) if rows else list(SQL_COLUMNS.get(entity, ()))
+        result[entity] = {
+            "description": ENTITY_DESCRIPTIONS[entity],
+            "fields": {
+                field: {
+                    "type": "enum" if (entity, field) in ENUMS else FIELD_TYPES.get(field, "string"),
+                    "required": field not in OPTIONAL_FIELDS,
+                    "allowedValues": ENUMS.get((entity, field), []),
+                    "unique": (entity, field) in UNIQUE_FIELDS,
+                    "validation": FIELD_DESCRIPTIONS.get(field, f"Validated against the {entity} model and its foreign-key constraints."),
+                    "relationship": RELATIONSHIPS.get((entity, field), ""),
+                    "description": FIELD_DESCRIPTIONS.get(field, f"{field} value persisted on the {entity} record."),
+                    "units": "USD" if field in {"amount", "currentBalance", "balanceBefore", "balanceAfter", "overdraftLimit"} else "",
+                }
+                for field in fields
+            },
+        }
+    return result
+
+def render_data_dictionary(dictionary: Mapping[str, Mapping[str, object]]) -> str:
+    lines = ["# Synthetic data dictionary", "", "All records are deterministic synthetic data; no externally collected personal data is used.", ""]
+    for entity, definition in dictionary.items():
+        lines.extend([f"## {entity}", "", str(definition["description"]), "", "| Field | Type | Required | Description |", "|---|---|---:|---|"])
+        for field, details in definition["fields"].items():
+            lines.append(f"| `{field}` | {details['type']} | {'Yes' if details['required'] else 'No'} | {details['description']} |")
+        lines.append("")
+    return "\n".join(lines)
+
 def row_checksum(rows: Sequence[Mapping[str, str]]) -> str:
     payload = json.dumps(list(rows), sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(payload).hexdigest()
@@ -669,7 +756,7 @@ def sql_literal(value: object) -> str:
     return "'" + str(value).replace("'", "''") + "'"
 
 
-def write_sql(path: Path, data: Mapping[str, Sequence[Mapping[str, str]]]) -> None:
+def write_sql(path: Path, data: Mapping[str, Sequence[Mapping[str, str]]]) -> int:
     # These are insert-only exports; operational CSV/JSON retain richer generator metadata.
     excluded = {"ground_truth_labels", "negative_fixtures"}
     with path.open("w", encoding="utf-8", newline="\n") as handle:
@@ -679,16 +766,18 @@ def write_sql(path: Path, data: Mapping[str, Sequence[Mapping[str, str]]]) -> No
                 continue
             columns = list(SQL_COLUMNS.get(name, rows[0].keys()))
             quoted_columns = ", ".join(f'"{column}"' for column in columns)
-            handle.write(f'INSERT INTO "{name}" ({quoted_columns}) VALUES\n')
-            values = []
-            for row in rows:
-                values.append("(" + ", ".join(sql_literal(row.get(column)) for column in columns) + ")")
-            handle.write(",\n".join(values) + ";\n\n")
+            for start in range(0, len(rows), SQL_BATCH_SIZE):
+                batch = rows[start : start + SQL_BATCH_SIZE]
+                handle.write(f'INSERT INTO "{name}" ({quoted_columns}) VALUES\n')
+                values = ["(" + ", ".join(sql_literal(row.get(column)) for column in columns) + ")" for row in batch]
+                handle.write(",\n".join(values) + ";\n\n")
+    return sum((len(rows) + SQL_BATCH_SIZE - 1) // SQL_BATCH_SIZE for name, rows in data.items() if name not in excluded and rows)
 
 
 def write(output: Path, data: Mapping[str, Sequence[Mapping[str, str]]], seed: int, scale: str, duration: float) -> None:
-    if output.exists():
-        shutil.rmtree(output)
+    if output.exists() and any(output.iterdir()):
+        raise FileExistsError(f"Refusing to overwrite non-empty output directory: {output}")
+    output.mkdir(parents=True, exist_ok=True)
     operational = output / "operational"
     evaluation = output / "evaluation"
     fixtures = output / "negative-fixtures"
@@ -703,7 +792,8 @@ def write(output: Path, data: Mapping[str, Sequence[Mapping[str, str]]], seed: i
         (target / f"{name}.json").write_text(json.dumps(list(rows), indent=2, sort_keys=True), encoding="utf-8")
         checksums[name] = row_checksum(rows)
         counts[name] = len(rows)
-    write_sql(output / "operational.sql", {name: rows for name, rows in data.items() if name != "ground_truth_labels"})
+    operational_data = {name: rows for name, rows in data.items() if name not in {"ground_truth_labels", "negative_fixtures"}}
+    sql_statement_count = write_sql(output / "operational.sql", operational_data)
     (output / "scenario-documentation.json").write_text(
         json.dumps(
             {
@@ -718,25 +808,13 @@ def write(output: Path, data: Mapping[str, Sequence[Mapping[str, str]]], seed: i
         ),
         encoding="utf-8",
     )
-    (output / "data-dictionary.json").write_text(
-        json.dumps(
-            {
-                name: {
-                    column: "Generated deterministic field."
-                    for column in SQL_COLUMNS.get(name, rows[0].keys() if rows else [])
-                }
-                for name, rows in data.items()
-                if name not in {"ground_truth_labels", "negative_fixtures"}
-            },
-            indent=2,
-            sort_keys=True,
-        ),
-        encoding="utf-8",
-    )
+    dictionary = build_data_dictionary(data)
+    (output / "data-dictionary.json").write_text(json.dumps(dictionary, indent=2, sort_keys=True), encoding="utf-8")
+    (output / "DATA_DICTIONARY.md").write_text(render_data_dictionary(dictionary), encoding="utf-8")
     manifest = {
         "seed": seed,
         "scale": scale,
-        "generatorVersion": "phase2-v1",
+        "generatorVersion": "yottaflex-2026-v2",
         "schemaVersion": "0001_initial_postgresql",
         "referenceTimestamp": REFERENCE_TIME.isoformat(),
         "counts": counts,
@@ -746,13 +824,27 @@ def write(output: Path, data: Mapping[str, Sequence[Mapping[str, str]]], seed: i
         "negativeFixturesPath": "negative-fixtures/negative_fixtures.csv",
     }
     (output / "generation-manifest.json").write_text(json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8")
+    (output / "export-report.json").write_text(json.dumps({
+        "seed": seed,
+        "scale": scale,
+        "operationalRows": sum(len(rows) for name, rows in operational_data.items()),
+        "operationalEntityCounts": {name: len(operational_data[name]) for name in operational_data},
+        "evaluationRows": len(data["ground_truth_labels"]),
+        "negativeFixtureRows": len(data["negative_fixtures"]),
+        "sqlFile": "operational.sql",
+        "sqlFileSizeBytes": (output / "operational.sql").stat().st_size,
+        "insertStatementCount": sql_statement_count,
+        "insertBatchSize": SQL_BATCH_SIZE,
+        "sourceChecksums": checksums,
+        "sqlEditorLimitations": "Platform-specific SQL Editor size and execution limits were not measured; SQL was validated locally and not executed remotely."
+    }, indent=2, sort_keys=True), encoding="utf-8")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate deterministic RiskLens operational and evaluation exports.")
-    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--seed", type=int, default=20261022)
     parser.add_argument("--mode", "--scale", dest="scale", choices=("sample", "full"), default="sample")
-    parser.add_argument("--output", type=Path, default=Path("data/full"))
+    parser.add_argument("--output", type=Path, default=Path("data/yottaflex-full-2026"))
     args = parser.parse_args()
     started = time.perf_counter()
     data = build(args.scale, args.seed)

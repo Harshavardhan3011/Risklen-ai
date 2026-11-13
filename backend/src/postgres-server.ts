@@ -5,6 +5,7 @@ import rateLimit from "express-rate-limit";
 import bcrypt from "bcryptjs";
 import { z } from "zod";
 import { prisma } from "./prisma.js";
+import { evaluationMetrics } from "./evaluation-metrics.js";
 import { authenticatePostgresUser, prismaAuthStore, validatePostgresToken } from "./postgres-auth.js";
 import { getJwtSecret, type AuthUser } from "./auth.js";
 import { assessTransaction } from "./risk-engine.js";
@@ -33,61 +34,6 @@ async function customerIdForUser(user: AuthUser): Promise<string | null> {
   return customer?.id ?? null;
 }
 
-async function evaluationMetrics() {
-  const [alerts, labels, evidenceAlerts, validationTotals, latestRun] = await Promise.all([
-    prisma.alert.findMany({ select: { id: true, transactionId: true, riskRule: { select: { ruleCode: true } } } }),
-    prisma.groundTruthLabel.findMany({ select: { transactionId: true, scenarioCode: true, isSuspicious: true, expectedRuleCode: true } }),
-    prisma.alertEvidence.groupBy({ by: ["alertId"] }),
-    prisma.validationResult.groupBy({ by: ["status"], _count: { _all: true } }),
-    prisma.generationRun.findFirst({ orderBy: { startedAt: "desc" }, select: { startedAt: true, completedAt: true } }),
-  ]);
-  const positiveTransactions = new Set(labels.filter(label => label.isSuspicious).map(label => label.transactionId));
-  const universe = new Set(labels.map(label => label.transactionId));
-  const predictedTransactions = new Set(alerts.map(alert => alert.transactionId).filter(id => universe.has(id)));
-  const tp = [...predictedTransactions].filter(id => positiveTransactions.has(id)).length;
-  const fp = [...predictedTransactions].filter(id => !positiveTransactions.has(id)).length;
-  const fn = [...positiveTransactions].filter(id => !predictedTransactions.has(id)).length;
-  const tn = Math.max(0, universe.size - tp - fp - fn);
-  const precision = tp + fp ? tp / (tp + fp) : 0;
-  const recall = tp + fn ? tp / (tp + fn) : 0;
-  const f1 = precision + recall ? (2 * precision * recall) / (precision + recall) : 0;
-  const evidenceAlertIds = new Set(evidenceAlerts.map(item => item.alertId));
-  const evaluatedAlerts = alerts.filter(alert => universe.has(alert.transactionId));
-  const ruleMetrics = [...new Set(labels.map(label => label.expectedRuleCode).filter((code): code is string => Boolean(code)))].map(ruleCode => {
-    const expected = new Set(labels.filter(label => label.expectedRuleCode === ruleCode && label.isSuspicious).map(label => label.transactionId));
-    const predicted = new Set(evaluatedAlerts.filter(alert => alert.riskRule.ruleCode === ruleCode).map(alert => alert.transactionId));
-    const ruleTp = [...predicted].filter(id => expected.has(id)).length;
-    const ruleFp = [...predicted].filter(id => !expected.has(id)).length;
-    const ruleFn = [...expected].filter(id => !predicted.has(id)).length;
-    return { ruleCode, precision: ruleTp + ruleFp ? ruleTp / (ruleTp + ruleFp) : 0, recall: ruleTp + ruleFn ? ruleTp / (ruleTp + ruleFn) : 0 };
-  });
-  const scenarioCoverage = Object.fromEntries([...new Set(labels.map(label => label.scenarioCode))].map(scenarioCode => {
-    const expected = labels.filter(label => label.scenarioCode === scenarioCode && label.isSuspicious);
-    const found = expected.filter(label => predictedTransactions.has(label.transactionId));
-    return [scenarioCode, expected.length ? found.length / expected.length : 1];
-  }));
-  const validationTotal = validationTotals.reduce((total, item) => total + item._count._all, 0);
-  const validationPassed = validationTotals.find(item => item.status === "PASSED")?._count._all ?? 0;
-  const processingTimeSeconds = latestRun?.completedAt ? (latestRun.completedAt.getTime() - latestRun.startedAt.getTime()) / 1000 : null;
-  return {
-    truePositives: tp,
-    falsePositives: fp,
-    falseNegatives: fn,
-    trueNegatives: tn,
-    precision,
-    recall,
-    f1,
-    falsePositiveRate: fp + tn ? fp / (fp + tn) : 0,
-    ruleMetrics,
-    scenarioCoverage,
-    alertsPer1000Transactions: universe.size ? (predictedTransactions.size / universe.size) * 1000 : 0,
-    processingTimeSeconds,
-    evaluationUnit: "transaction ID within the ground-truth universe; duplicate alerts count once",
-    matchingMethodology: "Exact alert.transactionId to evaluation.ground_truth_labels.transactionId matching; labels are never returned by operational APIs.",
-    evidenceCompleteness: evaluatedAlerts.length ? evaluatedAlerts.filter(alert => evidenceAlertIds.has(alert.id)).length / evaluatedAlerts.length : 0,
-    validationPassRate: validationTotal ? validationPassed / validationTotal : 0,
-  };
-}
 
 export async function createPostgresApp() {
   const app = express();
@@ -107,6 +53,14 @@ export async function createPostgresApp() {
     const result = await authenticatePostgresUser(prismaAuthStore, parsed.data.email, parsed.data.password, jwtSecret);
     if (!result) return res.status(401).json({ error: "Invalid credentials" });
     return res.json(result);
+  });
+  app.get("/api/auth/me", auth, async (_req, res) => {
+    const identity = await prisma.user.findUnique({
+      where: { id: (res.locals.user as AuthUser).id },
+      select: { id: true, email: true, name: true, role: true },
+    });
+    if (!identity) return res.status(401).json({ error: "Invalid or expired token" });
+    return res.json({ user: identity });
   });
   app.post("/api/auth/register", authRateLimit, async (req, res) => {
     const parsed = z.object({ email: z.string().email(), name: z.string().trim().min(1).max(120), password: z.string().min(12) }).safeParse(req.body);
@@ -145,7 +99,19 @@ export async function createPostgresApp() {
       throw error;
     }
   });
-  app.get("/api/users", auth, requireRole("ADMIN"), async (_req, res) => res.json({ data: (await prisma.user.findMany({ orderBy: { email: "asc" } })).map(safeUser) }));
+  app.get("/api/users", auth, requireRole("ADMIN"), async (req, res) => {
+    const params = pageParams.parse(req.query);
+    const [total, users] = await Promise.all([
+      prisma.user.count(),
+      prisma.user.findMany({
+        orderBy: { email: "asc" },
+        skip: (params.page - 1) * params.pageSize,
+        take: params.pageSize,
+        select: { id: true, email: true, name: true, role: true, status: true, authVersion: true },
+      }),
+    ]);
+    return res.json({ data: users.map(safeUser), total, page: params.page, pageSize: params.pageSize });
+  });
   app.patch("/api/users/:id/provision", auth, requireRole("ADMIN"), async (req, res) => {
     const parsed = z.object({ password: z.string().min(12), role: z.enum(["ADMIN", "ANALYST", "COMPLIANCE_REVIEWER", "CUSTOMER"]).optional(), status: z.enum(["PENDING", "ACTIVE", "DISABLED", "LOCKED"]).default("ACTIVE") }).safeParse(req.body);
     if (!parsed.success || !validProvisioningPassword(parsed.data.password)) return res.status(400).json({ error: "Invalid provisioning details" });
@@ -161,22 +127,44 @@ export async function createPostgresApp() {
     return res.json({ user: safeUser(user) });
   });
   app.get("/api/overview", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (_req, res) => {
-    const [alerts, critical, openCases, metrics, volumeRows] = await Promise.all([
-      prisma.alert.findMany({ orderBy: [{ riskScore: "desc" }, { createdAt: "desc" }], take: 5, include: { riskRule: true } }),
-      prisma.alert.count({ where: { priority: "CRITICAL" } }),
+    const now = new Date();
+    const end = new Date(now);
+    end.setUTCHours(0, 0, 0, 0);
+    end.setUTCDate(end.getUTCDate() + 1);
+    const start = new Date(end);
+    start.setUTCDate(start.getUTCDate() - 7);
+    const [alerts, alertSummaryRows, openCases, metrics, volumeRows] = await Promise.all([
+      prisma.alert.findMany({
+        orderBy: [{ riskScore: "desc" }, { createdAt: "desc" }],
+        take: 5,
+        select: {
+          id: true, customerId: true, riskScore: true, status: true, explanation: true, createdAt: true,
+          riskRule: { select: { name: true } },
+        },
+      }),
+      prisma.$queryRaw<Array<{ openAlerts: bigint; critical: bigint }>>`
+        SELECT count(*) FILTER (WHERE "status" <> 'CLOSED') AS "openAlerts",
+               count(*) FILTER (WHERE "priority" = 'CRITICAL') AS "critical"
+        FROM "public"."alerts"
+      `,
       prisma.case.count({ where: { status: { not: "CLOSED" } } }),
       evaluationMetrics(),
-      prisma.alert.findMany({ where: { createdAt: { gte: new Date(Date.now() - 7 * 86400000) } }, select: { createdAt: true } }),
+      prisma.$queryRaw<Array<{ day: string; count: bigint }>>`
+        SELECT to_char(date_trunc('day', "createdAt" AT TIME ZONE 'UTC'), 'YYYY-MM-DD') AS day,
+               count(*) AS count
+        FROM "public"."alerts"
+        WHERE "createdAt" >= ${start} AND "createdAt" < ${end}
+        GROUP BY 1
+      `,
     ]);
+    const alertSummary = alertSummaryRows[0] ?? { openAlerts: 0n, critical: 0n };
+    const groupedVolume = new Map(volumeRows.map(row => [row.day, Number(row.count)]));
     const volume = Array.from({ length: 7 }, (_, index) => {
-      const day = new Date();
-      day.setHours(0, 0, 0, 0);
-      day.setDate(day.getDate() - (6 - index));
-      const next = new Date(day);
-      next.setDate(next.getDate() + 1);
-      return volumeRows.filter(alert => alert.createdAt >= day && alert.createdAt < next).length;
+      const day = new Date(start);
+      day.setUTCDate(day.getUTCDate() + index);
+      return groupedVolume.get(day.toISOString().slice(0, 10)) ?? 0;
     });
-    res.json({ metrics: { alerts: await prisma.alert.count({ where: { status: { not: "CLOSED" } } }), critical, openCases, precision: metrics.precision, recall: metrics.recall }, evaluation: metrics, volume, recentAlerts: alerts.map(alert => ({ id: alert.id, customer_id: alert.customerId, rule_name: alert.riskRule.name, priority: scoreBand(alert.riskScore), score: alert.riskScore, explanation: alert.explanation, status: alert.status })) });
+    res.json({ metrics: { alerts: Number(alertSummary.openAlerts), critical: Number(alertSummary.critical), openCases, precision: metrics.precision, recall: metrics.recall }, evaluation: metrics, volume, recentAlerts: alerts.map(alert => ({ id: alert.id, customer_id: alert.customerId, rule_name: alert.riskRule.name, priority: scoreBand(alert.riskScore), score: alert.riskScore, explanation: alert.explanation, status: alert.status })) });
   });
   app.post("/api/risk/batch", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (req, res) => {
     const parsed = z.object({ batchSize: z.coerce.number().int().min(1).max(250).default(100), maxTransactions: z.coerce.number().int().min(1).optional() }).safeParse(req.body ?? {});
@@ -209,7 +197,14 @@ export async function createPostgresApp() {
   });
   app.get("/api/cases", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (req, res) => {
     const params = pageParams.parse(req.query);
-    const [total, cases] = await Promise.all([prisma.case.count(), prisma.case.findMany({ orderBy: { updatedAt: "desc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize, include: { caseAlerts: { include: { alert: true } }, assignedTo: { select: { id: true, name: true, email: true } } } })]);
+    const [total, cases] = await Promise.all([prisma.case.count(), prisma.case.findMany({
+      orderBy: { updatedAt: "desc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize,
+      select: {
+        id: true, status: true, disposition: true, updatedAt: true,
+        caseAlerts: { select: { caseId: true, alertId: true, alert: { select: { id: true, priority: true, riskScore: true, status: true } } } },
+        assignedTo: { select: { id: true, name: true, email: true } },
+      },
+    })]);
     res.json({ data: cases, total, page: params.page, pageSize: params.pageSize });
   });
   app.post("/api/cases", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (req, res) => {
@@ -310,7 +305,7 @@ export async function createPostgresApp() {
     const ownCustomerId = user.role === "CUSTOMER" ? await customerIdForUser(user) : null;
     if (!canAccessCustomerRecord(user.role, ownCustomerId, ownCustomerId ?? "")) return res.status(403).json({ error: "Customer profile is not linked" });
     const where = ownCustomerId ? { id: ownCustomerId } : (params.search ? { OR: [{ id: { contains: params.search, mode: "insensitive" as const } }, { fullName: { contains: params.search, mode: "insensitive" as const } }, { email: { contains: params.search, mode: "insensitive" as const } }] } : {});
-    const [total, data] = await Promise.all([prisma.customer.count({ where }), prisma.customer.findMany({ where, orderBy: { fullName: "asc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize, include: { kycProfile: true } })]);
+    const [total, data] = await Promise.all([prisma.customer.count({ where }), prisma.customer.findMany({ where, orderBy: { fullName: "asc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize, select: { id: true, fullName: true, email: true, countryCode: true, kycProfile: { select: { status: true, riskRating: true } } } })]);
     res.json({ data, total, page: params.page, pageSize: params.pageSize });
   });
   app.get("/api/accounts", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER", "CUSTOMER"), async (req, res) => {
@@ -319,7 +314,7 @@ export async function createPostgresApp() {
     const ownCustomerId = user.role === "CUSTOMER" ? await customerIdForUser(user) : null;
     if (!canAccessCustomerRecord(user.role, ownCustomerId, ownCustomerId ?? "")) return res.status(403).json({ error: "Customer profile is not linked" });
     const where = ownCustomerId ? { owners: { some: { customerId: ownCustomerId } } } : (params.search ? { OR: [{ id: { contains: params.search, mode: "insensitive" as const } }, { currency: { contains: params.search, mode: "insensitive" as const } }] } : {});
-    const [total, data] = await Promise.all([prisma.account.count({ where }), prisma.account.findMany({ where, orderBy: { openedAt: "desc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize, include: { owners: true } })]);
+    const [total, data] = await Promise.all([prisma.account.count({ where }), prisma.account.findMany({ where, orderBy: { openedAt: "desc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize, select: { id: true, accountType: true, status: true, currency: true, currentBalance: true, openedAt: true } })]);
     res.json({ data, total, page: params.page, pageSize: params.pageSize });
   });
   app.get("/api/customers/:id", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER", "CUSTOMER"), async (req, res) => {
@@ -427,14 +422,51 @@ export async function createPostgresApp() {
     });
     return res.json({ transactionId: transaction.id, assessment, persisted });
   });
-  app.get("/api/rules", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (_req, res) => res.json({ data: await prisma.riskRule.findMany({ where: { enabled: true }, orderBy: [{ ruleCode: "asc" }, { version: "desc" }] }) }));
+  app.get("/api/rules", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (req, res) => {
+    const params = pageParams.parse(req.query);
+    const where = { enabled: true };
+    const [total, data] = await Promise.all([
+      prisma.riskRule.count({ where }),
+      prisma.riskRule.findMany({
+        where,
+        orderBy: [{ ruleCode: "asc" }, { version: "desc" }],
+        skip: (params.page - 1) * params.pageSize,
+        take: params.pageSize,
+        select: { ruleCode: true, version: true, name: true, severity: true, weight: true, enabled: true },
+      }),
+    ]);
+    return res.json({ data, total, page: params.page, pageSize: params.pageSize });
+  });
   app.get("/api/audit", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (req, res) => {
     const params = pageParams.parse(req.query);
-    const [total, data] = await Promise.all([prisma.auditEvent.count(), prisma.auditEvent.findMany({ orderBy: { occurredAt: "desc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize })]);
+    const [total, data] = await Promise.all([prisma.auditEvent.count(), prisma.auditEvent.findMany({
+      orderBy: { occurredAt: "desc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize,
+      select: { id: true, entityType: true, entityId: true, eventType: true, actorId: true, occurredAt: true },
+    })]);
     res.json({ data, total, page: params.page, pageSize: params.pageSize });
   });
-  app.get("/api/validation", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (_req, res) => res.json({ data: await prisma.validationResult.findMany({ orderBy: { checkedAt: "desc" }, take: 100 }) }));
-  app.get("/api/generation-runs", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (_req, res) => res.json({ data: await prisma.generationRun.findMany({ orderBy: { startedAt: "desc" }, take: 50 }) }));
+  app.get("/api/validation", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (req, res) => {
+    const params = pageParams.parse(req.query);
+    const [total, data] = await Promise.all([
+      prisma.validationResult.count(),
+      prisma.validationResult.findMany({
+        orderBy: { checkedAt: "desc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize,
+        select: { id: true, checkName: true, status: true, message: true, checkedAt: true },
+      }),
+    ]);
+    return res.json({ data, total, page: params.page, pageSize: params.pageSize });
+  });
+  app.get("/api/generation-runs", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (req, res) => {
+    const params = pageParams.parse(req.query);
+    const [total, data] = await Promise.all([
+      prisma.generationRun.count(),
+      prisma.generationRun.findMany({
+        orderBy: { startedAt: "desc" }, skip: (params.page - 1) * params.pageSize, take: params.pageSize,
+        select: { id: true, seed: true, scale: true, status: true, startedAt: true, completedAt: true },
+      }),
+    ]);
+    return res.json({ data: data.map(run => ({ ...run, seed: run.seed.toString() })), total, page: params.page, pageSize: params.pageSize });
+  });
   app.get("*", (_req, res) => res.status(404).json({ error: "Not found" }));
   return app;
 }

@@ -1,0 +1,1157 @@
+{
+  "accounts": {
+    "description": "Financial account and current reconciled balance.",
+    "fields": {
+      "accountType": {
+        "allowedValues": [
+          "CHECKING",
+          "SAVINGS",
+          "WALLET",
+          "BUSINESS"
+        ],
+        "description": "Financial product type.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Financial product type."
+      },
+      "closedAt": {
+        "allowedValues": [],
+        "description": "Account closure timestamp when status is CLOSED.",
+        "relationship": "",
+        "required": false,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Account closure timestamp when status is CLOSED."
+      },
+      "createdAt": {
+        "allowedValues": [],
+        "description": "createdAt value persisted on the accounts record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the accounts model and its foreign-key constraints."
+      },
+      "currency": {
+        "allowedValues": [],
+        "description": "currency value persisted on the accounts record.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the accounts model and its foreign-key constraints."
+      },
+      "currentBalance": {
+        "allowedValues": [],
+        "description": "Balance after the final generated ledger movement.",
+        "relationship": "",
+        "required": true,
+        "type": "decimal(18,2)",
+        "unique": false,
+        "units": "USD",
+        "validation": "Balance after the final generated ledger movement."
+      },
+      "id": {
+        "allowedValues": [],
+        "description": "Immutable primary identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Immutable primary identifier."
+      },
+      "openedAt": {
+        "allowedValues": [],
+        "description": "Account lifecycle start timestamp.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Account lifecycle start timestamp."
+      },
+      "overdraftLimit": {
+        "allowedValues": [],
+        "description": "Maximum permitted negative balance; generated accounts use zero.",
+        "relationship": "",
+        "required": true,
+        "type": "decimal(18,2)",
+        "unique": false,
+        "units": "USD",
+        "validation": "Maximum permitted negative balance; generated accounts use zero."
+      },
+      "status": {
+        "allowedValues": [
+          "OPEN",
+          "DORMANT",
+          "CLOSED",
+          "SUSPENDED"
+        ],
+        "description": "status value persisted on the accounts record.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the accounts model and its foreign-key constraints."
+      },
+      "updatedAt": {
+        "allowedValues": [],
+        "description": "updatedAt value persisted on the accounts record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the accounts model and its foreign-key constraints."
+      }
+    }
+  },
+  "alerts": {
+    "description": "Rule-triggered transaction review record.",
+    "fields": {
+      "accountId": {
+        "allowedValues": [],
+        "description": "accountId value persisted on the alerts record.",
+        "relationship": "accounts.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the alerts model and its foreign-key constraints."
+      },
+      "closedAt": {
+        "allowedValues": [],
+        "description": "Account closure timestamp when status is CLOSED.",
+        "relationship": "",
+        "required": false,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Account closure timestamp when status is CLOSED."
+      },
+      "createdAt": {
+        "allowedValues": [],
+        "description": "createdAt value persisted on the alerts record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the alerts model and its foreign-key constraints."
+      },
+      "customerId": {
+        "allowedValues": [],
+        "description": "customerId value persisted on the alerts record.",
+        "relationship": "customers.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the alerts model and its foreign-key constraints."
+      },
+      "detectedAt": {
+        "allowedValues": [],
+        "description": "detectedAt value persisted on the alerts record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the alerts model and its foreign-key constraints."
+      },
+      "evaluationVersion": {
+        "allowedValues": [],
+        "description": "evaluationVersion value persisted on the alerts record.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the alerts model and its foreign-key constraints."
+      },
+      "explanation": {
+        "allowedValues": [],
+        "description": "Human-readable triggering rule and transaction reference.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Human-readable triggering rule and transaction reference."
+      },
+      "id": {
+        "allowedValues": [],
+        "description": "Immutable primary identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Immutable primary identifier."
+      },
+      "priority": {
+        "allowedValues": [
+          "LOW",
+          "MEDIUM",
+          "HIGH",
+          "CRITICAL"
+        ],
+        "description": "Risk band derived from the risk score.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Risk band derived from the risk score."
+      },
+      "riskRuleId": {
+        "allowedValues": [],
+        "description": "riskRuleId value persisted on the alerts record.",
+        "relationship": "risk_rules.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the alerts model and its foreign-key constraints."
+      },
+      "riskScore": {
+        "allowedValues": [],
+        "description": "Deterministic rule weight, capped at 100.",
+        "relationship": "",
+        "required": true,
+        "type": "integer",
+        "unique": false,
+        "units": "",
+        "validation": "Deterministic rule weight, capped at 100."
+      },
+      "status": {
+        "allowedValues": [
+          "OPEN",
+          "INVESTIGATING",
+          "ESCALATED",
+          "CLOSED",
+          "FALSE_POSITIVE"
+        ],
+        "description": "status value persisted on the alerts record.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the alerts model and its foreign-key constraints."
+      },
+      "transactionId": {
+        "allowedValues": [],
+        "description": "transactionId value persisted on the alerts record.",
+        "relationship": "transactions.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the alerts model and its foreign-key constraints."
+      }
+    }
+  },
+  "analyst_actions": {
+    "description": "Immutable analyst workflow action record.",
+    "fields": {
+      "actionType": {
+        "allowedValues": [
+          "ASSIGNED",
+          "UNASSIGNED",
+          "COMMENTED",
+          "EVIDENCE_ADDED",
+          "DISPOSITION_RECORDED",
+          "STATUS_CHANGED",
+          "ESCALATED"
+        ],
+        "description": "Recorded analyst workflow action.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Recorded analyst workflow action."
+      },
+      "actorId": {
+        "allowedValues": [],
+        "description": "actorId value persisted on the analyst_actions record.",
+        "relationship": "users.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the analyst_actions model and its foreign-key constraints."
+      },
+      "caseId": {
+        "allowedValues": [],
+        "description": "caseId value persisted on the analyst_actions record.",
+        "relationship": "cases.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the analyst_actions model and its foreign-key constraints."
+      },
+      "comment": {
+        "allowedValues": [],
+        "description": "comment value persisted on the analyst_actions record.",
+        "relationship": "",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the analyst_actions model and its foreign-key constraints."
+      },
+      "createdAt": {
+        "allowedValues": [],
+        "description": "createdAt value persisted on the analyst_actions record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the analyst_actions model and its foreign-key constraints."
+      },
+      "disposition": {
+        "allowedValues": [],
+        "description": "Analyst-recorded case outcome when available.",
+        "relationship": "",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Analyst-recorded case outcome when available."
+      },
+      "fromStatus": {
+        "allowedValues": [],
+        "description": "fromStatus value persisted on the analyst_actions record.",
+        "relationship": "",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the analyst_actions model and its foreign-key constraints."
+      },
+      "id": {
+        "allowedValues": [],
+        "description": "Immutable primary identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Immutable primary identifier."
+      },
+      "toStatus": {
+        "allowedValues": [],
+        "description": "toStatus value persisted on the analyst_actions record.",
+        "relationship": "",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the analyst_actions model and its foreign-key constraints."
+      }
+    }
+  },
+  "cases": {
+    "description": "Analyst review work item grouping related alerts.",
+    "fields": {
+      "assignedToId": {
+        "allowedValues": [],
+        "description": "assignedToId value persisted on the cases record.",
+        "relationship": "users.id (optional)",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the cases model and its foreign-key constraints."
+      },
+      "closedAt": {
+        "allowedValues": [],
+        "description": "Account closure timestamp when status is CLOSED.",
+        "relationship": "",
+        "required": false,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Account closure timestamp when status is CLOSED."
+      },
+      "createdAt": {
+        "allowedValues": [],
+        "description": "createdAt value persisted on the cases record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the cases model and its foreign-key constraints."
+      },
+      "disposition": {
+        "allowedValues": [
+          "CONFIRMED_SUSPICIOUS",
+          "LEGITIMATE",
+          "FALSE_POSITIVE",
+          "FURTHER_INVESTIGATION",
+          "ESCALATED"
+        ],
+        "description": "Analyst-recorded case outcome when available.",
+        "relationship": "",
+        "required": false,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Analyst-recorded case outcome when available."
+      },
+      "id": {
+        "allowedValues": [],
+        "description": "Immutable primary identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Immutable primary identifier."
+      },
+      "openedAt": {
+        "allowedValues": [],
+        "description": "Account lifecycle start timestamp.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Account lifecycle start timestamp."
+      },
+      "status": {
+        "allowedValues": [
+          "NEW",
+          "IN_PROGRESS",
+          "PENDING_REVIEW",
+          "ESCALATED",
+          "CLOSED"
+        ],
+        "description": "status value persisted on the cases record.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the cases model and its foreign-key constraints."
+      },
+      "updatedAt": {
+        "allowedValues": [],
+        "description": "updatedAt value persisted on the cases record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the cases model and its foreign-key constraints."
+      }
+    }
+  },
+  "customers": {
+    "description": "Synthetic customer identity and contact record.",
+    "fields": {
+      "countryCode": {
+        "allowedValues": [],
+        "description": "Two-character ISO 3166-1 alpha-2 country code.",
+        "relationship": "",
+        "required": true,
+        "type": "char(2)",
+        "unique": false,
+        "units": "",
+        "validation": "Two-character ISO 3166-1 alpha-2 country code."
+      },
+      "createdAt": {
+        "allowedValues": [],
+        "description": "createdAt value persisted on the customers record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the customers model and its foreign-key constraints."
+      },
+      "dateOfBirth": {
+        "allowedValues": [],
+        "description": "Synthetic customer birth date.",
+        "relationship": "",
+        "required": false,
+        "type": "date",
+        "unique": false,
+        "units": "",
+        "validation": "Synthetic customer birth date."
+      },
+      "email": {
+        "allowedValues": [],
+        "description": "email value persisted on the customers record.",
+        "relationship": "",
+        "required": false,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Validated against the customers model and its foreign-key constraints."
+      },
+      "fullName": {
+        "allowedValues": [],
+        "description": "Synthetic customer legal-name field.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Synthetic customer legal-name field."
+      },
+      "id": {
+        "allowedValues": [],
+        "description": "Immutable primary identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Immutable primary identifier."
+      },
+      "phone": {
+        "allowedValues": [],
+        "description": "phone value persisted on the customers record.",
+        "relationship": "",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the customers model and its foreign-key constraints."
+      },
+      "updatedAt": {
+        "allowedValues": [],
+        "description": "updatedAt value persisted on the customers record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the customers model and its foreign-key constraints."
+      }
+    }
+  },
+  "devices": {
+    "description": "Pseudonymous device fingerprint and lifecycle state.",
+    "fields": {
+      "createdAt": {
+        "allowedValues": [],
+        "description": "createdAt value persisted on the devices record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the devices model and its foreign-key constraints."
+      },
+      "deviceType": {
+        "allowedValues": [
+          "MOBILE",
+          "DESKTOP",
+          "TABLET"
+        ],
+        "description": "deviceType value persisted on the devices record.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the devices model and its foreign-key constraints."
+      },
+      "fingerprintHash": {
+        "allowedValues": [],
+        "description": "SHA-256 pseudonymous device fingerprint; not a raw device identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "SHA-256 pseudonymous device fingerprint; not a raw device identifier."
+      },
+      "firstSeenAt": {
+        "allowedValues": [],
+        "description": "firstSeenAt value persisted on the devices record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the devices model and its foreign-key constraints."
+      },
+      "id": {
+        "allowedValues": [],
+        "description": "Immutable primary identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Immutable primary identifier."
+      },
+      "lastSeenAt": {
+        "allowedValues": [],
+        "description": "lastSeenAt value persisted on the devices record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the devices model and its foreign-key constraints."
+      },
+      "operatingSystem": {
+        "allowedValues": [],
+        "description": "operatingSystem value persisted on the devices record.",
+        "relationship": "",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the devices model and its foreign-key constraints."
+      },
+      "status": {
+        "allowedValues": [
+          "ACTIVE",
+          "BLOCKED",
+          "RETIRED"
+        ],
+        "description": "status value persisted on the devices record.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the devices model and its foreign-key constraints."
+      },
+      "updatedAt": {
+        "allowedValues": [],
+        "description": "updatedAt value persisted on the devices record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the devices model and its foreign-key constraints."
+      }
+    }
+  },
+  "merchants": {
+    "description": "Merchant accepting customer transactions.",
+    "fields": {
+      "categoryCode": {
+        "allowedValues": [],
+        "description": "categoryCode value persisted on the merchants record.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the merchants model and its foreign-key constraints."
+      },
+      "countryCode": {
+        "allowedValues": [],
+        "description": "Two-character ISO 3166-1 alpha-2 country code.",
+        "relationship": "",
+        "required": true,
+        "type": "char(2)",
+        "unique": false,
+        "units": "",
+        "validation": "Two-character ISO 3166-1 alpha-2 country code."
+      },
+      "createdAt": {
+        "allowedValues": [],
+        "description": "createdAt value persisted on the merchants record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the merchants model and its foreign-key constraints."
+      },
+      "id": {
+        "allowedValues": [],
+        "description": "Immutable primary identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Immutable primary identifier."
+      },
+      "name": {
+        "allowedValues": [],
+        "description": "name value persisted on the merchants record.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the merchants model and its foreign-key constraints."
+      },
+      "riskRating": {
+        "allowedValues": [
+          "LOW",
+          "MEDIUM",
+          "HIGH",
+          "CRITICAL"
+        ],
+        "description": "riskRating value persisted on the merchants record.",
+        "relationship": "",
+        "required": false,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the merchants model and its foreign-key constraints."
+      },
+      "updatedAt": {
+        "allowedValues": [],
+        "description": "updatedAt value persisted on the merchants record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the merchants model and its foreign-key constraints."
+      }
+    }
+  },
+  "risk_rules": {
+    "description": "Versioned deterministic transaction risk rule.",
+    "fields": {
+      "configuration": {
+        "allowedValues": [],
+        "description": "configuration value persisted on the risk_rules record.",
+        "relationship": "",
+        "required": true,
+        "type": "json",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the risk_rules model and its foreign-key constraints."
+      },
+      "createdAt": {
+        "allowedValues": [],
+        "description": "createdAt value persisted on the risk_rules record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the risk_rules model and its foreign-key constraints."
+      },
+      "description": {
+        "allowedValues": [],
+        "description": "description value persisted on the risk_rules record.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the risk_rules model and its foreign-key constraints."
+      },
+      "effectiveFrom": {
+        "allowedValues": [],
+        "description": "Start of a relationship's validity period.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Start of a relationship's validity period."
+      },
+      "effectiveTo": {
+        "allowedValues": [],
+        "description": "End of a relationship's validity period, when ended.",
+        "relationship": "",
+        "required": false,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "End of a relationship's validity period, when ended."
+      },
+      "enabled": {
+        "allowedValues": [],
+        "description": "enabled value persisted on the risk_rules record.",
+        "relationship": "",
+        "required": true,
+        "type": "boolean",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the risk_rules model and its foreign-key constraints."
+      },
+      "id": {
+        "allowedValues": [],
+        "description": "Immutable primary identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Immutable primary identifier."
+      },
+      "name": {
+        "allowedValues": [],
+        "description": "name value persisted on the risk_rules record.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the risk_rules model and its foreign-key constraints."
+      },
+      "ruleCode": {
+        "allowedValues": [],
+        "description": "Stable deterministic rule identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Stable deterministic rule identifier."
+      },
+      "severity": {
+        "allowedValues": [
+          "LOW",
+          "MEDIUM",
+          "HIGH",
+          "CRITICAL"
+        ],
+        "description": "severity value persisted on the risk_rules record.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the risk_rules model and its foreign-key constraints."
+      },
+      "threshold": {
+        "allowedValues": [],
+        "description": "threshold value persisted on the risk_rules record.",
+        "relationship": "",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the risk_rules model and its foreign-key constraints."
+      },
+      "updatedAt": {
+        "allowedValues": [],
+        "description": "updatedAt value persisted on the risk_rules record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the risk_rules model and its foreign-key constraints."
+      },
+      "version": {
+        "allowedValues": [],
+        "description": "version value persisted on the risk_rules record.",
+        "relationship": "",
+        "required": true,
+        "type": "integer",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the risk_rules model and its foreign-key constraints."
+      },
+      "weight": {
+        "allowedValues": [],
+        "description": "weight value persisted on the risk_rules record.",
+        "relationship": "",
+        "required": true,
+        "type": "integer",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the risk_rules model and its foreign-key constraints."
+      }
+    }
+  },
+  "transactions": {
+    "description": "Posted or declined debit/credit ledger movement.",
+    "fields": {
+      "accountId": {
+        "allowedValues": [],
+        "description": "accountId value persisted on the transactions record.",
+        "relationship": "accounts.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transactions model and its foreign-key constraints."
+      },
+      "amount": {
+        "allowedValues": [],
+        "description": "Transaction or transfer amount in the associated currency.",
+        "relationship": "",
+        "required": true,
+        "type": "decimal(18,2)",
+        "unique": false,
+        "units": "USD",
+        "validation": "Transaction or transfer amount in the associated currency."
+      },
+      "balanceAfter": {
+        "allowedValues": [],
+        "description": "Ledger balance immediately after the transaction.",
+        "relationship": "",
+        "required": true,
+        "type": "decimal(18,2)",
+        "unique": false,
+        "units": "USD",
+        "validation": "Ledger balance immediately after the transaction."
+      },
+      "balanceBefore": {
+        "allowedValues": [],
+        "description": "Ledger balance immediately before the transaction.",
+        "relationship": "",
+        "required": true,
+        "type": "decimal(18,2)",
+        "unique": false,
+        "units": "USD",
+        "validation": "Ledger balance immediately before the transaction."
+      },
+      "createdAt": {
+        "allowedValues": [],
+        "description": "createdAt value persisted on the transactions record.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transactions model and its foreign-key constraints."
+      },
+      "currency": {
+        "allowedValues": [],
+        "description": "currency value persisted on the transactions record.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transactions model and its foreign-key constraints."
+      },
+      "customerId": {
+        "allowedValues": [],
+        "description": "customerId value persisted on the transactions record.",
+        "relationship": "customers.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transactions model and its foreign-key constraints."
+      },
+      "deviceId": {
+        "allowedValues": [],
+        "description": "deviceId value persisted on the transactions record.",
+        "relationship": "devices.id (optional)",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transactions model and its foreign-key constraints."
+      },
+      "id": {
+        "allowedValues": [],
+        "description": "Immutable primary identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Immutable primary identifier."
+      },
+      "merchantId": {
+        "allowedValues": [],
+        "description": "merchantId value persisted on the transactions record.",
+        "relationship": "merchants.id (optional)",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transactions model and its foreign-key constraints."
+      },
+      "metadata": {
+        "allowedValues": [],
+        "description": "Operational transaction attributes; excludes evaluation scenario and label fields.",
+        "relationship": "",
+        "required": false,
+        "type": "json",
+        "unique": false,
+        "units": "",
+        "validation": "Operational transaction attributes; excludes evaluation scenario and label fields."
+      },
+      "occurredAt": {
+        "allowedValues": [],
+        "description": "Time the financial event occurred.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Time the financial event occurred."
+      },
+      "postedAt": {
+        "allowedValues": [],
+        "description": "Time a successful transaction was posted; absent for declined activity.",
+        "relationship": "",
+        "required": false,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Time a successful transaction was posted; absent for declined activity."
+      },
+      "reference": {
+        "allowedValues": [],
+        "description": "reference value persisted on the transactions record.",
+        "relationship": "",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transactions model and its foreign-key constraints."
+      },
+      "status": {
+        "allowedValues": [
+          "PENDING",
+          "POSTED",
+          "DECLINED",
+          "REVERSED",
+          "FAILED"
+        ],
+        "description": "status value persisted on the transactions record.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transactions model and its foreign-key constraints."
+      },
+      "transactionType": {
+        "allowedValues": [
+          "DEBIT",
+          "CREDIT",
+          "TRANSFER",
+          "REVERSAL",
+          "FEE"
+        ],
+        "description": "transactionType value persisted on the transactions record.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transactions model and its foreign-key constraints."
+      }
+    }
+  },
+  "transfer_links": {
+    "description": "Bridge connecting paired internal transfer legs.",
+    "fields": {
+      "amount": {
+        "allowedValues": [],
+        "description": "Transaction or transfer amount in the associated currency.",
+        "relationship": "",
+        "required": true,
+        "type": "decimal(18,2)",
+        "unique": false,
+        "units": "USD",
+        "validation": "Transaction or transfer amount in the associated currency."
+      },
+      "currency": {
+        "allowedValues": [],
+        "description": "currency value persisted on the transfer_links record.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transfer_links model and its foreign-key constraints."
+      },
+      "id": {
+        "allowedValues": [],
+        "description": "Immutable primary identifier.",
+        "relationship": "",
+        "required": true,
+        "type": "string",
+        "unique": true,
+        "units": "",
+        "validation": "Immutable primary identifier."
+      },
+      "legReference": {
+        "allowedValues": [],
+        "description": "legReference value persisted on the transfer_links record.",
+        "relationship": "",
+        "required": false,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transfer_links model and its foreign-key constraints."
+      },
+      "occurredAt": {
+        "allowedValues": [],
+        "description": "Time the financial event occurred.",
+        "relationship": "",
+        "required": true,
+        "type": "timestamptz",
+        "unique": false,
+        "units": "",
+        "validation": "Time the financial event occurred."
+      },
+      "sourceAccountId": {
+        "allowedValues": [],
+        "description": "sourceAccountId value persisted on the transfer_links record.",
+        "relationship": "accounts.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transfer_links model and its foreign-key constraints."
+      },
+      "targetAccountId": {
+        "allowedValues": [],
+        "description": "targetAccountId value persisted on the transfer_links record.",
+        "relationship": "accounts.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transfer_links model and its foreign-key constraints."
+      },
+      "transactionId": {
+        "allowedValues": [],
+        "description": "transactionId value persisted on the transfer_links record.",
+        "relationship": "transactions.id",
+        "required": true,
+        "type": "string",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transfer_links model and its foreign-key constraints."
+      },
+      "transferType": {
+        "allowedValues": [
+          "INTERNAL",
+          "EXTERNAL",
+          "INTERNATIONAL"
+        ],
+        "description": "transferType value persisted on the transfer_links record.",
+        "relationship": "",
+        "required": true,
+        "type": "enum",
+        "unique": false,
+        "units": "",
+        "validation": "Validated against the transfer_links model and its foreign-key constraints."
+      }
+    }
+  }
+}

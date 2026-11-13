@@ -602,3 +602,12 @@ model GroundTruthLabel {
   @@schema("evaluation")
   @@map("ground_truth_labels")
 }
+
+model EvaluationMetricCache {
+  singleton Boolean @id @default(true)
+  revision  BigInt  @default(0)
+  payload   Json?
+
+  @@schema("evaluation")
+  @@map("evaluation_metric_cache")
+}

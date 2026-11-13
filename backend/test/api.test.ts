@@ -46,6 +46,31 @@ test("active users authenticate with the correct password", async () => {
   assert.ok(response.body.token);
 });
 
+test("authenticated identity endpoint returns the persisted profile only", async () => {
+  const login = await request(app).post("/api/auth/login").send({ email: "active@example.test", password: "correct horse battery staple" });
+  assert.equal(login.status, 200);
+  const response = await request(app).get("/api/auth/me").set("Authorization", `Bearer ${login.body.token}`);
+  assert.equal(response.status, 200);
+  assert.deepEqual(response.body, { user: { id: login.body.user.id, email: "active@example.test", name: "Active Analyst", role: "ANALYST" } });
+  assert.equal("password" in response.body.user, false);
+  assert.equal("passwordHash" in response.body.user, false);
+});
+
+test("SQLite overview uses current operational counts and does not invent evaluation metrics", async () => {
+  const user = createUser({ email: "overview@example.test", name: "Overview Analyst", password: "overview password 123", status: "ACTIVE" });
+  const token = signAuthToken({ id: user.id, email: user.email, name: user.name, role: user.role, authVersion: user.authVersion }, getJwtSecret());
+  const response = await request(app).get("/api/overview").set("Authorization", `Bearer ${token}`);
+  assert.equal(response.status, 200);
+  assert.equal(typeof response.body.metrics.alerts, "number");
+  assert.equal(typeof response.body.metrics.critical, "number");
+  assert.equal(typeof response.body.metrics.openCases, "number");
+  assert.equal(response.body.metrics.precision, null);
+  assert.equal(response.body.metrics.recall, null);
+  assert.equal(response.body.evaluation, null);
+  assert.equal(response.body.volume.length, 7);
+  assert.ok(response.body.recentAlerts.length <= 5);
+});
+
 test("incorrect passwords and inactive users are rejected", async () => {
   createUser({ email: "pending@example.test", name: "Pending Analyst", password: "pending password 123", status: "PENDING" });
   createUser({ email: "disabled@example.test", name: "Disabled Analyst", password: "disabled password 123", status: "DISABLED" });

@@ -28,6 +28,11 @@ export function createSqliteApp() {
     const safeUser: AuthUser = { id: user.id, email: user.email, name: user.name, role: user.role, authVersion: user.authVersion };
     return res.json({ token: signAuthToken(safeUser, jwtSecret), user: safeUser });
   });
+  app.get("/api/auth/me", auth, (_req, res) => {
+    const user = findUserById((res.locals.user as AuthUser).id);
+    if (!user || user.status !== "ACTIVE") return res.status(401).json({ error: "Invalid or expired token" });
+    return res.json({ user: { id: user.id, email: user.email, name: user.name, role: user.role } });
+  });
   app.post("/api/auth/register", authRateLimit, (req, res) => {
     const parsed = z.object({ email: z.string().email(), name: z.string().trim().min(1).max(120), password: z.string().min(12) }).safeParse(req.body);
     if (!parsed.success) return res.status(400).json({ error: "Invalid registration details" });
@@ -60,8 +65,22 @@ export function createSqliteApp() {
   }
   app.get("/api/users", auth, requireRole("ADMIN"), (_req, res) => res.json({ data: listUsers() }));
   app.get("/api/overview", auth, (_req, res) => {
-    const alerts = query<Alert>("SELECT * FROM alerts ORDER BY score DESC");
-    res.json({ metrics: { alerts: alerts.length, critical: alerts.filter(a => a.priority === "CRITICAL").length, openCases: query<{ count: number }>("SELECT COUNT(*) AS count FROM cases WHERE status != 'CLOSED'")[0].count, precision: 0.91, recall: 0.84 }, volume: [42, 58, 51, 76, 63, 81, 69], recentAlerts: alerts.slice(0, 5) });
+    const counts = query<{ alerts: number; critical: number; openCases: number }>(`SELECT
+      (SELECT COUNT(*) FROM alerts WHERE status != 'CLOSED') AS alerts,
+      (SELECT COUNT(*) FROM alerts WHERE priority = 'CRITICAL') AS critical,
+      (SELECT COUNT(*) FROM cases WHERE status != 'CLOSED') AS "openCases"`)[0];
+    const volumeRows = query<{ day: string; count: number }>(`SELECT date(created_at) AS day, COUNT(*) AS count
+      FROM alerts WHERE created_at >= date('now', '-6 days')
+      GROUP BY date(created_at) ORDER BY day`);
+    const volumeMap = new Map(volumeRows.map((row) => [row.day, row.count]));
+    const volume = Array.from({ length: 7 }, (_, index) => {
+      const date = new Date();
+      date.setUTCHours(0, 0, 0, 0);
+      date.setUTCDate(date.getUTCDate() - (6 - index));
+      return volumeMap.get(date.toISOString().slice(0, 10)) ?? 0;
+    });
+    const alerts = query<Alert>("SELECT * FROM alerts ORDER BY score DESC, created_at DESC LIMIT 5");
+    return res.json({ metrics: { ...counts, precision: null, recall: null }, evaluation: null, volume, recentAlerts: alerts });
   });
   app.get("/api/alerts", auth, (req, res) => {
     const status = typeof req.query.status === "string" ? req.query.status : undefined;

@@ -1,7 +1,7 @@
 """Prepare and optionally execute a guarded PostgreSQL dataset import.
 
 Dry-run is the default and performs no database connection. Execution requires
-both --execute and --confirm-import, and uses separate atomic transactions for
+both --execute and --confirm-import, and uses one atomic transaction for
 operational and evaluation data. Negative fixtures are never imported.
 """
 from __future__ import annotations
@@ -14,7 +14,8 @@ import re
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
-from typing import Any, Callable, Dict, Iterable, List, Mapping, Sequence
+from typing import Any, Dict, Iterable, List, Mapping, Sequence
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 OPERATIONAL_ORDER = (
     "users",
@@ -250,6 +251,18 @@ def validate_evaluation_rows(rows: Sequence[Mapping[str, Any]], errors: List[str
                 errors.append(f"ground_truth_labels.metadata row {row_number} is not valid JSON")
 
 
+def run_atomic(connection: Any, operation: Any) -> Any:
+    """Run an operation inside one driver transaction and explicitly rollback failures."""
+    try:
+        with connection.transaction():
+            return operation(connection)
+    except BaseException:
+        rollback = getattr(connection, "rollback", None)
+        if callable(rollback):
+            rollback()
+        raise
+
+
 def build_report(directory: Path) -> dict:
     manifest = json.loads((directory / "generation-manifest.json").read_text(encoding="utf-8"))
     errors: List[str] = []
@@ -271,10 +284,12 @@ def build_report(directory: Path) -> dict:
     sql = (directory / "operational.sql").read_text(encoding="utf-8")
     statements = split_sql_statements(sql)
     sql_tables = [match.group(1) for match in INSERT_RE.finditer(sql)]
-    if sql_tables != list(OPERATIONAL_ORDER):
-        errors.append("operational SQL insertion order does not match the dependency order")
-    if len(statements) != len(OPERATIONAL_ORDER):
-        errors.append("operational SQL statement count mismatch")
+    legacy_order = list(OPERATIONAL_ORDER)
+    expected_batched_order = [entity for entity in OPERATIONAL_ORDER for _ in range((len(data[entity]) + 499) // 500)]
+    legacy_sql = sql_tables == legacy_order and len(statements) == len(legacy_order)
+    batched_sql = sql_tables == expected_batched_order and len(statements) == len(expected_batched_order)
+    if not (legacy_sql or batched_sql):
+        errors.append("operational SQL batches/count/order do not match the dependency order")
     if re.search(r"\b(DROP|DELETE|TRUNCATE|UPDATE|ALTER|CREATE)\b", sql, re.IGNORECASE):
         errors.append("operational SQL contains a destructive or schema-changing command")
 
@@ -302,23 +317,86 @@ def build_report(directory: Path) -> dict:
         "negative_fixture_rows": len(fixtures),
         "sql_statements": len(statements),
         "insert_order": list(sql_tables),
-        "transaction_strategy": {
-            "operational": "single transaction; rollback on any statement failure",
-            "evaluation": "separate single transaction; rollback on any label failure",
-        },
+        "transaction_strategy": "one transaction covering operational and evaluation data; rollback on any failure",
         "checksums_verified": not any("checksum" in error for error in errors),
     }
 
 
-def run_atomic(connection: Any, operation: Callable[[Any], None]) -> None:
-    try:
-        with connection.transaction():
-            operation(connection)
-    except Exception:
-        rollback = getattr(connection, "rollback", None)
-        if callable(rollback):
-            rollback()
-        raise
+def normalize_psycopg_database_url(database_url: str) -> str:
+    """Remove Prisma-only schema configuration from the psycopg URL."""
+    parts = urlsplit(database_url)
+
+    if parts.scheme not in ("postgres", "postgresql"):
+        raise ValueError("DATABASE_URL must use postgres or postgresql scheme")
+
+    params = [
+        (key, value)
+        for key, value in parse_qsl(parts.query, keep_blank_values=True)
+        if key.lower() != "schema"
+    ]
+
+    return urlunsplit((
+        parts.scheme,
+        parts.netloc,
+        parts.path,
+        urlencode(params),
+        parts.fragment,
+    ))
+
+
+def verify_target_preflight(cursor: Any) -> None:
+    # Fail safely instead of waiting indefinitely for concurrent writers.
+    cursor.execute("SET LOCAL lock_timeout = '15s'")
+
+    lock_targets = [
+        f'"public"."{table}"'
+        for table in OPERATIONAL_ORDER
+    ]
+    lock_targets.append('"evaluation"."ground_truth_labels"')
+
+    cursor.execute(
+        "LOCK TABLE "
+        + ", ".join(lock_targets)
+        + " IN SHARE ROW EXCLUSIVE MODE"
+    )
+
+    migration_rows = cursor.execute(
+        'SELECT "migration_name" FROM "_prisma_migrations" '
+        'WHERE "migration_name" IN (%s, %s) AND "finished_at" IS NOT NULL',
+        ("0001_initial_postgresql", "0002_user_status"),
+    ).fetchall()
+    applied = {row[0] for row in migration_rows}
+    if applied != {"0001_initial_postgresql", "0002_user_status"}:
+        raise RuntimeError("Target migration history is not exactly compatible with migrations 0001 and 0002")
+
+    required_columns = {
+        ("public", "users", "passwordHash"),
+        ("public", "users", "status"),
+        ("evaluation", "ground_truth_labels", "transactionId"),
+    }
+    columns = {
+        tuple(row)
+        for row in cursor.execute(
+            "SELECT table_schema, table_name, column_name FROM information_schema.columns "
+            "WHERE (table_schema, table_name, column_name) IN "
+            "((%s, %s, %s), (%s, %s, %s), (%s, %s, %s))",
+            (
+                "public", "users", "passwordHash",
+                "public", "users", "status",
+                "evaluation", "ground_truth_labels", "transactionId",
+            ),
+        ).fetchall()
+    }
+    if not required_columns.issubset(columns):
+        raise RuntimeError("Target schema is missing required 0001/0002 import columns")
+
+    for table in OPERATIONAL_ORDER:
+        count = cursor.execute(f'SELECT COUNT(*) FROM "public"."{table}"').fetchone()[0]
+        if count:
+            raise RuntimeError(f"Target table public.{table} is not empty ({count} rows)")
+    evaluation_count = cursor.execute('SELECT COUNT(*) FROM "evaluation"."ground_truth_labels"').fetchone()[0]
+    if evaluation_count:
+        raise RuntimeError(f"Target table evaluation.ground_truth_labels is not empty ({evaluation_count} rows)")
 
 
 def execute_import(directory: Path, database_url: str) -> None:
@@ -330,40 +408,32 @@ def execute_import(directory: Path, database_url: str) -> None:
     if not report["passed"]:
         raise ValueError(json.dumps(report, sort_keys=True))
     statements = split_sql_statements((directory / "operational.sql").read_text(encoding="utf-8"))
-
-    def operational(connection: Any) -> None:
-        with connection.cursor() as cursor:
-            for statement in statements:
-                cursor.execute(statement)
-
-    with psycopg.connect(database_url) as connection:
-        run_atomic(connection, operational)
-
     ground_truth = json.loads((directory / "evaluation" / "ground_truth_labels.json").read_text(encoding="utf-8"))
 
-    def evaluation(connection: Any) -> None:
-        with connection.cursor() as cursor:
-            for row in ground_truth:
-                cursor.execute(
-                    'INSERT INTO "evaluation"."ground_truth_labels" '
-                    '("id", "transactionId", "customerId", "scenarioCode", "isSuspicious", '
-                    '"expectedRuleCode", "labelSource", "createdAt", "metadata") '
-                    "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
-                    (
-                        row["id"],
-                        row["transactionId"],
-                        row.get("customerId") or None,
-                        row["scenarioCode"],
-                        row["isSuspicious"].lower() == "true" if isinstance(row["isSuspicious"], str) else row["isSuspicious"],
-                        row.get("expectedRuleCode") or None,
-                        row["labelSource"],
-                        row["createdAt"],
-                        row.get("metadata") or None,
-                    ),
-                )
-
-    with psycopg.connect(database_url) as connection:
-        run_atomic(connection, evaluation)
+    with psycopg.connect(normalize_psycopg_database_url(database_url)) as connection:
+        with connection.transaction():
+            with connection.cursor() as cursor:
+                verify_target_preflight(cursor)
+                for statement in statements:
+                    cursor.execute(statement)
+                for row in ground_truth:
+                    cursor.execute(
+                        'INSERT INTO "evaluation"."ground_truth_labels" '
+                        '("id", "transactionId", "customerId", "scenarioCode", "isSuspicious", '
+                        '"expectedRuleCode", "labelSource", "createdAt", "metadata") '
+                        "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                        (
+                            row["id"],
+                            row["transactionId"],
+                            row.get("customerId") or None,
+                            row["scenarioCode"],
+                            row["isSuspicious"].lower() == "true" if isinstance(row["isSuspicious"], str) else row["isSuspicious"],
+                            row.get("expectedRuleCode") or None,
+                            row["labelSource"],
+                            row["createdAt"],
+                            row.get("metadata") or None,
+                        ),
+                    )
 
 
 def main() -> None:

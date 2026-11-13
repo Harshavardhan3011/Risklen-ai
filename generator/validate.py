@@ -9,7 +9,7 @@ from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Dict, Iterable, List, Mapping, Sequence, Tuple
 
-from .generate import RULES, TARGETS, risk_band
+from .generate import RULES, TARGETS, risk_band, stable_uuid
 
 
 def read_rows(directory: Path, name: str, folder: str = "operational") -> List[dict]:
@@ -104,19 +104,19 @@ def validate_transfers(
     return failures
 
 
-def validate_negative_fixture(fixture: Mapping[str, str]) -> bool:
+def validate_negative_fixture(fixture: Mapping[str, str]) -> str | None:
     fixture_type = fixture.get("type")
     if fixture_type == "closed_account_transaction":
-        return fixture.get("accountStatus") == "CLOSED" and fixture.get("transactionStatus") != "DECLINED"
+        return fixture.get("expectedError") if fixture.get("accountStatus") == "CLOSED" and fixture.get("transactionStatus") != "DECLINED" else None
     if fixture_type == "negative_balance_without_overdraft":
-        return float(fixture.get("balanceAfter", "0")) < -float(fixture.get("overdraftLimit", "0"))
+        return fixture.get("expectedError") if Decimal(fixture.get("balanceAfter", "0")) < -Decimal(fixture.get("overdraftLimit", "0")) else None
     if fixture_type == "mismatched_transfer_legs":
-        return fixture.get("sourceAmount") != fixture.get("targetAmount")
+        return fixture.get("expectedError") if fixture.get("sourceAmount") != fixture.get("targetAmount") else None
     if fixture_type == "alert_without_transaction":
-        return not fixture.get("transactionId")
+        return fixture.get("expectedError") if not fixture.get("transactionId") else None
     if fixture_type == "case_disposition_before_alert":
-        return fixture.get("dispositionAt", "") < fixture.get("alertCreatedAt", "")
-    return False
+        return fixture.get("expectedError") if fixture.get("dispositionAt", "") < fixture.get("alertCreatedAt", "") else None
+    return None
 
 
 def evaluate(alerts: Sequence[Mapping[str, str]], ground_truth: Sequence[Mapping[str, str]], transactions: Sequence[Mapping[str, str]], evidence: Sequence[Mapping[str, str]]) -> dict:
@@ -133,8 +133,7 @@ def evaluate(alerts: Sequence[Mapping[str, str]], ground_truth: Sequence[Mapping
     false_positive_rate = fp / (fp + tn) if fp + tn else 0.0
     by_rule = {}
     for rule_code in RULES:
-        rule_alerts = [row for row in alerts if row.get("ruleCode") == rule_code]
-        rule_predicted = {row["transactionId"] for row in rule_alerts}
+        rule_predicted = {row["transactionId"] for row in alerts if row.get("riskRuleId") == stable_uuid("rule", int(rule_code[1:]))}
         rule_tp = len(rule_predicted & actual_positive)
         rule_fp = len(rule_predicted - actual_positive)
         rule_truth = {row["transactionId"] for row in ground_truth if row.get("expectedRuleCode") == rule_code}
@@ -142,7 +141,7 @@ def evaluate(alerts: Sequence[Mapping[str, str]], ground_truth: Sequence[Mapping
         by_rule[rule_code] = {
             "precision": rule_tp / (rule_tp + rule_fp) if rule_tp + rule_fp else 0.0,
             "recall": rule_tp / (rule_tp + rule_fn) if rule_tp + rule_fn else 0.0,
-            "alerts": len(rule_alerts),
+            "alerts": len(rule_predicted),
         }
     scenario_coverage = {}
     scenarios = sorted({row["scenarioCode"] for row in ground_truth})
@@ -160,6 +159,7 @@ def evaluate(alerts: Sequence[Mapping[str, str]], ground_truth: Sequence[Mapping
         "recall": recall,
         "f1": f1,
         "falsePositiveRate": false_positive_rate,
+        "accuracy": (tp + tn) / len(truth) if truth else 0.0,
         "ruleMetrics": by_rule,
         "scenarioDetectionCoverage": scenario_coverage,
         "alertsPer1000Transactions": len(alerts) * 1000 / len(transactions) if transactions else 0.0,
@@ -196,12 +196,19 @@ def validate(directory: Path) -> dict:
     for name, count in expected.items():
         add(f"{name}_count", len(data[name]) == count, f"expected {count}, actual {len(data[name])}")
     for name, key in (
-        ("customers", "id"), ("accounts", "id"), ("accounts", "accountNumber"),
+        ("customers", "id"), ("accounts", "id"),
         ("merchants", "id"), ("devices", "id"), ("devices", "fingerprintHash"),
         ("transactions", "id"), ("alerts", "id"), ("risk_rules", "id"),
     ):
         add(f"{name}_{key}_unique", ids_unique(data[name], key))
 
+    add("account_id_format", all(__import__("re").fullmatch(r"ACC-CUS-\d{6}-\d{2}", row["id"]) for row in accounts))
+    add("account_ids_unique", ids_unique(accounts, "id"))
+    add("generated_user_state", len(data["users"]) == 10 and all(row["role"] == "ANALYST" and row["status"] == "PENDING" for row in data["users"]))
+    add("customer_id_format", all(__import__("re").fullmatch(r"CUS-\d{6}", row["id"]) for row in customers))
+    add("transaction_id_format", all(__import__("re").fullmatch(r"TXN-2026-\d{8}", row["id"]) for row in transactions))
+    add("alert_id_format", all(__import__("re").fullmatch(r"ALT-2026-\d{6}", row["id"]) for row in alerts))
+    add("case_id_format", all(__import__("re").fullmatch(r"CASE-2026-\d{6}", row["id"]) for row in data["cases"]))
     customer_ids = {row["id"] for row in customers}
     account_ids = {row["id"] for row in accounts}
     merchant_ids = {row["id"] for row in data["merchants"]}
@@ -252,19 +259,35 @@ def validate(directory: Path) -> dict:
             temporal_ok = False
     add("financial_reconciliation", financial_ok)
     add("temporal_constraints", temporal_ok)
+    by_account: Dict[str, List[Mapping[str, str]]] = defaultdict(list)
+    for row in transactions:
+        by_account[row["accountId"]].append(row)
+    balances_ok = True
+    for account_index, account in enumerate(accounts, 1):
+        movements = sorted(by_account[account["id"]], key=lambda row: row["occurredAt"])
+        expected_start = Decimal("1000.00") + Decimal(((account_index - 1) % 500) * 10)
+        balance = expected_start
+        for movement in movements:
+            if Decimal(movement["balanceBefore"]) != balance:
+                balances_ok = False
+            balance = Decimal(movement["balanceAfter"])
+        if movements and Decimal(account["currentBalance"]) != balance:
+            balances_ok = False
+    add("account_balance_reconciliation", balances_ok)
     add("transfer_currency_consistency", all(row["currency"] == "USD" for row in data["transfer_links"]))
     add("risk_rules_complete", len(data["risk_rules"]) == 9 and {row["ruleCode"] for row in data["risk_rules"]} == set(RULES))
     add("alert_scores_and_bands", all(0 <= int(row["riskScore"]) <= 100 and risk_band(int(row["riskScore"])) == row["priority"] for row in alerts))
     add("alert_evidence_complete", {row["id"] for row in alerts} == {row["alertId"] for row in data["alert_evidence"]})
-    add("ground_truth_isolated", all(row.get("labelSource") == "scenario-membership" for row in ground_truth))
-    rejected = [validate_negative_fixture(fixture) for fixture in fixtures]
-    add("negative_fixtures_rejected", len(rejected) == 5 and all(rejected))
+    leaked = any("scenario" in str(row.get("metadata", "")).lower() or "scenarioCode" in row for name in operational_names for row in data[name])
+    add("ground_truth_isolated", all(row.get("labelSource") == "scenario-membership" for row in ground_truth) and not leaked, "Operational rows must not contain scenario labels.")
+    detected = [validate_negative_fixture(fixture) for fixture in fixtures]
+    add("negative_fixtures_rejected", len(detected) == 5 and all(detected) and all(found == fixture["expectedError"] for found, fixture in zip(detected, fixtures)))
     metrics = evaluate(alerts, ground_truth, transactions, data["alert_evidence"])
     report = {
         "passed": all(check["passed"] for check in checks),
         "scale": manifest["scale"],
         "checks": checks,
-        "negativeFixtures": [{"fixtureId": fixture["fixtureId"], "rejected": valid, "expectedError": fixture["expectedError"]} for fixture, valid in zip(fixtures, rejected)],
+        "negativeFixtures": [{"fixtureId": fixture["fixtureId"], "type": fixture["type"], "transactionId": fixture.get("transactionId"), "rejected": found is not None, "detected": found is not None, "detectedError": found, "expectedError": fixture["expectedError"]} for fixture, found in zip(fixtures, detected)],
         "transferFailures": transfer_failures,
         "metrics": metrics,
     }

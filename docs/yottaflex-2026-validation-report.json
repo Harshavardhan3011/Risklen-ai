@@ -1,0 +1,336 @@
+{
+  "checks": [
+    {
+      "detail": "expected 5000, actual 5000",
+      "name": "customers_count",
+      "passed": true
+    },
+    {
+      "detail": "expected 7000, actual 7000",
+      "name": "accounts_count",
+      "passed": true
+    },
+    {
+      "detail": "expected 500, actual 500",
+      "name": "merchants_count",
+      "passed": true
+    },
+    {
+      "detail": "expected 3000, actual 3000",
+      "name": "devices_count",
+      "passed": true
+    },
+    {
+      "detail": "expected 100000, actual 100000",
+      "name": "transactions_count",
+      "passed": true
+    },
+    {
+      "detail": "expected 1000, actual 1000",
+      "name": "alerts_count",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "customers_id_unique",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "accounts_id_unique",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "merchants_id_unique",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "devices_id_unique",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "devices_fingerprintHash_unique",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "transactions_id_unique",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "alerts_id_unique",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "risk_rules_id_unique",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "account_id_format",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "account_ids_unique",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "generated_user_state",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "customer_id_format",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "transaction_id_format",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "alert_id_format",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "case_id_format",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "account_customer_references",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "account_references",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "kyc_customer_references",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "customer_device_references",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "transaction_references",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "transfer_references",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "alert_references",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "case_alert_references",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "analyst_action_references",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "evidence_references",
+      "passed": true
+    },
+    {
+      "detail": "[]",
+      "name": "transfer_reconciliation",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "financial_reconciliation",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "temporal_constraints",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "account_balance_reconciliation",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "transfer_currency_consistency",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "risk_rules_complete",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "alert_scores_and_bands",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "alert_evidence_complete",
+      "passed": true
+    },
+    {
+      "detail": "Operational rows must not contain scenario labels.",
+      "name": "ground_truth_isolated",
+      "passed": true
+    },
+    {
+      "detail": "",
+      "name": "negative_fixtures_rejected",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "accuracy": 0.99819,
+    "alertsPer1000Transactions": 10.0,
+    "evaluationUnit": "transaction: an alert is a positive prediction when its transactionId matches a ground-truth transaction.",
+    "evidenceCompleteness": 1.0,
+    "f1": 0.9004947773501923,
+    "falseNegatives": 0,
+    "falsePositiveRate": 0.001824946310281203,
+    "falsePositives": 181,
+    "matchingMethod": "Exact transaction ID matching; multiple alerts for one transaction count once.",
+    "precision": 0.819,
+    "recall": 1.0,
+    "ruleMetrics": {
+      "R001": {
+        "alerts": 91,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "R002": {
+        "alerts": 91,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "R003": {
+        "alerts": 91,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "R004": {
+        "alerts": 91,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "R005": {
+        "alerts": 91,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "R006": {
+        "alerts": 91,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "R007": {
+        "alerts": 91,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "R008": {
+        "alerts": 272,
+        "precision": 0.33455882352941174,
+        "recall": 1.0
+      },
+      "R009": {
+        "alerts": 91,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "scenarioDetectionCoverage": {
+      "benign_unusual": 1.0,
+      "circular_transfer": 1.0,
+      "closed_account_attempt": 1.0,
+      "dormant_reactivation": 1.0,
+      "legitimate_high_value": 1.0,
+      "negative_balance_attempt": 1.0,
+      "new_device": 1.0,
+      "normal": 1.0,
+      "repeated_attempts": 1.0,
+      "transfer_reconciliation_anomaly": 1.0,
+      "unusual_merchant": 1.0,
+      "velocity_spike": 1.0
+    },
+    "trueNegatives": 99000,
+    "truePositives": 819,
+    "validationPassRate": 1.0
+  },
+  "negativeFixtures": [
+    {
+      "detected": true,
+      "detectedError": "closed account transaction must be declined",
+      "expectedError": "closed account transaction must be declined",
+      "fixtureId": "NEG-001",
+      "rejected": true,
+      "transactionId": "NEG-TXN-001",
+      "type": "closed_account_transaction"
+    },
+    {
+      "detected": true,
+      "detectedError": "balance cannot fall below overdraft limit",
+      "expectedError": "balance cannot fall below overdraft limit",
+      "fixtureId": "NEG-002",
+      "rejected": true,
+      "transactionId": "NEG-TXN-002",
+      "type": "negative_balance_without_overdraft"
+    },
+    {
+      "detected": true,
+      "detectedError": "transfer legs must reconcile",
+      "expectedError": "transfer legs must reconcile",
+      "fixtureId": "NEG-003",
+      "rejected": true,
+      "transactionId": "NEG-TXN-003",
+      "type": "mismatched_transfer_legs"
+    },
+    {
+      "detected": true,
+      "detectedError": "alert transaction reference is required",
+      "expectedError": "alert transaction reference is required",
+      "fixtureId": "NEG-004",
+      "rejected": true,
+      "transactionId": "",
+      "type": "alert_without_transaction"
+    },
+    {
+      "detected": true,
+      "detectedError": "case disposition cannot precede alert creation",
+      "expectedError": "case disposition cannot precede alert creation",
+      "fixtureId": "NEG-005",
+      "rejected": true,
+      "transactionId": "NEG-TXN-005",
+      "type": "case_disposition_before_alert"
+    }
+  ],
+  "passed": true,
+  "scale": "full",
+  "transferFailures": []
+}
