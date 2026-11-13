@@ -44,42 +44,177 @@ async function customerIdForUser(user: AuthUser): Promise<string | null> {
   return customer?.id ?? null;
 }
 
+type EvaluationAggregateRow = {
+  universe_count: bigint;
+  predicted_count: bigint;
+  true_positives: bigint;
+  false_positives: bigint;
+  false_negatives: bigint;
+  true_negatives: bigint;
+  rule_metrics: Array<{ ruleCode: string; precision: number; recall: number }>;
+  scenario_coverage: Record<string, number>;
+  evaluated_alert_count: bigint;
+  evidence_alert_count: bigint;
+  validation_total: bigint;
+  validation_passed: bigint;
+  processing_time_seconds: number | null;
+};
+
 async function evaluationMetrics() {
-  const [alerts, labels, evidenceAlerts, validationTotals, latestRun] = await Promise.all([
-    prisma.alert.findMany({ select: { id: true, transactionId: true, riskRule: { select: { ruleCode: true } } } }),
-    prisma.groundTruthLabel.findMany({ select: { transactionId: true, scenarioCode: true, isSuspicious: true, expectedRuleCode: true } }),
-    prisma.alertEvidence.groupBy({ by: ["alertId"] }),
-    prisma.validationResult.groupBy({ by: ["status"], _count: { _all: true } }),
-    prisma.generationRun.findFirst({ orderBy: { startedAt: "desc" }, select: { startedAt: true, completedAt: true } }),
-  ]);
-  const positiveTransactions = new Set(labels.filter(label => label.isSuspicious).map(label => label.transactionId));
-  const universe = new Set(labels.map(label => label.transactionId));
-  const predictedTransactions = new Set(alerts.map(alert => alert.transactionId).filter(id => universe.has(id)));
-  const tp = [...predictedTransactions].filter(id => positiveTransactions.has(id)).length;
-  const fp = [...predictedTransactions].filter(id => !positiveTransactions.has(id)).length;
-  const fn = [...positiveTransactions].filter(id => !predictedTransactions.has(id)).length;
-  const tn = Math.max(0, universe.size - tp - fp - fn);
+  const [row] = await prisma.$queryRaw<EvaluationAggregateRow[]>`
+    WITH label_transactions AS MATERIALIZED (
+      SELECT "transactionId", BOOL_OR("isSuspicious") AS "isSuspicious"
+      FROM "evaluation"."ground_truth_labels"
+      GROUP BY "transactionId"
+    ),
+    predicted_transactions AS MATERIALIZED (
+      SELECT DISTINCT alert."transactionId"
+      FROM "public"."alerts" AS alert
+      INNER JOIN label_transactions AS label USING ("transactionId")
+    ),
+    overall_counts AS (
+      SELECT
+        COUNT(*) AS universe_count,
+        COUNT(*) FILTER (WHERE predicted."transactionId" IS NOT NULL) AS predicted_count,
+        COUNT(*) FILTER (WHERE label."isSuspicious" AND predicted."transactionId" IS NOT NULL) AS true_positives,
+        COUNT(*) FILTER (WHERE NOT label."isSuspicious" AND predicted."transactionId" IS NOT NULL) AS false_positives,
+        COUNT(*) FILTER (WHERE label."isSuspicious" AND predicted."transactionId" IS NULL) AS false_negatives
+      FROM label_transactions AS label
+      LEFT JOIN predicted_transactions AS predicted USING ("transactionId")
+    ),
+    overall AS (
+      SELECT *, GREATEST(universe_count - true_positives - false_positives - false_negatives, 0) AS true_negatives
+      FROM overall_counts
+    ),
+    rule_codes AS (
+      SELECT DISTINCT "expectedRuleCode" AS rule_code
+      FROM "evaluation"."ground_truth_labels"
+      WHERE "expectedRuleCode" IS NOT NULL
+    ),
+    expected_rule_transactions AS (
+      SELECT DISTINCT "expectedRuleCode" AS rule_code, "transactionId"
+      FROM "evaluation"."ground_truth_labels"
+      WHERE "isSuspicious" AND "expectedRuleCode" IS NOT NULL
+    ),
+    predicted_rule_transactions AS (
+      SELECT DISTINCT rule."ruleCode" AS rule_code, alert."transactionId"
+      FROM "public"."alerts" AS alert
+      INNER JOIN "public"."risk_rules" AS rule ON rule."id" = alert."riskRuleId"
+      INNER JOIN label_transactions AS label USING ("transactionId")
+    ),
+    expected_rule_counts AS (
+      SELECT rule_code, COUNT(*) AS count
+      FROM expected_rule_transactions
+      GROUP BY rule_code
+    ),
+    predicted_rule_counts AS (
+      SELECT rule_code, COUNT(*) AS count
+      FROM predicted_rule_transactions
+      GROUP BY rule_code
+    ),
+    true_positive_rule_counts AS (
+      SELECT expected.rule_code, COUNT(*) AS count
+      FROM expected_rule_transactions AS expected
+      INNER JOIN predicted_rule_transactions AS predicted
+        ON predicted.rule_code = expected.rule_code
+        AND predicted."transactionId" = expected."transactionId"
+      GROUP BY expected.rule_code
+    ),
+    rule_summary AS (
+      SELECT
+        codes.rule_code,
+        COALESCE(expected.count, 0) AS expected_count,
+        COALESCE(predicted.count, 0) AS predicted_count,
+        COALESCE(true_positive.count, 0) AS true_positive_count
+      FROM rule_codes AS codes
+      LEFT JOIN expected_rule_counts AS expected USING (rule_code)
+      LEFT JOIN predicted_rule_counts AS predicted USING (rule_code)
+      LEFT JOIN true_positive_rule_counts AS true_positive USING (rule_code)
+    ),
+    scenario_summary AS (
+      SELECT
+        label."scenarioCode" AS scenario_code,
+        COUNT(*) FILTER (WHERE label."isSuspicious") AS expected_count,
+        COUNT(*) FILTER (
+          WHERE label."isSuspicious"
+          AND EXISTS (
+            SELECT 1 FROM predicted_transactions AS predicted
+            WHERE predicted."transactionId" = label."transactionId"
+          )
+        ) AS found_count
+      FROM "evaluation"."ground_truth_labels" AS label
+      GROUP BY label."scenarioCode"
+    ),
+    evidence_summary AS (
+      SELECT
+        COUNT(*) AS evaluated_alert_count,
+        COUNT(*) FILTER (WHERE EXISTS (
+          SELECT 1 FROM "public"."alert_evidence" AS evidence WHERE evidence."alertId" = alert."id"
+        )) AS evidence_alert_count
+      FROM "public"."alerts" AS alert
+      WHERE EXISTS (
+        SELECT 1 FROM label_transactions AS label WHERE label."transactionId" = alert."transactionId"
+      )
+    ),
+    validation_summary AS (
+      SELECT
+        COUNT(*) AS validation_total,
+        COUNT(*) FILTER (WHERE "status"::text = 'PASSED') AS validation_passed
+      FROM "public"."validation_results"
+    ),
+    latest_run AS (
+      SELECT CASE WHEN "completedAt" IS NOT NULL
+        THEN EXTRACT(EPOCH FROM ("completedAt" - "startedAt"))::double precision
+        ELSE NULL
+      END AS processing_time_seconds
+      FROM "public"."generation_runs"
+      ORDER BY "startedAt" DESC
+      LIMIT 1
+    )
+    SELECT
+      overall.universe_count,
+      overall.predicted_count,
+      overall.true_positives,
+      overall.false_positives,
+      overall.false_negatives,
+      overall.true_negatives,
+      COALESCE((
+        SELECT jsonb_agg(jsonb_build_object(
+          'ruleCode', rule_code,
+          'precision', CASE WHEN predicted_count > 0 THEN true_positive_count::double precision / predicted_count ELSE 0 END,
+          'recall', CASE WHEN expected_count > 0 THEN true_positive_count::double precision / expected_count ELSE 0 END
+        ) ORDER BY rule_code)
+        FROM rule_summary
+      ), '[]'::jsonb) AS rule_metrics,
+      COALESCE((
+        SELECT jsonb_object_agg(
+          scenario_code,
+          CASE WHEN expected_count > 0 THEN found_count::double precision / expected_count ELSE 1 END
+        )
+        FROM scenario_summary
+      ), '{}'::jsonb) AS scenario_coverage,
+      evidence.evaluated_alert_count,
+      evidence.evidence_alert_count,
+      validation.validation_total,
+      validation.validation_passed,
+      (SELECT processing_time_seconds FROM latest_run) AS processing_time_seconds
+    FROM overall
+    CROSS JOIN evidence_summary AS evidence
+    CROSS JOIN validation_summary AS validation
+  `;
+  if (!row) throw new Error("Evaluation metrics query returned no result.");
+
+  const tp = Number(row.true_positives);
+  const fp = Number(row.false_positives);
+  const fn = Number(row.false_negatives);
+  const tn = Number(row.true_negatives);
+  const universeSize = Number(row.universe_count);
+  const predictedCount = Number(row.predicted_count);
   const precision = tp + fp ? tp / (tp + fp) : 0;
   const recall = tp + fn ? tp / (tp + fn) : 0;
   const f1 = precision + recall ? (2 * precision * recall) / (precision + recall) : 0;
-  const evidenceAlertIds = new Set(evidenceAlerts.map(item => item.alertId));
-  const evaluatedAlerts = alerts.filter(alert => universe.has(alert.transactionId));
-  const ruleMetrics = [...new Set(labels.map(label => label.expectedRuleCode).filter((code): code is string => Boolean(code)))].map(ruleCode => {
-    const expected = new Set(labels.filter(label => label.expectedRuleCode === ruleCode && label.isSuspicious).map(label => label.transactionId));
-    const predicted = new Set(evaluatedAlerts.filter(alert => alert.riskRule.ruleCode === ruleCode).map(alert => alert.transactionId));
-    const ruleTp = [...predicted].filter(id => expected.has(id)).length;
-    const ruleFp = [...predicted].filter(id => !expected.has(id)).length;
-    const ruleFn = [...expected].filter(id => !predicted.has(id)).length;
-    return { ruleCode, precision: ruleTp + ruleFp ? ruleTp / (ruleTp + ruleFp) : 0, recall: ruleTp + ruleFn ? ruleTp / (ruleTp + ruleFn) : 0 };
-  });
-  const scenarioCoverage = Object.fromEntries([...new Set(labels.map(label => label.scenarioCode))].map(scenarioCode => {
-    const expected = labels.filter(label => label.scenarioCode === scenarioCode && label.isSuspicious);
-    const found = expected.filter(label => predictedTransactions.has(label.transactionId));
-    return [scenarioCode, expected.length ? found.length / expected.length : 1];
-  }));
-  const validationTotal = validationTotals.reduce((total, item) => total + item._count._all, 0);
-  const validationPassed = validationTotals.find(item => item.status === "PASSED")?._count._all ?? 0;
-  const processingTimeSeconds = latestRun?.completedAt ? (latestRun.completedAt.getTime() - latestRun.startedAt.getTime()) / 1000 : null;
+  const validationTotal = Number(row.validation_total);
+  const evaluatedAlertCount = Number(row.evaluated_alert_count);
   return {
     truePositives: tp,
     falsePositives: fp,
@@ -89,14 +224,14 @@ async function evaluationMetrics() {
     recall,
     f1,
     falsePositiveRate: fp + tn ? fp / (fp + tn) : 0,
-    ruleMetrics,
-    scenarioCoverage,
-    alertsPer1000Transactions: universe.size ? (predictedTransactions.size / universe.size) * 1000 : 0,
-    processingTimeSeconds,
+    ruleMetrics: row.rule_metrics,
+    scenarioCoverage: row.scenario_coverage,
+    alertsPer1000Transactions: universeSize ? (predictedCount / universeSize) * 1000 : 0,
+    processingTimeSeconds: row.processing_time_seconds,
     evaluationUnit: "transaction ID within the ground-truth universe; duplicate alerts count once",
     matchingMethodology: "Exact alert.transactionId to evaluation.ground_truth_labels.transactionId matching; labels are never returned by operational APIs.",
-    evidenceCompleteness: evaluatedAlerts.length ? evaluatedAlerts.filter(alert => evidenceAlertIds.has(alert.id)).length / evaluatedAlerts.length : 0,
-    validationPassRate: validationTotal ? validationPassed / validationTotal : 0,
+    evidenceCompleteness: evaluatedAlertCount ? Number(row.evidence_alert_count) / evaluatedAlertCount : 0,
+    validationPassRate: validationTotal ? Number(row.validation_passed) / validationTotal : 0,
   };
 }
 
@@ -138,6 +273,10 @@ export async function createPostgresApp() {
     try { res.locals.user = await validatePostgresToken(prismaAuthStore, token, jwtSecret); next(); }
     catch { res.status(401).json({ error: "Invalid or expired token" }); }
   }
+  app.get("/api/auth/me", auth, async (_req, res) => {
+    const user = res.locals.user as AuthUser & { status: string };
+    return res.json({ user: { id: user.id, email: user.email, name: user.name, role: user.role, status: user.status } });
+  });
   function requireRole(...roles: string[]) {
     return (_req: express.Request, res: express.Response, next: express.NextFunction): void => {
       if (!roles.includes((res.locals.user as AuthUser).role)) { res.status(403).json({ error: "Forbidden" }); return; }
@@ -225,22 +364,49 @@ export async function createPostgresApp() {
     return res.json({ user: safeUser(user) });
   });
   app.get("/api/overview", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (_req, res) => {
-    const [alerts, critical, openCases, metrics, volumeRows] = await Promise.all([
-      prisma.alert.findMany({ orderBy: [{ riskScore: "desc" }, { createdAt: "desc" }], take: 5, include: { riskRule: true } }),
-      prisma.alert.count({ where: { priority: "CRITICAL" } }),
+    const now = new Date();
+    const today = new Date(now);
+    today.setHours(0, 0, 0, 0);
+    const volumeRanges = Array.from({ length: 7 }, (_, index) => {
+      const start = new Date(today);
+      start.setDate(start.getDate() - (6 - index));
+      const end = new Date(start);
+      end.setDate(end.getDate() + 1);
+      return { start, end };
+    });
+    const recentStart = new Date(Date.now() - 7 * 86400000);
+    const volumeExpressions = volumeRanges.map((range, index) => Prisma.sql`
+      COUNT(*) FILTER (WHERE "createdAt" >= ${range.start} AND "createdAt" < ${range.end})::bigint AS ${Prisma.raw(`"day${index}"`)}
+    `);
+    const [alertTotals, openCases, metrics, alerts, volumeRows] = await Promise.all([
+      prisma.$queryRaw<Array<{ alerts: bigint; critical: bigint }>>`
+        SELECT
+          COUNT(*) FILTER (WHERE "status"::text <> 'CLOSED') AS alerts,
+          COUNT(*) FILTER (WHERE "priority"::text = 'CRITICAL') AS critical
+        FROM "public"."alerts"
+      `,
       prisma.case.count({ where: { status: { not: "CLOSED" } } }),
       evaluationMetrics(),
-      prisma.alert.findMany({ where: { createdAt: { gte: new Date(Date.now() - 7 * 86400000) } }, select: { createdAt: true } }),
+      prisma.alert.findMany({
+        orderBy: [{ riskScore: "desc" }, { createdAt: "desc" }],
+        take: 5,
+        select: {
+          id: true,
+          customerId: true,
+          riskScore: true,
+          explanation: true,
+          status: true,
+          riskRule: { select: { name: true } },
+        },
+      }),
+      prisma.$queryRaw<Array<Record<string, bigint>>>(Prisma.sql`
+        SELECT ${Prisma.join(volumeExpressions)}
+        FROM "public"."alerts"
+        WHERE "createdAt" >= ${recentStart}
+      `),
     ]);
-    const volume = Array.from({ length: 7 }, (_, index) => {
-      const day = new Date();
-      day.setHours(0, 0, 0, 0);
-      day.setDate(day.getDate() - (6 - index));
-      const next = new Date(day);
-      next.setDate(next.getDate() + 1);
-      return volumeRows.filter(alert => alert.createdAt >= day && alert.createdAt < next).length;
-    });
-    res.json({ metrics: { alerts: await prisma.alert.count({ where: { status: { not: "CLOSED" } } }), critical, openCases, precision: metrics.precision, recall: metrics.recall }, evaluation: metrics, volume, recentAlerts: alerts.map(alert => ({ id: alert.id, customer_id: alert.customerId, rule_name: alert.riskRule.name, priority: scoreBand(alert.riskScore), score: alert.riskScore, explanation: alert.explanation, status: alert.status })) });
+    const volume = volumeRanges.map((_, index) => Number(volumeRows[0]?.[`day${index}`] ?? 0n));
+    res.json({ metrics: { alerts: Number(alertTotals[0]?.alerts ?? 0n), critical: Number(alertTotals[0]?.critical ?? 0n), openCases, precision: metrics.precision, recall: metrics.recall }, evaluation: metrics, volume, recentAlerts: alerts.map(alert => ({ id: alert.id, customer_id: alert.customerId, rule_name: alert.riskRule.name, priority: scoreBand(alert.riskScore), score: alert.riskScore, explanation: alert.explanation, status: alert.status })) });
   });
   app.post("/api/risk/batch", auth, requireRole("ADMIN", "ANALYST", "COMPLIANCE_REVIEWER"), async (req, res) => {
     const parsed = z.object({ batchSize: z.coerce.number().int().min(1).max(250).default(100), maxTransactions: z.coerce.number().int().min(1).optional() }).safeParse(req.body ?? {});

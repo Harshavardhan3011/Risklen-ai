@@ -18,6 +18,8 @@ export type PostgresAuthStore = {
   findById(id: string): Promise<PostgresAuthRecord | null>;
 };
 
+export type ValidatedPostgresUser = AuthUser & { status: UserStatus };
+
 export const prismaAuthStore: PostgresAuthStore = {
   async findByEmail(email) {
     const user = await prisma.user.findUnique({ where: { email } });
@@ -70,7 +72,7 @@ export async function validatePostgresToken(
   store: PostgresAuthStore,
   token: string,
   secret: string,
-): Promise<AuthUser> {
+): Promise<ValidatedPostgresUser> {
   const tokenUser = verifyAuthToken(token, secret);
   const currentUser = await store.findById(tokenUser.id);
   if (
@@ -81,7 +83,14 @@ export async function validatePostgresToken(
   ) {
     throw new Error("Invalid or expired token");
   }
-  return tokenUser;
+  return {
+    id: currentUser.id,
+    email: currentUser.email,
+    name: currentUser.name,
+    role: currentUser.role,
+    authVersion: currentUser.authVersion,
+    status: currentUser.status,
+  };
 }
 
 export async function updatePostgresUserStatus(id: string, status: UserStatus): Promise<void> {
