@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { test } from "node:test";
+import jwt from "jsonwebtoken";
 import app from "../src/server.js";
 import { getJwtSecret, signAuthToken } from "../src/auth.js";
 import { createUser, db, findUserByEmail, runMigrations, updateUserPassword, updateUserRole, updateUserStatus, type MigrationDefinition } from "../src/db.js";
@@ -44,6 +45,42 @@ test("active users authenticate with the correct password", async () => {
   assert.equal("password" in response.body.user, false);
   assert.equal("passwordHash" in response.body.user, false);
   assert.ok(response.body.token);
+});
+
+test("authenticated profile restoration returns persisted identity and rejects invalid sessions", async () => {
+  const accounts = [
+    { email: "me-admin@example.test", name: "Test Administrator", role: "ADMIN" },
+    { email: "me-analyst@example.test", name: "Test Analyst", role: "ANALYST" },
+    { email: "me-reviewer@example.test", name: "Test Reviewer", role: "COMPLIANCE_REVIEWER" },
+  ] as const;
+  for (const account of accounts) createUser({ ...account, password: "correct profile password", status: "ACTIVE" });
+
+  for (const account of accounts) {
+    const persistedUser = findUserByEmail(account.email);
+    assert.ok(persistedUser);
+    const token = signAuthToken({ id: persistedUser.id, email: persistedUser.email, name: persistedUser.name, role: persistedUser.role, authVersion: persistedUser.authVersion }, getJwtSecret());
+    const profile = await request(app).get("/api/auth/me").set("Authorization", `Bearer ${token}`);
+    assert.equal(profile.status, 200);
+    assert.deepEqual(profile.body.user, {
+      id: findUserByEmail(account.email)?.id,
+      email: account.email,
+      name: account.name,
+      role: account.role,
+      status: "ACTIVE",
+    });
+    assert.equal("password" in profile.body.user, false);
+    assert.equal("passwordHash" in profile.body.user, false);
+  }
+
+  const analyst = findUserByEmail("me-analyst@example.test");
+  assert.ok(analyst);
+  const expiredToken = jwt.sign({ sub: analyst.id, email: analyst.email, name: analyst.name, role: analyst.role, authVersion: analyst.authVersion }, getJwtSecret(), { expiresIn: -1 });
+  assert.equal((await request(app).get("/api/auth/me").set("Authorization", `Bearer ${expiredToken}`)).status, 401);
+
+  const analystLogin = await request(app).post("/api/auth/login").send({ email: analyst.email, password: "correct profile password" });
+  updateUserPassword(analyst.id, "replacement profile password");
+  assert.equal((await request(app).get("/api/auth/me").set("Authorization", `Bearer ${analystLogin.body.token}`)).status, 401);
+  assert.equal((await request(app).get("/api/auth/me")).status, 401);
 });
 
 test("incorrect passwords and inactive users are rejected", async () => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import axios from "axios";
 import {
@@ -19,7 +19,6 @@ import {
   Users,
   WalletCards,
 } from "lucide-react";
-import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import {
   BrowserRouter,
   Link,
@@ -34,6 +33,7 @@ import {
 import "./style.css";
 
 const api = axios.create({ baseURL: import.meta.env.VITE_API_URL ?? "http://localhost:4000" });
+const AlertVolumeChart = lazy(() => import("./AlertVolumeChart"));
 
 type AlertRecord = {
   id: string;
@@ -52,8 +52,37 @@ type Overview = {
   volume: number[];
   recentAlerts: AlertRecord[];
 };
-type User = { name: string; role: string; email: string };
+type User = { id?: string; name: string; role: string; email: string; status?: string };
+type AuthStatus = "restoring" | "authenticated" | "anonymous" | "error";
 type CaseRecord = { id: string; status: string; disposition?: string | null; assignedTo?: { name: string } | null; caseAlerts?: Array<{ alert: AlertRecord }> };
+
+const sessionRestorationRequests = new Map<string, Promise<User>>();
+const overviewRequests = new Map<string, Promise<Overview>>();
+
+function restoreAuthenticatedUser(token: string): Promise<User> {
+  const existing = sessionRestorationRequests.get(token);
+  if (existing) return existing;
+  const pending = api.get<{ user: User }>("/api/auth/me", { headers: { Authorization: `Bearer ${token}` } })
+    .then((response) => response.data.user);
+  sessionRestorationRequests.set(token, pending);
+  void pending.then(
+    () => { if (sessionRestorationRequests.get(token) === pending) sessionRestorationRequests.delete(token); },
+    () => { if (sessionRestorationRequests.get(token) === pending) sessionRestorationRequests.delete(token); },
+  );
+  return pending;
+}
+
+function loadOverview(token: string): Promise<Overview> {
+  const existing = overviewRequests.get(token);
+  if (existing) return existing;
+  const pending = api.get<Overview>("/api/overview", { headers: { Authorization: `Bearer ${token}` } }).then((response) => response.data);
+  overviewRequests.set(token, pending);
+  void pending.then(
+    () => { if (overviewRequests.get(token) === pending) overviewRequests.delete(token); },
+    () => { if (overviewRequests.get(token) === pending) overviewRequests.delete(token); },
+  );
+  return pending;
+}
 
 const navigation = [
   { label: "Dashboard", to: "/dashboard", icon: LayoutDashboard },
@@ -72,36 +101,90 @@ const navigation = [
 ];
 
 function App() {
-  const [token, setToken] = useState(localStorage.getItem("risklens-token"));
+  const [token, setToken] = useState(() => localStorage.getItem("risklens-token"));
   const [user, setUser] = useState<User | null>(null);
+  const [authStatus, setAuthStatus] = useState<AuthStatus>(() => localStorage.getItem("risklens-token") ? "restoring" : "anonymous");
+  const [restoreAttempt, setRestoreAttempt] = useState(0);
+  const trustedToken = useRef<string | null>(null);
 
   if (token) api.defaults.headers.common.Authorization = `Bearer ${token}`;
   else delete api.defaults.headers.common.Authorization;
 
   useEffect(() => {
-    if (token) api.defaults.headers.common.Authorization = `Bearer ${token}`;
-    else delete api.defaults.headers.common.Authorization;
-  }, [token]);
+    const interceptorId = api.interceptors.response.use(
+      (response) => response,
+      (error: unknown) => {
+        if (axios.isAxiosError(error) && error.response?.status === 401) {
+          localStorage.removeItem("risklens-token");
+          trustedToken.current = null;
+          setToken(null);
+          setUser(null);
+          setAuthStatus("anonymous");
+        }
+        return Promise.reject(error);
+      },
+    );
+    return () => api.interceptors.response.eject(interceptorId);
+  }, []);
+
+  useEffect(() => {
+    if (!token) {
+      trustedToken.current = null;
+      setUser(null);
+      setAuthStatus("anonymous");
+      return;
+    }
+    if (trustedToken.current === token) return;
+
+    let active = true;
+    setUser(null);
+    setAuthStatus("restoring");
+    restoreAuthenticatedUser(token)
+      .then((restoredUser) => {
+        if (!active) return;
+        trustedToken.current = token;
+        setUser(restoredUser);
+        setAuthStatus("authenticated");
+      })
+      .catch((error: unknown) => {
+        if (!active || (axios.isAxiosError(error) && error.response?.status === 401)) return;
+        setAuthStatus("error");
+      });
+    return () => { active = false; };
+  }, [token, restoreAttempt]);
 
   const login = (value: string, loggedInUser: User) => {
     localStorage.setItem("risklens-token", value);
+    trustedToken.current = value;
     setToken(value);
     setUser(loggedInUser);
+    setAuthStatus("authenticated");
   };
   const logout = () => {
     localStorage.removeItem("risklens-token");
+    trustedToken.current = null;
     setToken(null);
     setUser(null);
+    setAuthStatus("anonymous");
   };
+  const retryRestoration = () => setRestoreAttempt((attempt) => attempt + 1);
+
+  const loginPage = !token
+    ? <Login onLogin={login} />
+    : authStatus === "authenticated"
+      ? <Navigate to="/dashboard" replace />
+      : authStatus === "error"
+        ? <SessionRestoreFailure onRetry={retryRestoration} onSignIn={logout} />
+        : <SessionRestoring />;
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={token ? <Navigate to="/dashboard" replace /> : <Login onLogin={login} />} />
-        <Route element={<ProtectedRoute token={token} />}>
-          <Route element={<DashboardLayout user={user} onLogout={logout} />}>
+        <Route path="/login" element={loginPage} />
+        <Route element={<ProtectedRoute token={token} user={user} status={authStatus} onRetry={retryRestoration} onSignIn={logout} />}>
+          <Route element={<DashboardLayout user={user as User} onLogout={logout} />}>
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/dashboard" element={<DashboardPage token={token as string} />} />
             <Route path="/alerts" element={<AlertsPage />} />
             <Route path="/cases" element={<CasesPage />} />
             <Route path="/transactions" element={<TransactionsPage />} />
@@ -122,12 +205,30 @@ function App() {
   );
 }
 
-function ProtectedRoute({ token }: { token: string | null }) {
+function ProtectedRoute({ token, user, status, onRetry, onSignIn }: { token: string | null; user: User | null; status: AuthStatus; onRetry: () => void; onSignIn: () => void }) {
   const location = useLocation();
-  return token ? <Outlet /> : <Navigate to="/login" replace state={{ from: location.pathname }} />;
+  if (status === "restoring") return <SessionRestoring />;
+  if (status === "error") return <SessionRestoreFailure onRetry={onRetry} onSignIn={onSignIn} />;
+  return token && status === "authenticated" && user
+    ? <Outlet />
+    : <Navigate to="/login" replace state={{ from: location.pathname }} />;
 }
 
-function DashboardLayout({ user, onLogout }: { user: User | null; onLogout: () => void }) {
+function SessionRestoring() {
+  return <div className="login"><section className="login-card" role="status" aria-live="polite"><div className="brand"><ShieldCheck /> RiskLens<span>AI</span></div><p className="muted">Restoring your authenticated session…</p></section></div>;
+}
+
+function SessionRestoreFailure({ onRetry, onSignIn }: { onRetry: () => void; onSignIn: () => void }) {
+  return <div className="login"><section className="login-card" role="alert"><div className="brand"><ShieldCheck /> RiskLens<span>AI</span></div><h1>Session could not be verified</h1><p className="muted">The service did not confirm your identity. Retry the request or sign in again.</p><div className="session-actions"><button className="primary" onClick={onRetry} type="button">Retry verification</button><button className="secondary" onClick={onSignIn} type="button">Sign in</button></div></section></div>;
+}
+
+function initialsFor(name: string, email: string): string {
+  const words = name.trim().split(/\s+/).filter(Boolean);
+  if (words.length > 1) return `${words[0][0]}${words[words.length - 1][0]}`.toUpperCase();
+  return (words[0]?.slice(0, 2) || email.slice(0, 1) || "?").toUpperCase();
+}
+
+function DashboardLayout({ user, onLogout }: { user: User; onLogout: () => void }) {
   const location = useLocation();
   return (
     <div className="app">
@@ -155,12 +256,11 @@ function DashboardLayout({ user, onLogout }: { user: User | null; onLogout: () =
       <main>
         <header>
           <div>
-            <p className="eyebrow">RISK INTELLIGENCE / OPERATIONS</p>
             <h1>{pageTitle(location.pathname)}</h1>
-            <p className="muted">Explainable transaction monitoring for analyst decisions.</p>
           </div>
-          <div className="user">
-            AM <span>{user?.name ?? "Alex Morgan"}<br /><small>{user?.role ?? "Analyst"}</small></span>
+          <div className="user" aria-label={`Signed in as ${user.name}, ${user.role}`}>
+            <strong className="user-initials" aria-hidden="true">{initialsFor(user.name, user.email)}</strong>
+            <span><strong>{user.name}</strong><br /><small>{user.email}</small><br /><small>{user.role}</small></span>
           </div>
         </header>
         <Outlet />
@@ -173,28 +273,42 @@ function pageTitle(pathname: string) {
   return navigation.find((item) => item.to === pathname)?.label ?? (pathname === "/" ? "Dashboard" : "Page not found");
 }
 
-function DashboardPage() {
+function DashboardPage({ token }: { token: string }) {
   const [overview, setOverview] = useState<Overview | null>(null);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [retryCount, setRetryCount] = useState(0);
   useEffect(() => {
-    api.get<Overview>("/api/overview").then((response) => setOverview(response.data)).catch(() => setError("Could not load risk data. Is the API running?"));
-  }, []);
-  const chart = overview?.volume.map((value, index) => ({ day: `D${index + 1}`, value })) ?? [];
+    let active = true;
+    setLoading(true);
+    setError("");
+    loadOverview(token)
+      .then((data) => { if (active) { setOverview(data); setError(""); } })
+      .catch((requestError: unknown) => {
+        if (active && !axios.isCancel(requestError)) setError("Could not load dashboard data. Retry when the service is available.");
+      })
+      .finally(() => { if (active) setLoading(false); });
+    return () => { active = false; };
+  }, [retryCount, token]);
+  if (loading && !overview) return <section className="panel dashboard-loading" aria-busy="true" aria-live="polite">Loading dashboard data…</section>;
+  if (error && !overview) return <section className="panel" role="alert"><div className="error">{error}</div><button className="primary" onClick={() => setRetryCount((count) => count + 1)} type="button">Retry</button></section>;
+  if (!overview) return null;
+  const chart = overview.volume.map((value, index) => ({ day: `D${index + 1}`, value }));
   const metricCards: Array<[string, string | number, typeof AlertTriangle]> = [
-    ["Open alerts", overview?.metrics.alerts ?? 0, AlertTriangle],
-    ["Critical priority", overview?.metrics.critical ?? 0, ShieldCheck],
-    ["Open cases", overview?.metrics.openCases ?? 0, ClipboardList],
-    ["Precision", `${Math.round((overview?.metrics.precision ?? 0) * 100)}%`, CheckCircle2],
+    ["Open alerts", overview.metrics.alerts, AlertTriangle],
+    ["Critical priority", overview.metrics.critical, ShieldCheck],
+    ["Open cases", overview.metrics.openCases, ClipboardList],
+    ["Precision", `${Math.round(overview.metrics.precision * 100)}%`, CheckCircle2],
   ];
   return (
     <>
-      {error && <div className="error">{error}</div>}
+      {error && <div className="error" role="alert">{error}</div>}
       <section className="metrics">{metricCards.map(([label, value, Icon]) => <div className="metric" key={label}><Icon /><small>{label}</small><strong>{String(value)}</strong></div>)}</section>
       <section className="grid">
-        <div className="panel"><div className="panel-head"><h2>Alert volume</h2><span className="badge green">Last 7 days</span></div><ResponsiveContainer width="100%" height={220}><BarChart data={chart}><XAxis dataKey="day" /><YAxis /><Tooltip /><Bar dataKey="value" fill="#2667c9" radius={[4, 4, 0, 0]} /></BarChart></ResponsiveContainer></div>
-        <div className="panel"><div className="panel-head"><h2>Detection quality</h2><span className="badge blue">Evaluation</span></div><div className="quality"><strong>{Math.round((overview?.metrics.recall ?? 0) * 100)}%</strong><span>Recall</span><strong>{Math.round((overview?.metrics.precision ?? 0) * 100)}%</strong><span>Precision</span></div><p className="muted">Metrics are calculated against isolated ground-truth labels.</p></div>
+        <div className="panel"><div className="panel-head"><h2>Alert volume</h2><span className="badge green">Last 7 days</span></div><Suspense fallback={<div className="dashboard-loading" role="status">Loading chart…</div>}><AlertVolumeChart data={chart} /></Suspense></div>
+        <div className="panel"><div className="panel-head"><h2>Detection quality</h2><span className="badge blue">Evaluation</span></div><div className="quality"><strong>{Math.round(overview.metrics.recall * 100)}%</strong><span>Recall</span><strong>{Math.round(overview.metrics.precision * 100)}%</strong><span>Precision</span></div><p className="muted">Metrics are calculated against isolated ground-truth labels.</p></div>
       </section>
-      <div className="panel"><div className="panel-head"><h2>Priority alert queue</h2><Link className="text-link" to="/alerts">View all alerts</Link></div><AlertTable alerts={overview?.recentAlerts ?? []} /></div>
+      <div className="panel"><div className="panel-head"><h2>Priority alert queue</h2><Link className="text-link" to="/alerts">View all alerts</Link></div>{overview.recentAlerts.length ? <AlertTable alerts={overview.recentAlerts} /> : <p className="muted">No alerts require review.</p>}</div>
     </>
   );
 }

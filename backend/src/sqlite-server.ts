@@ -48,9 +48,12 @@ export function createSqliteApp() {
       if (!currentUser || currentUser.status !== "ACTIVE" || currentUser.role !== tokenUser.role || currentUser.authVersion !== tokenUser.authVersion) {
         res.status(401).json({ error: "Invalid or expired token" }); return;
       }
-      res.locals.user = tokenUser; next();
+      res.locals.user = tokenUser;
+      res.locals.profile = { id: currentUser.id, email: currentUser.email, name: currentUser.name, role: currentUser.role, status: currentUser.status };
+      next();
     } catch { res.status(401).json({ error: "Invalid or expired token" }); }
   }
+  app.get("/api/auth/me", auth, (_req, res) => res.json({ user: res.locals.profile }));
   function requireRole(...roles: string[]) {
     return (_req: express.Request, res: express.Response, next: express.NextFunction): void => {
       const user = res.locals.user as AuthUser | undefined;
